@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cj2nmhh3ghjdy"]
+
+[ext_resource type="PackedScene" uid="uid://c7sw3q8pj3c8e" path="res://chunks/chunk_base.tscn" id="1_kleyr"]
+[ext_resource type="PackedScene" uid="uid://dwv1opqfyn2un" path="res://props/rock/rock2.tscn" id="2_4hedx"]
+[ext_resource type="PackedScene" uid="uid://bcmm6q0ne27t8" path="res://props/tree/tree2.tscn" id="2_pgsrp"]
+[ext_resource type="PackedScene" uid="uid://dhj421tt3vkko" path="res://props/mushroom/mushroom1.tscn" id="3_4hedx"]
+[ext_resource type="PackedScene" uid="uid://pkxy3jd5x0fs" path="res://props/tree/tree1.tscn" id="5_5qwe3"]
+[ext_resource type="PackedScene" uid="uid://ngw5kywhk3s8" path="res://props/mushroom/mushroom2.tscn" id="6_rv6jy"]
+[ext_resource type="PackedScene" uid="uid://dls1xxohtygxr" path="res://props/bush/bush1.tscn" id="7_rv6jy"]
+[ext_resource type="PackedScene" uid="uid://bj7g1s6a3tm0f" path="res://props/bush/bush2.tscn" id="8_4yay7"]
+
+[node name="Chunk" unique_id=1907970453 instance=ExtResource("1_kleyr")]
+
+[node name="PropBase4" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="0" unique_id=1132229471 instance=ExtResource("2_pgsrp")]
+transform = Transform3D(0.50803447, 0, 1.0542725, 0, 0.99999994, 0, -0.86133665, 0, 0.62183213, 29.42361, 0, 23.388073)
+
+[node name="PropBase" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="1" unique_id=1430264877 instance=ExtResource("2_4hedx")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="PropBase2" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="2" unique_id=1385070690 instance=ExtResource("3_4hedx")]
+transform = Transform3D(0.5875824, 0.12143651, 0, -0.12143651, 0.5875824, 0, 0, 0, 0.59999996, 25.86457, 0.48607826, -0.6090069)
+
+[node name="PropBase3" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="3" unique_id=2075690166 instance=ExtResource("5_5qwe3")]
+transform = Transform3D(-0.64013314, 0.0031939473, 0.7682573, 0.002044562, 0.9999949, -0.0024537859, -0.76826125, 0, -0.6401364, 21.081509, 0.114739895, 28.740921)
+
+[node name="PropBase5" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="4" unique_id=1970753816 instance=ExtResource("6_rv6jy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.88374, 0.4537182, -25.40004)
+
+[node name="PropBase6" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="5" unique_id=758718449 instance=ExtResource("6_rv6jy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 25.389263, 0.48611736, -22.699116)
+
+[node name="PropBase7" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="6" unique_id=524057377 instance=ExtResource("6_rv6jy")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 22.276402, 0.48611736, -28.096785)
+
+[node name="PropBase8" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="7" unique_id=1522303879 instance=ExtResource("3_4hedx")]
+transform = Transform3D(0.29642192, 0.046195835, 0, -0.046195835, 0.29642192, 0, 0, 0, 0.29999998, 27.41232, 0.48607826, 2.348957)
+
+[node name="PropBase21" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="8" unique_id=1969968102 instance=ExtResource("7_rv6jy")]
+transform = Transform3D(0.23599692, 0, 0.05285503, 0, 0.21189338, 0, -0.05133053, 0, 0.24300595, 29.828873, 0, 14.432966)
+
+[node name="PropBase24" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="9" unique_id=1970269010 instance=ExtResource("7_rv6jy")]
+transform = Transform3D(-0.13239273, 0, 0.45225152, 0, 0.30543998, 0, -0.41778487, 0, -0.14331493, 30.101265, 0, 17.270498)
+
+[node name="PropBase25" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="10" unique_id=69293660 instance=ExtResource("7_rv6jy")]
+transform = Transform3D(-0.07992454, 0, 0.2947725, 0, 0.231387, 0, -0.25221363, 0, -0.093411066, 26.804394, 0, 18.24162)
+
+[node name="PropBase26" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="11" unique_id=41221904 instance=ExtResource("8_4yay7")]
+transform = Transform3D(-0.09062611, 0, 0.2859841, 0, 0.29999998, 0, -0.2859841, 0, -0.09062611, 27.655107, 0, 15.8175125)
+
+[node name="PropBase22" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="12" unique_id=1818579370 instance=ExtResource("7_rv6jy")]
+transform = Transform3D(0.05370449, 0, -0.24246132, 0, 0.21189338, 0, 0.23546803, 0, 0.0552995, 21.810596, 0, 31.825611)
+
+[node name="PropBase27" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="13" unique_id=1500180759 instance=ExtResource("7_rv6jy")]
+transform = Transform3D(0.4164305, 0, 0.14786202, 0, 0.30544, 0, -0.13659325, 0, 0.4507854, 18.97595, 0, 32.126568)
+
+[node name="PropBase28" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="14" unique_id=880398625 instance=ExtResource("7_rv6jy")]
+transform = Transform3D(0.25139597, 0, 0.09637479, 0, 0.231387, 0, -0.08246037, 0, 0.29381686, 17.971676, 0, 28.839642)
+
+[node name="PropBase29" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="15" unique_id=355969571 instance=ExtResource("8_4yay7")]
+transform = Transform3D(-0.106759265, 0, 0.43376365, 0, 0.29999998, 0, -0.33689466, 0, -0.13745631, 27.655107, 0, 27.744345)
+
+[node name="PropBase23" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="16" unique_id=1155482562 instance=ExtResource("7_rv6jy")]
+transform = Transform3D(0.23599692, 0, 0.05285503, 0, 0.21189338, 0, -0.05133053, 0, 0.24300595, 26.494171, 0, 30.294302)
+
+[node name="PropBase9" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="17" unique_id=750926988 instance=ExtResource("6_rv6jy")]
+transform = Transform3D(-0.99388605, 0, 0.11041084, 0, 1, 0, -0.11041084, 0, -0.99388605, -21.806189, 0.4537182, 13.758992)
+
+[node name="PropBase10" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="18" unique_id=130502716 instance=ExtResource("6_rv6jy")]
+transform = Transform3D(-0.49694303, 0, 0.05520542, 0, 0.5, 0, -0.05520542, 0, -0.49694303, -25.985952, 0.48611736, 10.577123)
+
+[node name="PropBase11" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="19" unique_id=204833743 instance=ExtResource("6_rv6jy")]
+transform = Transform3D(-0.2981658, 0, 0.03312324, 0, 0.29999998, 0, -0.03312324, 0, -0.2981658, -23.488085, 0.48611736, 16.285484)
+
+[node name="PropBase12" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="20" unique_id=1513824060 instance=ExtResource("3_4hedx")]
+transform = Transform3D(-0.37645277, 0.0023062136, 0.46720213, 0.0036756322, 0.59998864, 0, -0.46719342, 0.002862106, -0.3764598, -18.779411, 0.32481086, -40.945866)
+
+[node name="PropBase13" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="21" unique_id=2128311977 instance=ExtResource("3_4hedx")]
+transform = Transform3D(-0.18794192, 0.0104088755, 0.2336011, 0.016589615, 0.29954094, -6.661338e-17, -0.23324369, 0.012917844, -0.18822995, -17.425919, 0.64734566, -43.98052)

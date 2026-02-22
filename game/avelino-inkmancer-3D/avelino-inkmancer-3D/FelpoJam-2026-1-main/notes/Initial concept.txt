@@ -1,0 +1,146 @@
+IDEIA JOGO
+Avelino Gamer Hamburguer 3
+
+Documento de Design – Jogo do Necromante dos Carimbos (Estado Atual)
+
+GENERO
+- Roguelike
+Duração padrão: 20 minutos
+Após 20 minutos: modo freeplay infinito
+
+CONCEITO CENTRAL
+O jogador controla um necromante que usa carimbos para invocar unidades feitas de tinta.
+- O jogador:
+Invoca unidades usando carimbos
+Ataca diretamente com o carimbo (baixo dano)
+Não possui, inicialmente, sistema de combate direto além disso
+
+Spells adicionais estão sendo planejadas, mas a mecânica principal é invocação
+
+SISTEMA DE CARIMBOS
+- Tipos de Carimbo
+
+Durante a run, o jogador pode obter:
+
+-Carimbo base inicial
+-Carimbos coletados ao longo da run (encontrados em baús ou dropados por inimigos)
+
+Carimbos podem ser encontrados tanto não gravados, como previamente gravados
+
+Carimbos possuem sistema de "raridade", desde carimbos mais simples que permitem a construção de unidades mais fracas, até carimbos mais fortes, para unidades mais fortes.
+
+SISTEMA DE GRAVURA
+
+O jogador pode criar uma gravura em um carimbo. A gravura é permanente dentro da run e não pode ser modificada depois dentro da run. Gravar um carimbo pausa o jogo e abre um menu, onde a gravura é realizada.
+
+Ao gravar, o jogador escolhe:
+
+1 - Tipo de unidade
+
+- Melee: Ataque corpo a corpo
+- Ranged: Ataque a distância alvo unico, dps
+- Cerco: Ataque a distancia AOE, burst
+(Outros poderão ser definidos no futuro)
+
+2 - Distribuição de atributos
+
+Cada carimbo concede pontos base para investir em atributos, dependendo da raridade:
+
+Raridade	Pontos de atributo
+Branco (Comum)	+4
+Verde (Incomum)	+12
+(Outras raridades ainda não definidas)	
+
+Atributos alteram visualmente o modelo da unidade (ideia pro futuro):
+
++1 ponto de Vida → modelo fica maior
+
++1 ponto de Força → arma fica mais complexa
+
++1 ponto de Defesa → armadura fica mais complexa
+
+As mudanças são cumulativas e refletem diretamente no visual da unidade.
+
+ATRIBUTOS
+
+Atributos ainda não foram pensados por completo, mas inicialmente:
+
+Força: Dano causado
+Defesa: Resistencia da unidade
+Velocidade: velocidade da unidade
+Duração: tempo de duração até unidade secar (morrer naturalmente)
+
+SISTEMA DE TINTA
+
+A tinta é o recurso principal do jogo.
+
+- Propriedades da tinta:
+
+É necessária para invocar unidades.
+
+Regenera ao longo do tempo (ou é adquirida por meio de inimigos mortos).
+
+A regeneração aumenta com o tempo (modelo ainda em definição).
+
+Carimbos de tier mais alto consomem mais tinta.
+
+COOLDOWN
+
+Além do custo de tinta:
+
+Cada carimbo possui cooldown individual.
+
+O cooldown depende da raridade.
+
+Quanto mais raro o carimbo → maior o cooldown.
+
+SISTEMA DE INVOCAÇÃO
+
+O jogador usa tinta para spawnar unidades.
+
+Carimbos não possuem cooldown global, apenas individual.
+
+A limitação principal de invocação é:
+
+- Quantidade de tinta disponível
+- Cooldown do carimbo
+
+UNIDADES ALIADAS
+
+São feitas de tinta. Causam dano e agram inimigos
+
+Podem morrer em combate.
+
+Podem secar e morrer mesmo sem serem mortas.
+
+PAPEL DO JOGADOR
+
+O jogador:
+
+Invoca unidades
+
+Ataca com o carimbo (baixo dano)
+
+Não possui, por enquanto, mecânicas de combate além disso
+
+A gameplay gira em torno de:
+
+Construir um time balanceado através das gravuras permanentes.
+
+ESTRATÉGIA ESPERADA
+
+Como gravuras são permanentes:
+
+O jogador precisa ser estratégico.
+
+Deve criar unidades que se complementem.
+
+Build mal pensada pode comprometer a run.
+
+INIMIGOS:
+
+Existe uma certa variação de inimigos possíveis (originalmente 5). Algorítimo de decisão de Spawn não definido ainda. Haverá também um boss final, e potencialmente 2 bosses intermediários
+
+MAPA:
+
+Estética do mapa a decidir. Props gerados proceduralmente

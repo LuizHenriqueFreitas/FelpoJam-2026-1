@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cx5aui21n35j5"]
+
+[ext_resource type="Script" uid="uid://bh7e3dybjpbf3" path="res://menus/controlsmenu.gd" id="1_w0ct3"]
+
+[node name="controlsmenu" type="Control" unique_id=2071406324]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w0ct3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1308540211]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -31.0
+offset_right = 47.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=515104380]
+layout_mode = 2
+text = "CONTROLES"
+horizontal_alignment = 1
+
+[node name="GridControles" type="GridContainer" parent="VBoxContainer" unique_id=124665516]
+layout_mode = 2
+columns = 2
+
+[node name="BtnVoltar" type="Button" parent="VBoxContainer" unique_id=372632776]
+layout_mode = 2
+text = "voltar"
