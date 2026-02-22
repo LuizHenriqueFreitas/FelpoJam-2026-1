@@ -1,0 +1,18 @@
+ARQUITETURA CHUNKS
+
+Então, o modelo base do chão, pode ter a estrutura
+Static Body 3D (floor)
+|_ CollisionShape3D 
+|_ MeshInstance3D
+
+O modelo do chunk deve possuir
+Node3D (chunk)
+|_ floor
+|_ prop_container
+
+E oque muda em sí de chunk pra chunk é o prop_container, que contém todos os props do chunk
+prop_container (Node3D)
+|_ prop1
+|_ prop2
+
+Cada prop sendo uma cena que contém modelo e hitbox propria (arvore, pedra, etc)
