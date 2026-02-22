@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ca4t4kjn8osaa"]
+
+[ext_resource type="PackedScene" uid="uid://gt8l7smnonc8" path="res://player.tscn" id="1_4fuuu"]
+[ext_resource type="Script" uid="uid://bwvx3yf77fesd" path="res://camera_3d.gd" id="2_dxrkv"]
+[ext_resource type="PackedScene" uid="uid://ccwtc3kto5acf" path="res://chunks/spawn_chunk.tscn" id="3_dakft"]
+[ext_resource type="Script" uid="uid://dix7o7ep5011h" path="res://game/chunk_manager.gd" id="4_u5opy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e2o6t"]
+
+[sub_resource type="Sky" id="Sky_feb5d"]
+sky_material = SubResource("ProceduralSkyMaterial_e2o6t")
+
+[sub_resource type="Environment" id="Environment_fc0e3"]
+background_mode = 2
+sky = SubResource("Sky_feb5d")
+
+[node name="game" type="Node3D" unique_id=1459525975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1920929e-07, 0)
+
+[node name="Player" parent="." unique_id=1351006858 instance=ExtResource("1_4fuuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4746869, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=305135476]
+transform = Transform3D(0.7071068, 0.5, -0.5, 0, 0.7071068, 0.70710677, 0.7071068, -0.5, 0.5, -9, 14.897191, 9)
+projection = 1
+size = 39.514
+script = ExtResource("2_dxrkv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1801254928]
+transform = Transform3D(0.03235538, 0.96888196, 0.2453995, 0.12664886, -0.24752331, 0.9605688, 0.9914198, 0, -0.1307165, -59.297314, 17.622591, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2116462058]
+environment = SubResource("Environment_fc0e3")
+
+[node name="SpawnChunk" parent="." unique_id=1907970453 instance=ExtResource("3_dakft")]
+
+[node name="ChunkManager" type="Node3D" parent="." unique_id=1219678097]
+script = ExtResource("4_u5opy")
