@@ -3,4 +3,7 @@ Tiago - Criação do Initial.txt
 Tiago - Criação do CHANGELOG.txt
 22/02/2016
 Tiago - Criação de /avelino_inkmancer_3D
-
+Matheus - Criação do menu principal
+Matheus - Criação do menu ingame
+Matheus - Criação da HUD do player
+Matheus - Criação de protótipo do sistema de invocações
