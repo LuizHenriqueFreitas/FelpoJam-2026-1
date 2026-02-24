@@ -7,7 +7,7 @@ const ACTIONS = {
 	"walk_back":    "Mover Trás",
 	"atack":        "Atacar",
 	"summon":       "Invocar",
-	# adicione mais ações conforme seu jogo
+	# Adiciona mais ações aqui se precisar
 }
 
 @onready var grid = $VBoxContainer/GridControles

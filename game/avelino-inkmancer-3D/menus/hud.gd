@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var barra_vida    = $HUDRoot/HUDContainer/VidaSection/BarraVida
 @onready var barra_mana    = $HUDRoot/HUDContainer/ManaSection/BarraMana
+@onready var summon_system = get_node_or_null("res://SummonSystem.gd")
 
 @onready var btn_habilidade = [
 	$HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer/Hab1,
@@ -69,6 +70,8 @@ func _selecionar_habilidade(idx: int):
 		btn_habilidade[i].modulate = Color(1, 1, 1, 1)
 	habilidade_selecionada = idx
 	btn_habilidade[idx].modulate = Color(1.5, 1.2, 0.2, 1)
+	if summon_system:
+		summon_system.set_habilidade(idx)
 
 
 # Input por teclado e mouse
@@ -81,15 +84,9 @@ func _input(event):
 			KEY_4: _selecionar_habilidade(3)
 
 	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			_on_invocacao()
-		elif event.button_index == MOUSE_BUTTON_LEFT:
-			# Só ataca se o mouse não estiver sobre nenhum elemento da HUD
+		if event.button_index == MOUSE_BUTTON_LEFT:
 			if not _mouse_sobre_hud():
 				_on_ataque()
-
-
-# ─── Ações ───────────────────────────────────────────────────────────────────
 
 func _on_ataque():
 	print("Ataque executado!")
@@ -97,6 +94,7 @@ func _on_ataque():
 func _on_invocacao():
 	print("Invocando habilidade: ", habilidade_selecionada + 1)
 
+# Pra não conseguir atacar clicando nos botões do HUD
 func _mouse_sobre_hud():
 	var mouse_pos = get_viewport().get_mouse_position()
 	var hud_root = $HUDRoot

@@ -1,8 +1,16 @@
-[gd_scene format=3 uid="uid://de0xu4lyu04eo"]
+[gd_scene format=3 uid="uid://cbdo35joupfnb"]
 
-[ext_resource type="Script" uid="uid://crmtw74nyj6ms" path="res://menus/mainmenu.gd" id="1_2ydd5"]
+[ext_resource type="Script" uid="uid://bcqe8ha8lch1s" path="res://menus/mainmenu.gd" id="1_2ydd5"]
+[ext_resource type="Texture2D" uid="uid://dika117rp476w" path="res://texturabotoes/jogar-preto.png" id="2_1pjrb"]
+[ext_resource type="Texture2D" uid="uid://wu41ncxpviyd" path="res://texturabotoes/jogar-branco.png" id="3_7gycx"]
+[ext_resource type="Texture2D" uid="uid://bdskycn8veffa" path="res://texturabotoes/controles-preto.png" id="4_070k2"]
+[ext_resource type="Texture2D" uid="uid://c5y8bei1h7y3m" path="res://texturabotoes/controels-branco.png" id="5_noxst"]
+[ext_resource type="Texture2D" uid="uid://c3ddv0s3kcies" path="res://texturabotoes/audio-preto.png" id="6_gkrlc"]
+[ext_resource type="Texture2D" uid="uid://5lhu1qrncces" path="res://texturabotoes/audio-branco.png" id="7_qsejf"]
+[ext_resource type="Texture2D" uid="uid://1qdqp63r8mcj" path="res://texturabotoes/sair-preto.png" id="8_36xnw"]
+[ext_resource type="Texture2D" uid="uid://finh3jyan3t8" path="res://texturabotoes/sair-vermelho.png" id="9_t1j7i"]
 
-[node name="mainmenu" type="Control" unique_id=144998336]
+[node name="menu" type="Control" unique_id=1648596554]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,40 +19,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2ydd5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=267774404]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -41.0
-offset_top = -81.5
-offset_right = 41.0
-offset_bottom = 81.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
+[node name="BtnJogar" type="TextureButton" parent="." unique_id=853706611]
+layout_mode = 0
+offset_left = 1326.0
+offset_top = 429.18814
+offset_right = 1770.8713
+offset_bottom = 523.1882
+rotation = -0.0882031
+texture_normal = ExtResource("2_1pjrb")
+texture_pressed = ExtResource("3_7gycx")
+texture_hover = ExtResource("3_7gycx")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Jogo" type="Label" parent="VBoxContainer" unique_id=1322212248]
-layout_mode = 2
-text = "MEU JOGO"
-horizontal_alignment = 1
+[node name="BtnControles" type="TextureButton" parent="." unique_id=1629145105]
+layout_mode = 0
+offset_left = 1070.0
+offset_top = 583.0
+offset_right = 1793.1818
+offset_bottom = 678.0
+rotation = -0.08935235
+texture_normal = ExtResource("4_070k2")
+texture_pressed = ExtResource("5_noxst")
+texture_hover = ExtResource("5_noxst")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BtnJogar" type="Button" parent="VBoxContainer" unique_id=1197772812]
-layout_mode = 2
-text = "jogar"
+[node name="BtnAudio" type="TextureButton" parent="." unique_id=66944462]
+layout_mode = 0
+offset_left = 1406.0
+offset_top = 706.18823
+offset_right = 1803.1387
+offset_bottom = 800.18823
+rotation = -0.086087786
+texture_normal = ExtResource("6_gkrlc")
+texture_pressed = ExtResource("7_qsejf")
+texture_hover = ExtResource("7_qsejf")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BtnControles" type="Button" parent="VBoxContainer" unique_id=1128718354]
-layout_mode = 2
-text = "controles"
+[node name="BtnSair" type="TextureButton" parent="." unique_id=2122151332]
+layout_mode = 0
+offset_left = 1506.0
+offset_top = 835.1882
+offset_right = 1806.6086
+offset_bottom = 932.1882
+rotation = -0.08551744
+texture_normal = ExtResource("8_36xnw")
+texture_pressed = ExtResource("9_t1j7i")
+texture_hover = ExtResource("9_t1j7i")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BtnAudio" type="Button" parent="VBoxContainer" unique_id=1841305381]
-layout_mode = 2
-text = "audio"
-
-[node name="BtnSair" type="Button" parent="VBoxContainer" unique_id=598370246]
-layout_mode = 2
-text = "sair"
-
-[connection signal="pressed" from="VBoxContainer/BtnJogar" to="." method="_on_btn_jogar_pressed"]
+[connection signal="pressed" from="BtnJogar" to="." method="_on_btn_jogar_pressed"]
+[connection signal="pressed" from="BtnControles" to="." method="_on_btn_controles_pressed"]
+[connection signal="pressed" from="BtnAudio" to="." method="_on_btn_audio_pressed"]
+[connection signal="pressed" from="BtnSair" to="." method="_on_btn_sair_pressed"]
