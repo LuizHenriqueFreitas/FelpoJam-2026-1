@@ -6,4 +6,8 @@ Tiago - Criação de /avelino_inkmancer_3D
 Matheus - Criação do menu principal
 Matheus - Criação do menu ingame
 Matheus - Criação da HUD do player
-Matheus - Criação de protótipo do sistema de invocações
+24/02/2026
+Matheus - Vsync para tirar serrilhado
+Matheus - Melhora na moviemntação do personagem para remover pixel jumping
+Matheus - Melhora nos menus
+Matheus - Criação do protótipo do sistema de invocação
