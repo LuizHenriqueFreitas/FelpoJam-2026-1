@@ -24,6 +24,10 @@ buses/default_bus_layout="uid://d0uauuowgt7im"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[dotnet]
+
+project/assembly_name="Avelino 3d gamer"
+
 [input]
 
 walk_right={

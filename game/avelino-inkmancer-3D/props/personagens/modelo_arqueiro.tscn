@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://btw4t07frla54"]
+
+[ext_resource type="PackedScene" uid="uid://dhauqulfydigq" path="res://assets/models/personagens/arqueiro.glb" id="1_771mw"]
+[ext_resource type="PackedScene" uid="uid://dn1rximrr3341" path="res://assets/models/personagens/arco.glb" id="2_g53od"]
+
+[node name="arqueiro" unique_id=682006127 instance=ExtResource("1_771mw")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1853194033) index="0" unique_id=2014917589]
+bones/0/position = Vector3(0, 0.67759705, 0)
+bones/1/rotation = Quaternion(0.081853785, 0, 1.9515463e-08, 0.9966444)
+bones/3/rotation = Quaternion(-0.09291944, -7.4150077e-09, -5.342041e-08, 0.9956737)
+bones/4/position = Vector3(0.01446879, 0.100399755, 0.14259821)
+bones/4/rotation = Quaternion(-0.046236802, 0.12490253, -0.7792416, 0.61240834)
+bones/5/rotation = Quaternion(0.17292486, 0.09371869, -0.2804386, 0.93950415)
+bones/6/rotation = Quaternion(0.39049566, 0.033089265, -0.18346164, 0.9015322)
+bones/7/position = Vector3(-0.014468854, 0.10039976, 0.14259823)
+bones/7/rotation = Quaternion(-0.046236973, -0.12490269, 0.77924174, 0.61240834)
+bones/8/rotation = Quaternion(0.17292489, -0.093718655, 0.28043866, 0.9395041)
+bones/9/rotation = Quaternion(0.3904956, -0.033089243, 0.18346167, 0.9015321)
+bones/10/rotation = Quaternion(0.0062112203, 0.13267036, 0.9873534, -0.08656401)
+bones/11/rotation = Quaternion(-0.41866097, 0.013326533, -0.04300372, 0.90702593)
+bones/12/rotation = Quaternion(0.7767505, -0.018210381, -0.011317442, 0.6294434)
+bones/13/rotation = Quaternion(-0.23798071, 0.10862219, 0.95826435, 0.115307674)
+bones/14/rotation = Quaternion(-0.41865996, -0.013326521, 0.043003593, 0.9070264)
+bones/15/rotation = Quaternion(0.7767502, 0.018210402, 0.011317429, 0.62944376)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="0" unique_id=375667282]
+transform = Transform3D(-0.84751767, 0.039034665, -0.52933013, -0.28348723, -0.8764174, 0.38926563, -0.44871905, 0.4799676, 0.75384504, 0.42091718, 0.9231402, 0.07949567)
+bone_name = "mao.L"
+bone_idx = 6
+
+[node name="arco" parent="Armature/Skeleton3D/BoneAttachment3D" index="0" unique_id=1942274746 instance=ExtResource("2_g53od")]
+transform = Transform3D(0.8081917, 1.605524, -0.6157275, 1.4401233, -0.26022133, 1.2117481, 0.9396109, -0.9821308, -1.3276114, -0.049713373, 0.26429284, 0.12280184)

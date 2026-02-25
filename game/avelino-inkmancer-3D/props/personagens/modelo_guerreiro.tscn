@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://qcjbuu337bl0"]
+
+[ext_resource type="PackedScene" uid="uid://0od57cow7kaq" path="res://assets/models/personagens/guerreiro.glb" id="1_25jce"]
+[ext_resource type="PackedScene" uid="uid://cc3citakk0vcy" path="res://assets/models/personagens/espada.glb" id="2_ovgps"]
+
+[node name="guerreiro" unique_id=1296144920 instance=ExtResource("1_25jce")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(2019168347) index="0" unique_id=1706939604]
+bones/0/position = Vector3(0, 0.67759705, 0)
+bones/1/rotation = Quaternion(0.081853785, 0, 1.9515463e-08, 0.9966444)
+bones/3/rotation = Quaternion(-0.09291944, -7.4150077e-09, -5.342041e-08, 0.9956737)
+bones/4/position = Vector3(0.01446879, 0.100399755, 0.14259821)
+bones/4/rotation = Quaternion(-0.046236802, 0.12490253, -0.7792416, 0.61240834)
+bones/5/rotation = Quaternion(0.17292486, 0.09371869, -0.2804386, 0.93950415)
+bones/6/rotation = Quaternion(0.39049566, 0.033089265, -0.18346164, 0.9015322)
+bones/7/position = Vector3(-0.014468854, 0.10039976, 0.14259823)
+bones/7/rotation = Quaternion(-0.046236973, -0.12490269, 0.77924174, 0.61240834)
+bones/8/rotation = Quaternion(0.17292489, -0.093718655, 0.28043866, 0.9395041)
+bones/9/rotation = Quaternion(0.3904956, -0.033089243, 0.18346167, 0.9015321)
+bones/10/rotation = Quaternion(0.0062112203, 0.13267036, 0.9873534, -0.08656401)
+bones/11/rotation = Quaternion(-0.41866097, 0.013326533, -0.04300372, 0.90702593)
+bones/12/rotation = Quaternion(0.7767505, -0.018210381, -0.011317442, 0.6294434)
+bones/13/rotation = Quaternion(-0.23798071, 0.10862219, 0.95826435, 0.115307674)
+bones/14/rotation = Quaternion(-0.41865996, -0.013326521, 0.043003593, 0.9070264)
+bones/15/rotation = Quaternion(0.7767502, 0.018210402, 0.011317429, 0.62944376)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1" unique_id=881003815]
+transform = Transform3D(-0.8475176, -0.039034598, 0.5293299, 0.2834871, -0.8764172, 0.38926563, 0.44871902, 0.4799675, 0.753845, -0.42091706, 0.9231404, 0.07949579)
+bone_name = "mao.R"
+bone_idx = 9
+
+[node name="espada2" parent="Armature/Skeleton3D/BoneAttachment3D" index="0" unique_id=305065122 instance=ExtResource("2_ovgps")]
+transform = Transform3D(0.282894, 0.66831684, 2.277153, 2.3215795, 0.39777035, -0.4051541, -0.49228185, 2.2599187, -0.6021018, 0.06876153, 0.3843605, 0.18674529)

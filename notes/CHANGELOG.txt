@@ -1,13 +1,27 @@
 17/02/2026
 Tiago - Criação do Initial.txt
 Tiago - Criação do CHANGELOG.txt
-22/02/2016
+
+22/02/2026
 Tiago - Criação de /avelino_inkmancer_3D
 Matheus - Criação do menu principal
 Matheus - Criação do menu ingame
 Matheus - Criação da HUD do player
+
 24/02/2026
 Matheus - Vsync para tirar serrilhado
 Matheus - Melhora na moviemntação do personagem para remover pixel jumping
 Matheus - Melhora nos menus
 Matheus - Criação do protótipo do sistema de invocação
+
+20260225
+//essa é a datação correta de change log definida por convenção AAAAMMDD
+ 
+Luiz - 1:48 AM - nova pasta em: assets/models/<personagens> - onde foram adicionados os modelos do player, arqueiro nível 1 e 2 e guerreiro nível 1 e 2
+Luiz - 1:50 AM - nova pasta em: props/<personagens> - onde foi criada uma cena para cada modelo adicionando componentes, como espadas, arcos e carimbo aos respectivos personagens
+
+Luiz - 1:51 AM - para acessar uma animação usando as cenas configuradas, no script da entidade, junto com a verificação de uso de teclas, chame a função: get_node("<modelo_personagem>/AnimationPlayer").play("<animação desejada>")
+
+Luiz - 1:55 AM - Lista de personagens e animações adicionados: Guerreiro, Guerreiro Forte, Arqueiro e Arqueiro Forte, todos esses tem 5 animações cada(idle, walk, morte, sword_attack, atirar_flecha) + player que tem as mesmas animações (menos a da flecha, e sword_attack passa a ser stamp_attack) + idle-Armature_001, stamp_attack-Armature_001, e walk-Armature_001. Também os modelos de espada, carimbo e arco que já estão ajustados aos respectivos personagens em suas cenas.
+
+Luiz - 2:00 AM - as animações com o sufixo -Armature_001 são respectivas ao funcionamento correto com o carimbo - as outras são recicladas, apenas a animação de morte tem o nome simples

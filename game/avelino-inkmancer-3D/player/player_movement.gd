@@ -10,6 +10,12 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	# essa é a linha que chama as animações
+	# copie e cole ela para momentos que a animação muda
+	# nome das animações disponiveis documentado no change log
+	get_node("mago/AnimationPlayer").play("idle-Armature_001")
+
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace ddasdUI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_front", "walk_back")
