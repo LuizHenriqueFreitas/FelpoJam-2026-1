@@ -30,3 +30,5 @@ Luiz - 2:00 AM - as animações com o sufixo -Armature_001 são respectivas ao f
 Luiz - 2:09 AM - adição dos modelos de: minion + espada e arco, canhao (e canhao minion) e anjo - anjo tem animação de idle e ataque a serem revisadas se houver tempo. minion tem cena com espada e arco específicos de minions - o canhao te animação de movimento nas 4 rodas por animações individuais - verificar no arquivo do modelo em: assets/models/personagens/canhao.glb (ou canhaoMinion.glb, tem as mesmas animações) - os minions tem as mesmas 5 animações de guerreiros e arqueiros.
 
 Luiz - 2:13 AM - todas as cenas com os modelos devidamente configurados já estão criadas no diretório: props/personagens para facilitar o trabalho dos demais, assim espero
+
+Luiz - 3:36 PM - adição da cena "gifMainMenu" no diretório menus/ - já com a animação final do menu configurada
