@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://buvwcvjm4prgr"]
+
+[ext_resource type="Script" uid="uid://baso348fi6i3s" path="res://unit/health_bar_3d.gd" id="1_li5m3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5fn3"]
+shading_mode = 0
+albedo_color = Color(0.33, 0.33, 0.33, 1)
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0ovk3"]
+material = SubResource("StandardMaterial3D_s5fn3")
+size = Vector2(1, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7400r"]
+transparency = 1
+shading_mode = 0
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lcakd"]
+material = SubResource("StandardMaterial3D_7400r")
+size = Vector2(1, 0.15)
+
+[node name="HealthBar3d" type="Node3D" unique_id=1660286777]
+script = ExtResource("1_li5m3")
+
+[node name="Background" type="MeshInstance3D" parent="." unique_id=1601710464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.008442998, 0)
+mesh = SubResource("PlaneMesh_0ovk3")
+
+[node name="Fill" type="MeshInstance3D" parent="." unique_id=1754638564]
+mesh = SubResource("PlaneMesh_lcakd")

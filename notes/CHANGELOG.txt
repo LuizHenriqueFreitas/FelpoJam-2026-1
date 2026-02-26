@@ -11,3 +11,17 @@ Matheus - Vsync para tirar serrilhado
 Matheus - Melhora na moviemntação do personagem para remover pixel jumping
 Matheus - Melhora nos menus
 Matheus - Criação do protótipo do sistema de invocação
+26/02/2026
+Tiago - criação da pasta /unit, /spawner, /carimbo
+   /unit -> todas as cenas de unidades aliadas e inimigas do jogo, além de seus scripts
+   /spawner -> cena e scripts que controlam Spawn de unidades inimigas dentro dos chunks
+   /carimbo -> ainda nada.
+
+Detalhes sobre /unit
+   /base_unit -> cenas pai. Não mexer sem comunicar
+   /projectiles -> projéteis usados por unidades. Não mexer em script, pode mexer no mesh para colocar um modelo bonito
+   /enemy -> unidades dos inimigos. Substituir mesh das cenas pra implantar os modelos dos inimigos
+   /ally -> mesma coisa que /enemy, mas pros aliados
+
+NOTA: Se precisar mexer nos scripts dentro de /enemy ou /ally pra configurar algo das animações, tome cuidado 😢
+ 

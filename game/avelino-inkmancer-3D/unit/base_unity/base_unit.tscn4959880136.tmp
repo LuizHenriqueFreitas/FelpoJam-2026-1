@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bgjwsh30jfe0w"]
+
+[ext_resource type="Script" uid="uid://bard256xwi5dv" path="res://unit/base_unity/base_unit.gd" id="1_duel4"]
+[ext_resource type="PackedScene" uid="uid://buvwcvjm4prgr" path="res://unit/health_bar_3d.tscn" id="2_5h0md"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b2d66"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpxl1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bg0jo"]
+radius = 17.111816
+
+[node name="BaseUnit" type="CharacterBody3D" unique_id=1076276240]
+script = ExtResource("1_duel4")
+health_bar_scene = ExtResource("2_5h0md")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1431176807]
+mesh = SubResource("BoxMesh_b2d66")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=635973530]
+shape = SubResource("BoxShape3D_tpxl1")
+
+[node name="AttackOrigin" type="Node3D" parent="." unique_id=1486245529]
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=324132409]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=12795770]
+shape = SubResource("CylinderShape3D_bg0jo")

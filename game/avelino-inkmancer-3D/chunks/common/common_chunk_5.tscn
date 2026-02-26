@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://ce4yrwb3tune3"]
 
 [ext_resource type="PackedScene" uid="uid://c7sw3q8pj3c8e" path="res://chunks/chunk_base.tscn" id="1_y4s6g"]
+[ext_resource type="PackedScene" uid="uid://q6iwmqy0dv32" path="res://spawner/unit_spawner.tscn" id="2_d233s"]
 
 [node name="Chunk" unique_id=1907970453 instance=ExtResource("1_y4s6g")]
+
+[node name="UnitSpawner" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="0" unique_id=108467292 instance=ExtResource("2_d233s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

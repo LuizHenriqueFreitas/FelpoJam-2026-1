@@ -89,10 +89,10 @@ func _input(event):
 				_on_ataque()
 
 func _on_ataque():
-	print("Ataque executado!")
-
+	pass
+	
 func _on_invocacao():
-	print("Invocando habilidade: ", habilidade_selecionada + 1)
+	pass
 
 # Pra não conseguir atacar clicando nos botões do HUD
 func _mouse_sobre_hud():

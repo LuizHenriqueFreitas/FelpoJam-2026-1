@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cpeea7mf7t6sx"]
+
+[ext_resource type="PackedScene" uid="uid://bgjwsh30jfe0w" path="res://unit/base_unity/base_unit.tscn" id="1_adcr4"]
+[ext_resource type="Script" uid="uid://dmldn8gcuxmgs" path="res://unit/base_unity/ranged/ranged_unit.gd" id="2_e3f8q"]
+[ext_resource type="PackedScene" uid="uid://dmxwlcmbon73" path="res://unit/projectiles/ranged_projectile.tscn" id="3_wrf56"]
+
+[node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_adcr4")]
+script = ExtResource("2_e3f8q")
+projectile_scene = ExtResource("3_wrf56")
+projectile_arc_time = 0.8
+projectile_offset_distance = 5.0

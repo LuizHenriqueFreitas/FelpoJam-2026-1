@@ -19,7 +19,9 @@ func _ready():
 
 func randomize_seed():
 	rng = RandomNumberGenerator.new()
+	world_seed = int(Time.get_unix_time_from_system())
 	rng.seed = world_seed
+	print("World Seed:", world_seed)
 
 
 func setup_chunk_pool():
@@ -70,8 +72,6 @@ func spawn_chunk_at(coord: Vector2i):
 	chunks[coord] = chunk_instance
 
 
-# ===== POOL COM PESO =====
-
 func get_weighted_chunk() -> PackedScene:
 
 	var total_weight = 0
@@ -88,5 +88,5 @@ func get_weighted_chunk() -> PackedScene:
 		if roll <= cumulative:
 			return entry[0]
 
-	# fallback (nunca deve acontecer)
+	# fallback
 	return chunk_pool[0][0]

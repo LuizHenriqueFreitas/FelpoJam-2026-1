@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://da3ggd6w7dy4r"]
+
+[ext_resource type="PackedScene" uid="uid://ei2lkbaj83ut" path="res://unit/base_unity/melee/melee_unit.tscn" id="1_lx7bi"]
+[ext_resource type="Script" uid="uid://djo2aptsnggf1" path="res://unit/enemy/melee_enemy.gd" id="2_d7gwc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d7gwc"]
+radius = 4.0
+
+[node name="MeleeEnemy" unique_id=1076276240 instance=ExtResource("1_lx7bi")]
+script = ExtResource("2_d7gwc")
+faction = 1
+
+[node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
+shape = SubResource("CylinderShape3D_d7gwc")

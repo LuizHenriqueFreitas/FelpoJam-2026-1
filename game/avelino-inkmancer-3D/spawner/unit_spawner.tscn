@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://q6iwmqy0dv32"]
+
+[ext_resource type="Script" uid="uid://bwbecx4rhiacu" path="res://spawner/unit_spawner.gd" id="1_edt1j"]
+
+[node name="UnitSpawner" type="Marker3D" unique_id=108467292]
+gizmo_extents = 4.65
+script = ExtResource("1_edt1j")

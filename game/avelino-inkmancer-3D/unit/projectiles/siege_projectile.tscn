@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://prcg8jmpn5m5"]
+
+[ext_resource type="Script" uid="uid://cejpbetyb7tsm" path="res://unit/projectiles/siege_projectile.gd" id="1_in6cl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_in6cl"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_21xc1"]
+
+[node name="SiegeProjectile" type="RigidBody3D" unique_id=1731104118]
+collision_layer = 2
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_in6cl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=309752345]
+shape = SubResource("SphereShape3D_in6cl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2114561356]
+mesh = SubResource("SphereMesh_21xc1")

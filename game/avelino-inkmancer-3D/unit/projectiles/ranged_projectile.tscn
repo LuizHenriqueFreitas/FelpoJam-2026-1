@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dmxwlcmbon73"]
+
+[ext_resource type="Script" uid="uid://b13g4vti0kldv" path="res://unit/projectiles/ranged_projectile.gd" id="1_mtjrl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51fgg"]
+size = Vector3(0.2, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mtjrl"]
+
+[node name="RangedProjectile" type="RigidBody3D" unique_id=1731104118]
+collision_layer = 4
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_mtjrl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=309752345]
+shape = SubResource("BoxShape3D_51fgg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2114561356]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_mtjrl")

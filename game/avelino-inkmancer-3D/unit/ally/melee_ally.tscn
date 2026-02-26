@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b1o3jsuh7q7as"]
+
+[ext_resource type="PackedScene" uid="uid://ei2lkbaj83ut" path="res://unit/base_unity/melee/melee_unit.tscn" id="1_o400j"]
+[ext_resource type="Script" uid="uid://bv87j1mvhc5cr" path="res://unit/ally/melee_ally.gd" id="2_q2kyk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q2kyk"]
+radius = 12.0
+
+[node name="MeleeAlly" unique_id=1076276240 instance=ExtResource("1_o400j")]
+script = ExtResource("2_q2kyk")
+wander_interval = 4.0
+
+[node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
+shape = SubResource("CylinderShape3D_q2kyk")

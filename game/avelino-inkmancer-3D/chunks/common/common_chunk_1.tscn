@@ -6,10 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://dls1xxohtygxr" path="res://props/bush/bush1.tscn" id="4_uw4hv"]
 [ext_resource type="PackedScene" uid="uid://bj7g1s6a3tm0f" path="res://props/bush/bush2.tscn" id="5_rfjho"]
 [ext_resource type="PackedScene" uid="uid://dqlxcrmj3tmhj" path="res://props/rock/rock1.tscn" id="6_6f3dc"]
+[ext_resource type="PackedScene" uid="uid://q6iwmqy0dv32" path="res://spawner/unit_spawner.tscn" id="7_ms0cg"]
 
 [node name="Chunk" unique_id=1907970453 instance=ExtResource("1_rmm5t")]
 
-[node name="prop_container" parent="." index="1" unique_id=2120614474]
+[node name="UnitSpawner" parent="." index="1" unique_id=108467292 instance=ExtResource("7_ms0cg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="prop_container" parent="." index="2" unique_id=2120614474]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="PropBase" parent="prop_container" index="0" unique_id=1132229471 instance=ExtResource("2_tj3m1")]
