@@ -25,3 +25,8 @@ Luiz - 1:51 AM - para acessar uma animação usando as cenas configuradas, no sc
 Luiz - 1:55 AM - Lista de personagens e animações adicionados: Guerreiro, Guerreiro Forte, Arqueiro e Arqueiro Forte, todos esses tem 5 animações cada(idle, walk, morte, sword_attack, atirar_flecha) + player que tem as mesmas animações (menos a da flecha, e sword_attack passa a ser stamp_attack) + idle-Armature_001, stamp_attack-Armature_001, e walk-Armature_001. Também os modelos de espada, carimbo e arco que já estão ajustados aos respectivos personagens em suas cenas.
 
 Luiz - 2:00 AM - as animações com o sufixo -Armature_001 são respectivas ao funcionamento correto com o carimbo - as outras são recicladas, apenas a animação de morte tem o nome simples
+
+20260226
+Luiz - 2:09 AM - adição dos modelos de: minion + espada e arco, canhao (e canhao minion) e anjo - anjo tem animação de idle e ataque a serem revisadas se houver tempo. minion tem cena com espada e arco específicos de minions - o canhao te animação de movimento nas 4 rodas por animações individuais - verificar no arquivo do modelo em: assets/models/personagens/canhao.glb (ou canhaoMinion.glb, tem as mesmas animações) - os minions tem as mesmas 5 animações de guerreiros e arqueiros.
+
+Luiz - 2:13 AM - todas as cenas com os modelos devidamente configurados já estão criadas no diretório: props/personagens para facilitar o trabalho dos demais, assim espero

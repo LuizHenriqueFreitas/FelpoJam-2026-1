@@ -1,5 +1,2 @@
-res://player/player.tscn
-res://player/player_movement.gd
-res://game/game.tscn
-res://props/personagens/modelo_arqueiro.tscn
-res://props/personagens/modelo_arqueiro_forte.tscn
+res://props/personagens/modelo_canhao.tscn
+res://props/personagens/modelo_minion.tscn

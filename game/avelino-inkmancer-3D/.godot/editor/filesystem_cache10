@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1771991974
+::res://::1772082014
 default_bus_layout.tres::AudioBusLayout::8955307486092052308::1771991930::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::450130012223377640::1771991930::1771991974::1::::<><><>0<>0<>6365a1106264267d5d47a1f7ba906c9d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 range_circle.gdshader::Shader::7652375283338351432::1771991930::0::1::::<><><>0<>0<><>::
@@ -34,23 +34,29 @@ mushroom_models.tscn::PackedScene::2791445086114057811::1771991930::0::1::::<><>
 nature_environment_models_low-poly.glb::PackedScene::7949316235958661051::1771991930::1771991975::1::::<><><>0<>0<>aa8c8c54f4a83c98c34e77475e60c126<>res://.godot/imported/nature_environment_models_low-poly.glb-ed7c3a452374907d706bbbe952dd64ac.scn::uid://dwr0w2fwsakre::::res://assets/models/nature_environment_models_low-poly_0.png
 nature_environment_models_low-poly_0.png::CompressedTexture2D::8740069672098222606::1771991930::1771991974::1::::<><><>0<>0<>2bf55d2b4a0bcc7105bc5447bb54d9a0<>res://.godot/imported/nature_environment_models_low-poly_0.png-2a5322b5d5f1c7a4e5a9f89257b66957.s3tc.ctex::
 tree_models.tscn::PackedScene::557754098017436043::1771991930::0::1::::<><><>0<>0<><>::uid://dg05xh1nheia4::::res://assets/models/low_poly_trees.glb
-::res://assets/models/personagens/::1771992061
+::res://assets/models/personagens/::1772082390
+anjo.glb::PackedScene::8506412634410295824::1772082035::1772082037::1::::<><><>0<>0<>614f54ca7124150ccadd3ec48a561362<>res://.godot/imported/anjo.glb-e08d963511926010ec3e124ff2830a08.scn::
 arco.glb::PackedScene::8126464541636828788::1771991639::1771992059::1::::<><><>0<>0<>9d864fbdc252b5f62fb693ab80bf6a6d<>res://.godot/imported/arco.glb-525170b75acd94093ba54a65a825e723.scn::uid://bjk60002wg5r1::::res://assets/models/personagens/arco_1024 palette.png
-arqueiro.glb::PackedScene::7651827936822565492::1771918376::1771992060::1::::<><><>0<>0<>1abe55ff5a2ccb27567ba97967a0f0e4<>res://.godot/imported/arqueiro.glb-19a554d545376dc1f7f427fb3c76e114.scn::uid://bo5f6n1wi65vj::::res://assets/models/personagens/arqueiro_1024 palette.jpg
-arqueiroForte.glb::PackedScene::613565000035048969::1771918660::1771992060::1::::<><><>0<>0<>5e192b0c4204e066ef8c090fdb1d3672<>res://.godot/imported/arqueiroForte.glb-43f07ffa2b7c3073f92e1d7d115b6f53.scn::uid://cew0eh3ctdxh1::::res://assets/models/personagens/arqueiroForte_1024 palette.jpg
-Carimbo.glb::PackedScene::535881885809345593::1771962503::1771992060::1::::<><><>0<>0<>003c2542b2eb2178752def4e44a365fa<>res://.godot/imported/Carimbo.glb-8e6f0a51a2f2062273b716ff05484103.scn::uid://decpbi4vq8663::::res://assets/models/personagens/Carimbo_1024 palette.png
-espada.glb::PackedScene::4971158350525090008::1771965332::1771992060::1::::<><><>0<>0<>7218460c2b1145a839f6efacdce4fd76<>res://.godot/imported/espada.glb-ea2557a7b482364a94770b42ed318b2a.scn::uid://b0s1r8l7wt53a::::res://assets/models/personagens/espada_texrura espada.png
-guerreiro.glb::PackedScene::1783859788806670808::1771915541::1771992060::1::::<><><>0<>0<>2a3833b7957e4c019c52b1afdad75563<>res://.godot/imported/guerreiro.glb-0549db420fd1247affff1fc75d79ca51.scn::uid://wk43cx3dmnp6::::res://assets/models/personagens/guerreiro_textura_guerreiro.jpg
-guerreiroForte.glb::PackedScene::7204379102992377285::1771918709::1771992060::1::::<><><>0<>0<>2387f98c7b5c8b29e11c5cb9630459f2<>res://.godot/imported/guerreiroForte.glb-892adcce9f1578aafe8695f15c830490.scn::uid://bbukl8idot1pu::::res://assets/models/personagens/guerreiroForte_1024 palette.jpg
-mago.glb::PackedScene::344115589626605970::1771956516::1771992061::1::::<><><>0<>0<>35cf6d7e84d636e3799343e0dd81e62f<>res://.godot/imported/mago.glb-9990e01e3baee5c167a6628f25cfd297.scn::uid://q6a5seshws5i::::res://assets/models/personagens/mago_1024 palette.png
+arcoMinion.glb::PackedScene::8945204784695941495::1772082035::1772082037::1::::<><><>0<>0<>7138418f6085484009485ded3ec3781c<>res://.godot/imported/arcoMinion.glb-6acd0ecab289d0669d336c662aa6a7d8.scn::
 arco_1024 palette.png::CompressedTexture2D::3040692278559664004::1771992059::1771992061::1::::<><><>0<>0<>54cc6960b9a79e05fba88c6865ddfe73<>res://.godot/imported/arco_1024 palette.png-5815485ba6081f83daa9588a2a710c52.s3tc.ctex::
-arqueiro_1024 palette.jpg::CompressedTexture2D::3431355495802222339::1771992059::1771992061::1::::<><><>0<>0<>47d53638739e838865b34408299c7d46<>res://.godot/imported/arqueiro_1024 palette.jpg-8cbc45718c400dc7ec3bc68f1c498b75.s3tc.ctex::
+arqueiro.glb::PackedScene::7651827936822565492::1771918376::1772041456::1::::<><><>0<>0<>65dfeb319770d93c342a2cb0be274093<>res://.godot/imported/arqueiro.glb-19a554d545376dc1f7f427fb3c76e114.scn::uid://bo5f6n1wi65vj::::res://assets/models/personagens/arqueiro_1024 palette.jpg
+arqueiroForte.glb::PackedScene::613565000035048969::1771918660::1771992060::1::::<><><>0<>0<>5e192b0c4204e066ef8c090fdb1d3672<>res://.godot/imported/arqueiroForte.glb-43f07ffa2b7c3073f92e1d7d115b6f53.scn::uid://cew0eh3ctdxh1::::res://assets/models/personagens/arqueiroForte_1024 palette.jpg
 arqueiroForte_1024 palette.jpg::CompressedTexture2D::5100538531556808556::1771992060::1771992061::1::::<><><>0<>0<>e9b31cb47586a5e8d215afded330188d<>res://.godot/imported/arqueiroForte_1024 palette.jpg-9368846d1941aaed5ec3862cf581ff89.s3tc.ctex::
+arqueiro_1024 palette.jpg::CompressedTexture2D::3431355495802222339::1771992059::1772041455::1::::<><><>0<>0<>47d53638739e838865b34408299c7d46<>res://.godot/imported/arqueiro_1024 palette.jpg-8cbc45718c400dc7ec3bc68f1c498b75.s3tc.ctex::
+canhao.glb::PackedScene::5218267433943530560::1772082035::1772082037::1::::<><><>0<>0<>38871867b4df8d524e3c38aec503024d<>res://.godot/imported/canhao.glb-ebf212aa6b79508bcfa63533378cb973.scn::
+canhaoMinion.glb::PackedScene::2286872458719938172::1772082390::1772082390::1::::<><><>0<>0<>43920da62eea551989500e37b944b409<>res://.godot/imported/canhaoMinion.glb-21f580c56250f93fe5663406c1b6e390.scn::
+Carimbo.glb::PackedScene::535881885809345593::1771962503::1771992060::1::::<><><>0<>0<>003c2542b2eb2178752def4e44a365fa<>res://.godot/imported/Carimbo.glb-8e6f0a51a2f2062273b716ff05484103.scn::uid://decpbi4vq8663::::res://assets/models/personagens/Carimbo_1024 palette.png
 Carimbo_1024 palette.png::CompressedTexture2D::7445059187787942558::1771992060::1771992061::1::::<><><>0<>0<>66698c2b13f3af215aacad833bcf5e94<>res://.godot/imported/Carimbo_1024 palette.png-8141c6c883791d43d2f56bac4fa3c360.s3tc.ctex::
+espada.glb::PackedScene::4971158350525090008::1771965332::1771992060::1::::<><><>0<>0<>7218460c2b1145a839f6efacdce4fd76<>res://.godot/imported/espada.glb-ea2557a7b482364a94770b42ed318b2a.scn::uid://b0s1r8l7wt53a::::res://assets/models/personagens/espada_texrura espada.png
+espadaMinion.glb::PackedScene::7422759107245889995::1772082035::1772082038::1::::<><><>0<>0<>c36684ea92ae75386f75e33b8fbf87fe<>res://.godot/imported/espadaMinion.glb-1a8e5ab1eaf1998be0cfb3aaa203e561.scn::
 espada_texrura espada.png::CompressedTexture2D::4179911326272816616::1771992060::1771992061::1::::<><><>0<>0<>7a8119a55d74e83a92f38f7e3784f91f<>res://.godot/imported/espada_texrura espada.png-bd4d415842281779a3598475f82c80ec.s3tc.ctex::
-guerreiro_textura_guerreiro.jpg::CompressedTexture2D::1566609274450764705::1771992060::1771992061::1::::<><><>0<>0<>162c493d51aa366268a2fd3c658a7930<>res://.godot/imported/guerreiro_textura_guerreiro.jpg-c1acd81c844e0f92a8d35d742a7153b9.s3tc.ctex::
-guerreiroForte_1024 palette.jpg::CompressedTexture2D::2498525641857729874::1771992060::1771992061::1::::<><><>0<>0<>5bd5cfc2d972ad9b22ff2a1d37d454bb<>res://.godot/imported/guerreiroForte_1024 palette.jpg-6f28019f1a0a2dc70db5b1b0ed0c4c49.s3tc.ctex::
-mago_1024 palette.png::CompressedTexture2D::1187071734829116844::1771992060::1771992061::1::::<><><>0<>0<>0e62382585a6ccc53a956a419ac690a4<>res://.godot/imported/mago_1024 palette.png-e84ae99dcade6df7a457c707cdc8d3b7.s3tc.ctex::
+guerreiro.glb::PackedScene::1783859788806670808::1771915541::1772041456::1::::<><><>0<>0<>1ec0bdf7d6ed9a8bcaec51589f7a50ee<>res://.godot/imported/guerreiro.glb-0549db420fd1247affff1fc75d79ca51.scn::uid://wk43cx3dmnp6::::res://assets/models/personagens/guerreiro_textura_guerreiro.jpg
+guerreiroForte.glb::PackedScene::7204379102992377285::1771918709::1772041456::1::::<><><>0<>0<>aa014034142a9e130bf8cbd36763b88c<>res://.godot/imported/guerreiroForte.glb-892adcce9f1578aafe8695f15c830490.scn::uid://bbukl8idot1pu::::res://assets/models/personagens/guerreiroForte_1024 palette.jpg
+guerreiroForte_1024 palette.jpg::CompressedTexture2D::2498525641857729874::1771992060::1772041455::1::::<><><>0<>0<>5bd5cfc2d972ad9b22ff2a1d37d454bb<>res://.godot/imported/guerreiroForte_1024 palette.jpg-6f28019f1a0a2dc70db5b1b0ed0c4c49.s3tc.ctex::
+guerreiro_textura_guerreiro.jpg::CompressedTexture2D::1566609274450764705::1771992060::1772041455::1::::<><><>0<>0<>162c493d51aa366268a2fd3c658a7930<>res://.godot/imported/guerreiro_textura_guerreiro.jpg-c1acd81c844e0f92a8d35d742a7153b9.s3tc.ctex::
+mago.glb::PackedScene::344115589626605970::1771956516::1772041456::1::::<><><>0<>0<>b8641a346c802d2033b8c1b7321035ee<>res://.godot/imported/mago.glb-9990e01e3baee5c167a6628f25cfd297.scn::uid://q6a5seshws5i::::res://assets/models/personagens/mago_1024 palette.png
+mago_1024 palette.png::CompressedTexture2D::1187071734829116844::1771992060::1772041455::1::::<><><>0<>0<>0e62382585a6ccc53a956a419ac690a4<>res://.godot/imported/mago_1024 palette.png-e84ae99dcade6df7a457c707cdc8d3b7.s3tc.ctex::
+minion.glb::PackedScene::6588068465095504495::1772082035::1772082088::1::::<><><>0<>0<>03c6a8c276dcd081b225b20e80d6d957<>res://.godot/imported/minion.glb-f5e63dc76553e653f25300d8938541b4.scn::
 ::res://chunks/::1771991930
 chunk_base.tscn::PackedScene::7057429831493324030::1771991930::0::1::::<><><>0<>0<><>::uid://bi580olkp2t7v::::res://props/floor.tscn
 spawn_chunk.tscn::PackedScene::4959794046686963705::1771991930::0::1::::<><><>0<>0<><>::uid://c7sw3q8pj3c8e::::res://chunks/chunk_base.tscn
@@ -61,11 +67,11 @@ common_chunk_2.tscn::PackedScene::5461090289678507770::1771991930::0::1::::<><><
 common_chunk_3.tscn::PackedScene::2142715635027524249::1771991930::0::1::::<><><>0<>0<><>::uid://c7sw3q8pj3c8e::::res://chunks/chunk_base.tscn<>uid://pkxy3jd5x0fs::::res://props/tree/tree1.tscn<>uid://bcmm6q0ne27t8::::res://props/tree/tree2.tscn<>uid://dls1xxohtygxr::::res://props/bush/bush1.tscn<>uid://bj7g1s6a3tm0f::::res://props/bush/bush2.tscn<>uid://dqlxcrmj3tmhj::::res://props/rock/rock1.tscn
 common_chunk_4.tscn::PackedScene::6236804485035034490::1771991930::0::1::::<><><>0<>0<><>::uid://c7sw3q8pj3c8e::::res://chunks/chunk_base.tscn<>uid://pkxy3jd5x0fs::::res://props/tree/tree1.tscn<>uid://bcmm6q0ne27t8::::res://props/tree/tree2.tscn<>uid://dls1xxohtygxr::::res://props/bush/bush1.tscn<>uid://bj7g1s6a3tm0f::::res://props/bush/bush2.tscn<>uid://dqlxcrmj3tmhj::::res://props/rock/rock1.tscn
 common_chunk_5.tscn::PackedScene::5114952421485734632::1771991930::0::1::::<><><>0<>0<><>::uid://c7sw3q8pj3c8e::::res://chunks/chunk_base.tscn
-::res://game/::1771991930
+::res://game/::1771993490
 camera_3d.gd::GDScript::3975374939409358175::1771991930::0::1::::<>Camera3D<><>0<>0<><>::
 chunk_manager.gd::GDScript::7770223121059189739::1771991930::0::1::::<>Node3D<><>0<>0<><>::
 game.gd::GDScript::694072369833450002::1771991930::0::1::::<>Node3D<><>0<>0<><>::
-game.tscn::PackedScene::4833914272911812264::1771991930::0::1::::<><><>0<>0<><>::uid://gt8l7smnonc8::::res://player/player.tscn<>uid://j5hjgy0rvrwk::::res://game/game.gd<>uid://bwvx3yf77fesd::::res://game/camera_3d.gd<>uid://ccwtc3kto5acf::::res://chunks/spawn_chunk.tscn<>uid://dix7o7ep5011h::::res://game/chunk_manager.gd<>uid://kfgiwaxork6a::::res://menus/hud.tscn<>uid://xk4elh7o4jwn::::res://SummonSystem.gd
+game.tscn::PackedScene::4833914272911812264::1771993490::0::1::::<><><>0<>0<><>::uid://gt8l7smnonc8::::res://player/player.tscn<>uid://j5hjgy0rvrwk::::res://game/game.gd<>uid://bwvx3yf77fesd::::res://game/camera_3d.gd<>uid://ccwtc3kto5acf::::res://chunks/spawn_chunk.tscn<>uid://dix7o7ep5011h::::res://game/chunk_manager.gd<>uid://kfgiwaxork6a::::res://menus/hud.tscn<>uid://xk4elh7o4jwn::::res://SummonSystem.gd
 ::res://menus/::1771991930
 audiomenu.gd::GDScript::919627478186850457::1771991930::0::1::::<>Control<><>0<>0<><>::
 audiomenu.tscn::PackedScene::5336191379094063261::1771991930::0::1::::<><><>0<>0<><>::uid://ndqeorvuxnlx::::res://menus/audiomenu.gd
@@ -77,10 +83,10 @@ mainmenu.gd::GDScript::2560130583381656962::1771991930::0::1::::<>Control<><>0<>
 mainmenu.tscn::PackedScene::4850124974681643911::1771991930::0::1::::<><><>0<>0<><>::uid://bcqe8ha8lch1s::::res://menus/mainmenu.gd<>uid://dika117rp476w::::res://texturabotoes/jogar-preto.png<>uid://wu41ncxpviyd::::res://texturabotoes/jogar-branco.png<>uid://bdskycn8veffa::::res://texturabotoes/controles-preto.png<>uid://c5y8bei1h7y3m::::res://texturabotoes/controels-branco.png<>uid://c3ddv0s3kcies::::res://texturabotoes/audio-preto.png<>uid://5lhu1qrncces::::res://texturabotoes/audio-branco.png<>uid://1qdqp63r8mcj::::res://texturabotoes/sair-preto.png<>uid://finh3jyan3t8::::res://texturabotoes/sair-vermelho.png
 pausemenu.gd::GDScript::4315337022881254440::1771991930::0::1::::<>Control<><>0<>0<><>::
 pausemenu.tscn::PackedScene::6920055923509606395::1771991930::0::1::::<><><>0<>0<><>::uid://b2qm78whc5opc::::res://menus/pausemenu.gd
-::res://player/::1771991930
-player.tscn::PackedScene::462381252766424153::1771991930::0::1::::<><><>0<>0<><>::uid://dok80wqjb1dxa::::res://player/player_movement.gd
-player_movement.gd::GDScript::8164599125803125146::1771991930::0::1::::<>CharacterBody3D<><>0<>0<><>::
-::res://props/::1771991930
+::res://player/::1771993736
+player.tscn::PackedScene::462381252766424153::1771993736::0::1::::<><><>0<>0<><>::uid://dok80wqjb1dxa::::res://player/player_movement.gd<>uid://cm5wmol3rxixe::::res://props/personagens/modelo_player.tscn
+player_movement.gd::GDScript::8164599125803125146::1771993736::0::1::::<>CharacterBody3D<><>0<>0<><>::
+::res://props/::1771992353
 floor.tscn::PackedScene::3011911823823303273::1771991930::0::1::::<><><>0<>0<><>::
 prop_base.tscn::PackedScene::2634391977428226690::1771991930::0::1::::<><><>0<>0<><>::
 ::res://props/bush/::1771991930
@@ -89,6 +95,16 @@ bush2.tscn::PackedScene::3084592090510849823::1771991930::0::1::::<><><>0<>0<><>
 ::res://props/mushroom/::1771991930
 mushroom1.tscn::PackedScene::7670973761417642898::1771991930::0::1::::<><><>0<>0<><>::uid://bdseby6w0qvp7::::res://props/prop_base.tscn<>uid://b1wn4iw1tffxs::::res://assets/models/low_poly_mushrooms_set_0.png
 mushroom2.tscn::PackedScene::926231144794955893::1771991930::0::1::::<><><>0<>0<><>::uid://bdseby6w0qvp7::::res://props/prop_base.tscn<>uid://b1wn4iw1tffxs::::res://assets/models/low_poly_mushrooms_set_0.png
+::res://props/personagens/::1772082322
+modelo_arqueiro.tscn::PackedScene::3767221109047275041::1771993939::0::1::::<><><>0<>0<><>::uid://dhauqulfydigq::::res://assets/models/personagens/arqueiro.glb<>uid://dn1rximrr3341::::res://assets/models/personagens/arco.glb
+modelo_arqueiro_forte.tscn::PackedScene::7607481066202165930::1771994524::0::1::::<><><>0<>0<><>::uid://i0hlc0qcnnh6::::res://assets/models/personagens/arqueiroForte.glb<>uid://dn1rximrr3341::::res://assets/models/personagens/arco.glb
+modelo_guerreiro.tscn::PackedScene::1127699575119400531::1771994717::0::1::::<><><>0<>0<><>::uid://0od57cow7kaq::::res://assets/models/personagens/guerreiro.glb<>uid://cc3citakk0vcy::::res://assets/models/personagens/espada.glb
+modelo_guerreiro_forte.tscn::PackedScene::1893908140029297833::1771994832::0::1::::<><><>0<>0<><>::uid://dav4comsnaolh::::res://assets/models/personagens/guerreiroForte.glb<>uid://cc3citakk0vcy::::res://assets/models/personagens/espada.glb
+modelo_player.tscn::PackedScene::5678396780647679162::1771992371::0::1::::<><><>0<>0<><>::uid://e5xseydr1mba::::res://assets/models/personagens/mago.glb<>uid://hvt5qg1dkb1b::::res://assets/models/personagens/Carimbo.glb
+modelo_anjo.tscn::PackedScene::400037583983584359::1772082067::0::1::::<><><>0<>0<><>::uid://dtgtmxrv6hufo::::res://assets/models/personagens/anjo.glb
+modelo_minion.tscn::PackedScene::1800885285794976142::1772082308::0::1::::<><><>0<>0<><>::uid://c04kr4agmxebf::::res://assets/models/personagens/minion.glb<>uid://dd0v01jej4vyp::::res://assets/models/personagens/espadaMinion.glb
+modelo_canhao.tscn::PackedScene::2764235250592578893::1772082302::0::1::::<><><>0<>0<><>::uid://cgl1dqgnf2boy::::res://assets/models/personagens/canhao.glb
+modelo_minion_espada.tscn::PackedScene::5354731068729043613::1772082322::0::1::::<><><>0<>0<><>::uid://c04kr4agmxebf::::res://assets/models/personagens/minion.glb<>uid://dd0v01jej4vyp::::res://assets/models/personagens/espadaMinion.glb
 ::res://props/rock/::1771991930
 rock1.tscn::PackedScene::8306392678885619871::1771991930::0::1::::<><><>0<>0<><>::uid://bdseby6w0qvp7::::res://props/prop_base.tscn<>uid://dwr0w2fwsakre::::res://assets/models/nature_environment_models_low-poly_0.png
 rock2.tscn::PackedScene::8748372999704782377::1771991930::0::1::::<><><>0<>0<><>::uid://bdseby6w0qvp7::::res://props/prop_base.tscn<>uid://br4jqhnai5r2u::::res://assets/models/low_poly_trees_12.png
