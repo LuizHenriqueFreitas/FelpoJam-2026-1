@@ -146,6 +146,8 @@ func _invocar():
 	var hud = get_tree().root.find_child("HUD", true, false)
 	if hud:
 		habilidade_selecionada = hud.habilidade_selecionada
+	
+
 
 	print("Invocando habilidade %d em %s" % [habilidade_selecionada + 1, posicao_invocacao])
 

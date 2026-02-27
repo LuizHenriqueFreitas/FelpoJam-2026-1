@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://q8x4hc227qk5"]
+
+[ext_resource type="PackedScene" uid="uid://7t1pqkjsqohw" path="res://assets/models/personagens/canhaoMinion.glb" id="1_dt5j4"]
+
+[node name="canhaoMinion" unique_id=2039229285 instance=ExtResource("1_dt5j4")]

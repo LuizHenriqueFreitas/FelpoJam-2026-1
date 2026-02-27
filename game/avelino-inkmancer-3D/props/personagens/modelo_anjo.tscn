@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://fx1tcalfthad"]
+
+[ext_resource type="PackedScene" uid="uid://dtgtmxrv6hufo" path="res://assets/models/personagens/anjo.glb" id="1_tunge"]
+
+[node name="anjo" unique_id=1924285470 instance=ExtResource("1_tunge")]
