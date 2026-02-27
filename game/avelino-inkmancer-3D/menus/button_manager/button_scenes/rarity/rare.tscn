@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c5e5ahjfypvxw"]
+
+[ext_resource type="Texture2D" uid="uid://b448akx10o25c" path="res://texturacarimbos/raro.png" id="1_rm07v"]
+
+[node name="Rare" type="TextureRect" unique_id=1340423938]
+texture = ExtResource("1_rm07v")

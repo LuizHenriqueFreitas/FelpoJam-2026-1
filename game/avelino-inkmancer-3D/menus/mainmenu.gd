@@ -89,7 +89,7 @@ func _abrir_submenu(caminho: String):
 func _on_btn_jogar_pressed() -> void:
 	_mostrar_carimbo(btn_jogar, "BtnJogar")
 	await get_tree().create_timer(0.4).timeout
-	get_tree().change_scene_to_file("res://menus/main.tscn")
+	get_tree().change_scene_to_file("res://game/game.tscn")
 
 
 func _on_btn_audio_pressed() -> void:

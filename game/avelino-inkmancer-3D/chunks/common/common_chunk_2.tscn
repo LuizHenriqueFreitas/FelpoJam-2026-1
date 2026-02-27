@@ -83,4 +83,4 @@ transform = Transform3D(-0.18794192, 0.0104088755, 0.2336011, 0.016589615, 0.299
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.83, 1, 0)
 
 [node name="CarimboSpawner" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="23" unique_id=1274686265 instance=ExtResource("10_xer4n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.79503, 6.4453926, -44.494183)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.795, 2, -44.494)

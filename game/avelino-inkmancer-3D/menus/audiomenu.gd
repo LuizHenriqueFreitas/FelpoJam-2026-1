@@ -8,6 +8,8 @@ var modo_ingame := false
 @onready var label_musica  = $Pergaminho/LabelMusica
 @onready var label_efeitos = $Pergaminho/LabelEfeitos
 
+@onready var pergaminho = $Pergaminho
+
 var music_bus: int
 var sfx_bus: int
 
@@ -28,6 +30,9 @@ func _ready():
 	
 	label_musica.text  = "%d" % int(slider_musica.value)
 	label_efeitos.text = "%d" % int(slider_efeitos.value)
+	
+	if modo_ingame:
+		call_deferred("_centralizar_menu")
 
 
 func _on_musica_alterada(valor: float):
@@ -60,3 +65,15 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel") and modo_ingame:
 		get_viewport().set_input_as_handled()
 		queue_free() 
+
+func _centralizar_menu():
+	await get_tree().process_frame
+	pergaminho.scale = Vector2(0.5, 0.5)
+	pergaminho.set_anchors_preset(Control.PRESET_CENTER)
+	
+	var metade = (pergaminho.size * pergaminho.scale) / 2
+	pergaminho.offset_left   = -metade.x
+	pergaminho.offset_top    = -metade.y
+	pergaminho.offset_right  =  metade.x
+	pergaminho.offset_bottom =  metade.y
+	pergaminho.pivot_offset  = pergaminho.size / 2

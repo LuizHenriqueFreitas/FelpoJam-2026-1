@@ -1,7 +1,9 @@
+TextureRect
+CanvasLayer
 MeshInstance3D
-Marker3D
 CollisionShape3D
 Area3D
+Marker3D
 RigidBody3D
 Node3D
 GPUParticles3D
@@ -11,4 +13,3 @@ SubViewport
 SubViewportContainer
 CharacterBody3D
 Node
-WorldEnvironment

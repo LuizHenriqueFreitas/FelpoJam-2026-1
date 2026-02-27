@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cwk52bxx8b860"]
+
+[ext_resource type="Script" uid="uid://byglyweikm5vn" path="res://menus/button_manager/button_manager.gd" id="1_dnq5f"]
+
+[node name="ButtonManager" type="Node" unique_id=309044320]
+script = ExtResource("1_dnq5f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=883398032]
+layer = 100

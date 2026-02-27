@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c2mocqrrsb34a"]
+[gd_scene format=3 uid="uid://cbdo35joupfnb"]
 
 [ext_resource type="Script" uid="uid://bcqe8ha8lch1s" path="res://menus/mainmenu.gd" id="1_2ydd5"]
 [ext_resource type="Texture2D" uid="uid://br05tidokboec" path="res://texturabotoes/jogar-preto.png" id="2_1pjrb"]

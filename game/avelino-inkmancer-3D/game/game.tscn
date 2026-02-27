@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ca4t4kjn8osaa"]
 
 [ext_resource type="PackedScene" uid="uid://gt8l7smnonc8" path="res://player/player.tscn" id="1_4fuuu"]
-[ext_resource type="Script" uid="uid://gsmma4vw5lo" path="res://spawner/spawner_manager.gd" id="1_u5opy"]
+[ext_resource type="Script" uid="uid://j5hjgy0rvrwk" path="res://game/game.gd" id="1_l8g03"]
 [ext_resource type="Script" uid="uid://bwvx3yf77fesd" path="res://game/camera_3d.gd" id="2_dxrkv"]
 [ext_resource type="PackedScene" uid="uid://ccwtc3kto5acf" path="res://chunks/spawn_chunk.tscn" id="3_dakft"]
 [ext_resource type="Script" uid="uid://dix7o7ep5011h" path="res://game/chunk_manager.gd" id="4_u5opy"]
@@ -10,8 +10,16 @@
 [ext_resource type="PackedScene" uid="uid://bqrebuirs0pxa" path="res://carimbo/arrow.tscn" id="8_3vho3"]
 [ext_resource type="PackedScene" uid="uid://bmyvgn3wqtkmd" path="res://unit/enemy/siege_enemy.tscn" id="8_l8g03"]
 [ext_resource type="PackedScene" uid="uid://gilsa6mt7b7r" path="res://unit/enemy/ranged_enemy.tscn" id="8_y36n6"]
+[ext_resource type="PackedScene" uid="uid://bvr57p1p500h4" path="res://spawner/spawner_manager.tscn" id="10_j8tme"]
 [ext_resource type="PackedScene" uid="uid://righ50d3jwtv" path="res://carimbo/carimbo.tscn" id="11_qf6n1"]
 [ext_resource type="PackedScene" uid="uid://da3ggd6w7dy4r" path="res://unit/enemy/melee_enemy.tscn" id="11_vsp63"]
+[ext_resource type="PackedScene" uid="uid://cwk52bxx8b860" path="res://menus/button_manager/button_manager.tscn" id="14_b686c"]
+[ext_resource type="PackedScene" uid="uid://daer31x1s52ft" path="res://menus/button_manager/button_scenes/type/melee.tscn" id="15_u8s88"]
+[ext_resource type="PackedScene" uid="uid://q7ktg085kbyl" path="res://menus/button_manager/button_scenes/type/ranged.tscn" id="16_dxwpq"]
+[ext_resource type="PackedScene" uid="uid://cp7qik8cudo8" path="res://menus/button_manager/button_scenes/type/siege.tscn" id="17_mhvfb"]
+[ext_resource type="PackedScene" uid="uid://tn5dx37iouva" path="res://menus/button_manager/button_scenes/rarity/common.tscn" id="18_5e03w"]
+[ext_resource type="PackedScene" uid="uid://bneh41qsast34" path="res://menus/button_manager/button_scenes/rarity/uncommon.tscn" id="19_leid8"]
+[ext_resource type="PackedScene" uid="uid://c5e5ahjfypvxw" path="res://menus/button_manager/button_scenes/rarity/rare.tscn" id="20_8bboj"]
 
 [sub_resource type="Shader" id="Shader_dakft"]
 code = "shader_type canvas_item;
@@ -96,11 +104,7 @@ sky = SubResource("Sky_feb5d")
 
 [node name="game" type="Node3D" unique_id=1459525975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1920929e-07, 0)
-script = ExtResource("1_u5opy")
-part1 = Array[PackedScene]([ExtResource("11_vsp63")])
-part2 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("11_vsp63")])
-part3 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_l8g03")])
-part4 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_l8g03"), ExtResource("8_l8g03")])
+script = ExtResource("1_l8g03")
 
 [node name="HUD" parent="." unique_id=758513456 instance=ExtResource("6_dakft")]
 
@@ -147,3 +151,21 @@ carimbo_scene = ExtResource("11_qf6n1")
 script = ExtResource("7_u5opy")
 player = NodePath("../Player")
 camera = NodePath("../Camera3D")
+
+[node name="SpawnerManager" parent="." unique_id=2022992341 instance=ExtResource("10_j8tme")]
+part1 = Array[PackedScene]([ExtResource("11_vsp63")])
+part2 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6")])
+part3 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_y36n6")])
+part4 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_l8g03")])
+
+[node name="Carimbo" parent="." unique_id=50033548 instance=ExtResource("11_qf6n1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.214233, 0.9999999, -1.425293)
+
+[node name="ButtonManager" parent="." unique_id=309044320 instance=ExtResource("14_b686c")]
+interface_scene_melee = ExtResource("15_u8s88")
+interface_scene_ranged = ExtResource("16_dxwpq")
+interface_scene_siege = ExtResource("17_mhvfb")
+interface_scene_common = ExtResource("18_5e03w")
+interface_scene_uncommon = ExtResource("19_leid8")
+interface_scene_rare = ExtResource("20_8bboj")
+canvas_layer_path = NodePath("../HUD")

@@ -216,4 +216,4 @@ transform = Transform3D(-0.10276657, 0, 0.1825217, 0, 0.20023385, 0, -0.23312421
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -41.77)
 
 [node name="CarimboSpawner" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="68" unique_id=1274686265 instance=ExtResource("8_hroxt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.556845, 4.1230984, -43.11958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.557, 2, -43.12)

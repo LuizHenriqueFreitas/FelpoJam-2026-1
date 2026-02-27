@@ -7,7 +7,7 @@ var pause_menu_aberto := false
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel") and not pause_menu_aberto:
+	if event.is_action_pressed("pause") and not pause_menu_aberto:
 		_abrir_pause()
 
 
@@ -17,3 +17,6 @@ func _abrir_pause():
 	# Quando o menu for removido, marca como fechado
 	menu.tree_exited.connect(func(): pause_menu_aberto = false)
 	add_child(menu)
+	
+
+	

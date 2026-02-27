@@ -114,11 +114,3 @@ func _mouse_sobre_hud():
 	var hud_root = $HUDRoot
 	var rect = Rect2(hud_root.global_position, hud_root.size)
 	return rect.has_point(mouse_pos)
-
-
-# etste par ver se tava funcionando a barra de vida
-func _process(delta):
-	vida_atual -= 10 * delta
-	mana_atual -= 5 * delta
-	atualizar_vida(vida_atual)
-	atualizar_mana(mana_atual)

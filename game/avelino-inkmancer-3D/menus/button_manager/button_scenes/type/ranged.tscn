@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://q7ktg085kbyl"]
+
+[ext_resource type="Texture2D" uid="uid://bl75mq8ba8xc2" path="res://texturacarimbos/arco.png" id="1_gbgf5"]
+
+[node name="Ranged" type="TextureRect" unique_id=274773850]
+texture = ExtResource("1_gbgf5")

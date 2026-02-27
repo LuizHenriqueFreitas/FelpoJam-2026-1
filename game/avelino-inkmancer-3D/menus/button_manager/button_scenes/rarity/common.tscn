@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://tn5dx37iouva"]
+
+[ext_resource type="Texture2D" uid="uid://1qx1kjw7g15l" path="res://texturacarimbos/comum.png" id="1_0hyl0"]
+
+[node name="Common" type="TextureRect" unique_id=1340423938]
+offset_right = 182.0
+offset_bottom = 182.0
+texture = ExtResource("1_0hyl0")

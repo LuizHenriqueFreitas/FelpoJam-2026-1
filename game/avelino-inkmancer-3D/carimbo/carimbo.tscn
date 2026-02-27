@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://righ50d3jwtv"]
 
-[ext_resource type="Script" uid="uid://n5x0w7dh60q2" path="res://carimbo/carimbo.gd" id="1_dvkep"]
+[ext_resource type="Script" uid="uid://b8ru31prbflac" path="res://carimbo/carimbo.gd" id="1_dvkep"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dvkep"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_i12rq"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_8k063"]
+[sub_resource type="BoxMesh" id="BoxMesh_dvkep"]
 
-[node name="Carimbo" type="Area3D" unique_id=1695297096]
+[node name="Carimbo" type="Area3D" unique_id=50033548]
 script = ExtResource("1_dvkep")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1451627612]
-shape = SubResource("BoxShape3D_dvkep")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=659034950]
+shape = SubResource("BoxShape3D_i12rq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1491175249]
-mesh = SubResource("BoxMesh_8k063")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=137850961]
+mesh = SubResource("BoxMesh_dvkep")

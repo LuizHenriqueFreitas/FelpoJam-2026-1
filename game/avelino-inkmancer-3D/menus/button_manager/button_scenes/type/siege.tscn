@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cp7qik8cudo8"]
+
+[ext_resource type="Texture2D" uid="uid://t2eky0qiwisf" path="res://texturacarimbos/canhao.png" id="1_qpb7g"]
+
+[node name="Siege" type="TextureRect" unique_id=1663541471]
+texture = ExtResource("1_qpb7g")

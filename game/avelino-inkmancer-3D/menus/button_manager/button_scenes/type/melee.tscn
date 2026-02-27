@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://daer31x1s52ft"]
+
+[ext_resource type="Texture2D" uid="uid://cbr4d7bog8rny" path="res://texturacarimbos/meele.png" id="1_htcm2"]
+
+[node name="Melee" type="TextureRect" unique_id=718838743]
+texture = ExtResource("1_htcm2")

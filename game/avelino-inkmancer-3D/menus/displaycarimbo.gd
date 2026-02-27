@@ -48,9 +48,11 @@ signal carimbo_confirmado(carimbo: Carimbo)
 @onready var img_icone  = $Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/PreviewGravura/ImgIcone
 
 var carimbo: Carimbo
+var player: BaseUnit
 
 
 func _ready():
+	player = get_tree().get_first_node_in_group("player")
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
 
@@ -166,8 +168,9 @@ func _destacar_unidade(tipo: Carimbo.TipoUnidade):
 func _on_confirmar():
 	get_tree().paused = false
 	carimbo_confirmado.emit(carimbo)
+	player.add_carimbo(carimbo.tipo_unidade, carimbo.ataque, carimbo.vida, carimbo.velocidade, carimbo.raridade)
+	carimbo.queue_free()
 	queue_free()
-
 
 func _atualizar_preview():
 	# Atualiza borda conforme raridade

@@ -31,3 +31,5 @@ Tiago - Criação dos carimbos, seta q aponta pros carimbos, uns script aí e é
  
 Matheus - Termino da aparencia final dos menus e HUD
 Matheus - Criação do sistema de carimbos
+Tiago - Comitando  pra evitar perder coisa. 
+Terminando a configuração do sistema de carimbo. 
