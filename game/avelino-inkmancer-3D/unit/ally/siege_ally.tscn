@@ -6,10 +6,11 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tp0qu"]
 radius = 40.0
 
-[node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_ijx5d")]
+[node name="SiegeAlly" unique_id=1076276240 instance=ExtResource("1_ijx5d")]
 script = ExtResource("2_tp0qu")
 leash_distance = 20.0
 projectile_arc_time = 0.6
+projectile_offset_distance = 1.0
 attack_speed = 0.4
 attack_range = 40.0
 

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bqrebuirs0pxa"]
+
+[ext_resource type="Script" uid="uid://iyqraw0w3c2i" path="res://carimbo/arrow.gd" id="1_flaxg"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ny7ox"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flaxg"]
+transparency = 1
+depth_draw_mode = 2
+albedo_color = Color(0.8, 0, 0, 0.6313726)
+
+[node name="Arrow" type="Marker3D" unique_id=223899624]
+script = ExtResource("1_flaxg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1553335703]
+transform = Transform3D(-1, -1.4858522e-07, 5.846838e-16, 0, -7.429261e-08, -0.15300368, 8.742278e-08, -1.6996167, 6.688003e-09, 0, 1.0190856, 0)
+mesh = SubResource("PrismMesh_ny7ox")
+surface_material_override/0 = SubResource("StandardMaterial3D_flaxg")

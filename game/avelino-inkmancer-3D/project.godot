@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://d0uauuowgt7im"
 
+[autoload]
+
+ArrowManager="*uid://dcib725j1n648"
+
 [display]
 
 window/size/viewport_width=1920

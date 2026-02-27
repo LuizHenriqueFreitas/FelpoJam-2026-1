@@ -25,6 +25,9 @@ Detalhes sobre /unit
    health_bar_3d.tscn e .gd -> cena e script da barra de vida das unidades.
 
 NOTA: Se precisar mexer nos scripts dentro de /enemy ou /ally pra configurar algo das animações, tome cuidado 😢
+
+27/02/2026
+Tiago - Criação dos carimbos, seta q aponta pros carimbos, uns script aí e é isso
  
 Matheus - Termino da aparencia final dos menus e HUD
 Matheus - Criação do sistema de carimbos

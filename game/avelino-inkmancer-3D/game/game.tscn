@@ -7,8 +7,10 @@
 [ext_resource type="Script" uid="uid://dix7o7ep5011h" path="res://game/chunk_manager.gd" id="4_u5opy"]
 [ext_resource type="PackedScene" uid="uid://kfgiwaxork6a" path="res://menus/hud.tscn" id="6_dakft"]
 [ext_resource type="Script" uid="uid://xk4elh7o4jwn" path="res://SummonSystem.gd" id="7_u5opy"]
+[ext_resource type="PackedScene" uid="uid://bqrebuirs0pxa" path="res://carimbo/arrow.tscn" id="8_3vho3"]
 [ext_resource type="PackedScene" uid="uid://bmyvgn3wqtkmd" path="res://unit/enemy/siege_enemy.tscn" id="8_l8g03"]
 [ext_resource type="PackedScene" uid="uid://gilsa6mt7b7r" path="res://unit/enemy/ranged_enemy.tscn" id="8_y36n6"]
+[ext_resource type="PackedScene" uid="uid://righ50d3jwtv" path="res://carimbo/carimbo.tscn" id="11_qf6n1"]
 [ext_resource type="PackedScene" uid="uid://da3ggd6w7dy4r" path="res://unit/enemy/melee_enemy.tscn" id="11_vsp63"]
 
 [sub_resource type="Shader" id="Shader_dakft"]
@@ -126,6 +128,9 @@ projection = 1
 size = 39.514
 script = ExtResource("2_dxrkv")
 
+[node name="Arrow" parent="Camera3D" unique_id=223899624 instance=ExtResource("8_3vho3")]
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, 0, 1, 0, 3.4358802, 3.4358788)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1801254928]
 transform = Transform3D(0.03235538, 0.96888196, 0.24539952, 0.12664886, -0.24752331, 0.9605688, 0.9914198, 0, -0.13071652, -59.297314, 17.622591, 0)
 
@@ -136,6 +141,7 @@ environment = SubResource("Environment_fc0e3")
 
 [node name="ChunkManager" type="Node3D" parent="." unique_id=1219678097]
 script = ExtResource("4_u5opy")
+carimbo_scene = ExtResource("11_qf6n1")
 
 [node name="SummonSystem" type="Node3D" parent="." unique_id=1355144389 node_paths=PackedStringArray("player", "camera")]
 script = ExtResource("7_u5opy")

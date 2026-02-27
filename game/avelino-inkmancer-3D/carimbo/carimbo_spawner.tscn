@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bpy12pr2xnnvn"]
+
+[ext_resource type="Script" uid="uid://w0lbf6nbxoko" path="res://carimbo/carimbo_spawner.gd" id="1_0u21n"]
+
+[node name="CarimboSpawner" type="Marker3D" unique_id=1274686265]
+gizmo_extents = 0.95
+script = ExtResource("1_0u21n")
