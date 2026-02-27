@@ -26,3 +26,5 @@ Detalhes sobre /unit
 
 NOTA: Se precisar mexer nos scripts dentro de /enemy ou /ally pra configurar algo das animações, tome cuidado 😢
  
+Matheus - Termino da aparencia final dos menus e HUD
+Matheus - Criação do sistema de carimbos
