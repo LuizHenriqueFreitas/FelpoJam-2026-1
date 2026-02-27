@@ -22,6 +22,7 @@ Detalhes sobre /unit
    /projectiles -> projéteis usados por unidades. Não mexer em script, pode mexer no mesh para colocar um modelo bonito
    /enemy -> unidades dos inimigos. Substituir mesh das cenas pra implantar os modelos dos inimigos
    /ally -> mesma coisa que /enemy, mas pros aliados
+   health_bar_3d.tscn e .gd -> cena e script da barra de vida das unidades.
 
 NOTA: Se precisar mexer nos scripts dentro de /enemy ou /ally pra configurar algo das animações, tome cuidado 😢
 
