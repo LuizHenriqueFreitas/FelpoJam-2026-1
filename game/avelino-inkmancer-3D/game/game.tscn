@@ -5,11 +5,13 @@
 [ext_resource type="Script" uid="uid://bwvx3yf77fesd" path="res://game/camera_3d.gd" id="2_dxrkv"]
 [ext_resource type="PackedScene" uid="uid://ccwtc3kto5acf" path="res://chunks/spawn_chunk.tscn" id="3_dakft"]
 [ext_resource type="Script" uid="uid://dix7o7ep5011h" path="res://game/chunk_manager.gd" id="4_u5opy"]
-[ext_resource type="PackedScene" uid="uid://kfgiwaxork6a" path="res://menus/hud.tscn" id="6_dakft"]
+[ext_resource type="PackedScene" uid="uid://cdylrp604bv4p" path="res://menus/hud.tscn" id="6_dakft"]
 [ext_resource type="Script" uid="uid://xk4elh7o4jwn" path="res://SummonSystem.gd" id="7_u5opy"]
 [ext_resource type="PackedScene" uid="uid://bmyvgn3wqtkmd" path="res://unit/enemy/siege_enemy.tscn" id="8_l8g03"]
 [ext_resource type="PackedScene" uid="uid://gilsa6mt7b7r" path="res://unit/enemy/ranged_enemy.tscn" id="8_y36n6"]
+[ext_resource type="PackedScene" uid="uid://bjq6q41xggpgd" path="res://carimboteste.tscn" id="11_3vho3"]
 [ext_resource type="PackedScene" uid="uid://da3ggd6w7dy4r" path="res://unit/enemy/melee_enemy.tscn" id="11_vsp63"]
+[ext_resource type="AudioStream" uid="uid://cos4sc1iaq6wy" path="res://utilitarios/musicapartida.wav" id="12_qf6n1"]
 
 [sub_resource type="Shader" id="Shader_dakft"]
 code = "shader_type canvas_item;
@@ -100,8 +102,6 @@ part2 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), Ext
 part3 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_l8g03")])
 part4 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_l8g03"), ExtResource("8_l8g03")])
 
-[node name="HUD" parent="." unique_id=758513456 instance=ExtResource("6_dakft")]
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1967377695]
 visible = false
 material = SubResource("ShaderMaterial_y36n6")
@@ -116,6 +116,8 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 size_2d_override_stretch = true
 render_target_update_mode = 0
+
+[node name="HUD" parent="." unique_id=758513456 instance=ExtResource("6_dakft")]
 
 [node name="Player" parent="." unique_id=1351006858 instance=ExtResource("1_4fuuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4746869, 0)
@@ -141,3 +143,11 @@ script = ExtResource("4_u5opy")
 script = ExtResource("7_u5opy")
 player = NodePath("../Player")
 camera = NodePath("../Camera3D")
+
+[node name="Carimbo" parent="." unique_id=1351244291 instance=ExtResource("11_3vho3")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1027497970]
+process_mode = 3
+stream = ExtResource("12_qf6n1")
+autoplay = true
+bus = &"Music"

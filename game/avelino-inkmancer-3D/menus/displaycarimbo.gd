@@ -93,6 +93,8 @@ func _ready():
 	btn_vida_menos.add_theme_color_override("font_color", cor_botao)
 	btn_vel_mais.add_theme_color_override("font_color", cor_botao)
 	btn_vel_menos.add_theme_color_override("font_color", cor_botao)
+	
+	ajustar_tamanho_e_centralizar(0.75)
 
 
 func carregar_carimbo(c: Carimbo):
@@ -133,9 +135,6 @@ func _atualizar_display():
 	btn_vel_mais.disabled     = not carimbo.pode_adicionar("velocidade")
 	btn_vel_menos.disabled    = not carimbo.pode_remover("velocidade")
 
-	# Unidade selecionada
-	_destacar_unidade(carimbo.tipo_unidade)
-	_atualizar_preview()
 
 
 func _alterar(atributo: String, delta: int):
@@ -181,3 +180,17 @@ func _atualizar_preview():
 		Carimbo.TipoUnidade.GUERREIRO: img_icone.texture = icone_guerreiro
 		Carimbo.TipoUnidade.ARQUEIRO:  img_icone.texture = icone_arqueiro
 		Carimbo.TipoUnidade.CANHAO:    img_icone.texture = icone_canhao
+
+## Ajusta o tamanho do menu e o centraliza na tela
+func ajustar_tamanho_e_centralizar(fator_escala: float = 0.8):
+	# 1. Aplica a escala ao nó raiz (DisplayCarimbo)
+	self.scale = Vector2(fator_escala, fator_escala)
+	
+	# 2. Define o Pivot Offset para o centro do próprio menu
+	# Isso garante que a escala e a rotação ocorram a partir do meio
+	self.pivot_offset = self.size / 2
+	
+	# 3. Centraliza o nó na tela (Viewport)
+	# Pegamos o tamanho da tela e subtraímos metade do tamanho ocupado pelo menu
+	var tamanho_tela = get_viewport_rect().size
+	self.position = (tamanho_tela / 2) - (self.size / 2)

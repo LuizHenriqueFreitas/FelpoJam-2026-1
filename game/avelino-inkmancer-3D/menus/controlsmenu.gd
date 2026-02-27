@@ -16,11 +16,14 @@ const ACTIONS = {
 @onready var grid       = $Pergaminho/GridControles
 @onready var btn_voltar = $Pergaminho/BtnVoltar
 
+@onready var pergaminho = $Pergaminho
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	btn_voltar.pressed.connect(_on_voltar)
 	_preencher_controles()
+	if modo_ingame:
+		call_deferred("_centralizar_menu")
 
 
 func _preencher_controles():
@@ -66,12 +69,22 @@ func _get_key_name(action: String) -> String:
 
 
 func _on_voltar():
-	if modo_ingame:
-		queue_free()
-	else:
-		get_tree().change_scene_to_file("res://menus/mainmenu.tscn")
+	queue_free()
+
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel") and modo_ingame:
 		get_viewport().set_input_as_handled()
 		queue_free()
+
+func _centralizar_menu():
+	await get_tree().process_frame
+	pergaminho.scale = Vector2(0.5, 0.5)
+	pergaminho.set_anchors_preset(Control.PRESET_CENTER)
+	
+	var metade = (pergaminho.size * pergaminho.scale) / 2
+	pergaminho.offset_left   = -metade.x
+	pergaminho.offset_top    = -metade.y
+	pergaminho.offset_right  =  metade.x
+	pergaminho.offset_bottom =  metade.y
+	pergaminho.pivot_offset  = pergaminho.size / 2

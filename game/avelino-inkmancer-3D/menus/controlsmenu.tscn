@@ -5,6 +5,9 @@
 [ext_resource type="FontFile" uid="uid://bvaa2ggnhk1j2" path="res://utilitarios/EagleLake-Regular.ttf" id="3_5wlji"]
 [ext_resource type="Texture2D" uid="uid://ey3rmpcatond" path="res://texturabotoes/voltar-preto.png" id="4_g5efx"]
 [ext_resource type="Texture2D" uid="uid://dr04x5owkkuon" path="res://texturabotoes/voltar-branco.png" id="5_ah5ff"]
+[ext_resource type="AudioStream" uid="uid://cnbvj6bssrh6o" path="res://utilitarios/abrirmenu.ogg" id="6_1cf63"]
+
+[sub_resource type="Theme" id="Theme_1cf63"]
 
 [node name="controlsmenu" type="Control" unique_id=230318805]
 layout_mode = 3
@@ -66,8 +69,14 @@ offset_left = 128.99997
 offset_top = 621.5
 offset_right = 411.43777
 offset_bottom = 702.6339
+theme = SubResource("Theme_1cf63")
 texture_normal = ExtResource("4_g5efx")
 texture_pressed = ExtResource("5_ah5ff")
 texture_hover = ExtResource("5_ah5ff")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=427033747]
+stream = ExtResource("6_1cf63")
+autoplay = true
+bus = &"SFX"
