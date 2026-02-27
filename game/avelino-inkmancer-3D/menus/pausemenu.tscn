@@ -1,8 +1,17 @@
-[gd_scene format=3 uid="uid://c5ueksnk0pi32"]
+[gd_scene format=3 uid="uid://dfh6fcum1litg"]
 
-[ext_resource type="Script" uid="uid://b2qm78whc5opc" path="res://menus/pausemenu.gd" id="1_nyolr"]
+[ext_resource type="Texture2D" uid="uid://cvr08jqtyh35m" path="res://texturamenus/fundomenupause.png" id="1_pjcrl"]
+[ext_resource type="Script" uid="uid://dlbgtr08j223j" path="res://menus/pausemenu.gd" id="2_edbdd"]
+[ext_resource type="Texture2D" uid="uid://ey3rmpcatond" path="res://texturabotoes/voltar-preto.png" id="3_ex74m"]
+[ext_resource type="Texture2D" uid="uid://dr04x5owkkuon" path="res://texturabotoes/voltar-branco.png" id="4_3y4ve"]
+[ext_resource type="Texture2D" uid="uid://ckbpgm5uq1dyp" path="res://texturabotoes/controles-preto.png" id="5_bk6so"]
+[ext_resource type="Texture2D" uid="uid://cg5udiyygj4hf" path="res://texturabotoes/controles-branco.png" id="6_gkc7a"]
+[ext_resource type="Texture2D" uid="uid://oqi6vcea7urd" path="res://texturabotoes/audio-preto.png" id="7_88fea"]
+[ext_resource type="Texture2D" uid="uid://dfv2gua6jhact" path="res://texturabotoes/audio-branco.png" id="8_uup13"]
+[ext_resource type="Texture2D" uid="uid://c354lacctqxao" path="res://texturabotoes/sair-preto.png" id="9_gbaya"]
+[ext_resource type="Texture2D" uid="uid://c71qgbyg4w7s4" path="res://texturabotoes/sair-vermelho.png" id="10_4ycs0"]
 
-[node name="pausemenu" type="Control" unique_id=867405154]
+[node name="pausemenu" type="Control" unique_id=1617490124]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -10,10 +19,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nyolr")
+script = ExtResource("2_edbdd")
 
-[node name="Overlay" type="ColorRect" parent="." unique_id=65605797]
-visibility_layer = 2047
+[node name="Overlay" type="ColorRect" parent="." unique_id=220283518]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,41 +30,72 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.19607843)
 
-[node name="Panel" type="PanelContainer" parent="." unique_id=383700808]
+[node name="Pergaminho" type="TextureRect" parent="." unique_id=1460706314]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.5
-offset_top = -113.5
-offset_right = 40.5
-offset_bottom = 113.5
+offset_left = -273.0
+offset_top = -401.5
+offset_right = 273.0
+offset_bottom = 401.5
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_pjcrl")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1547566958]
-layout_mode = 2
-theme_override_constants/separation = 15
+[node name="voltar" type="TextureButton" parent="Pergaminho" unique_id=376498656]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -94.5
+offset_right = 128.56601
+offset_bottom = -18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ex74m")
+texture_pressed = ExtResource("4_3y4ve")
+texture_hover = ExtResource("4_3y4ve")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1004719736]
-layout_mode = 2
-text = "PAUSADO"
-horizontal_alignment = 1
+[node name="controle" type="TextureButton" parent="Pergaminho" unique_id=1045996450]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 411.0
+offset_right = 462.51886
+offset_bottom = 485.0
+texture_normal = ExtResource("5_bk6so")
+texture_pressed = ExtResource("6_gkc7a")
+texture_hover = ExtResource("6_gkc7a")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BtnVoltar" type="Button" parent="Panel/VBoxContainer" unique_id=1306718601]
-layout_mode = 2
-text = "voltar"
+[node name="audio" type="TextureButton" parent="Pergaminho" unique_id=184905334]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 515.0
+offset_right = 382.70758
+offset_bottom = 589.0
+texture_normal = ExtResource("7_88fea")
+texture_pressed = ExtResource("8_uup13")
+texture_hover = ExtResource("8_uup13")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BtnAudio" type="Button" parent="Panel/VBoxContainer" unique_id=1851108460]
-layout_mode = 2
-text = "audio"
-
-[node name="BtnControles" type="Button" parent="Panel/VBoxContainer" unique_id=939122518]
-layout_mode = 2
-text = "controles"
-
-[node name="BtnSair" type="Button" parent="Panel/VBoxContainer" unique_id=1399967047]
-layout_mode = 2
-text = "sair"
+[node name="sair" type="TextureButton" parent="Pergaminho" unique_id=352401672]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 611.0
+offset_right = 354.72034
+offset_bottom = 688.0
+texture_normal = ExtResource("9_gbaya")
+texture_pressed = ExtResource("10_4ycs0")
+texture_hover = ExtResource("10_4ycs0")
+ignore_texture_size = true
+stretch_mode = 0

@@ -1,66 +1,62 @@
 extends Control
 
-const STEP = 10.0  # quanto cada click altera o volume
-
-@onready var btn_musica_menos = $VBoxContainer/HBoxContainer/BtnMusicaMenos
-@onready var btn_musica_mais = $VBoxContainer/HBoxContainer/BtnMusicaMais
-@onready var bar_musica = $VBoxContainer/HBoxContainer/BarMusica
-
-@onready var btn_sfx_menos = $VBoxContainer/HBoxContainer2/BtnSFXMenos
-@onready var btn_sfx_mais = $VBoxContainer/HBoxContainer2/BtnSFXMais
-@onready var bar_sfx = $VBoxContainer/HBoxContainer2/BarSFX
-
-@onready var btn_voltar = $VBoxContainer/BtnVoltar
-
 var modo_ingame := false
 
-# O índice de canais de áudio
-var music_bus := AudioServer.get_bus_index("Music")
-var sfx_bus := AudioServer.get_bus_index("SFX")
+@onready var slider_musica  = $Pergaminho/SliderMusica
+@onready var slider_efeitos = $Pergaminho/SliderEfeitos
+@onready var btn_voltar     = $Pergaminho/BtnVoltar
+@onready var label_musica  = $Pergaminho/LabelMusica
+@onready var label_efeitos = $Pergaminho/LabelEfeitos
+
+var music_bus: int
+var sfx_bus: int
+
 
 func _ready():
-	# Carrega o valor de volume dos canais na barra
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	bar_musica.value = _db_to_percent(AudioServer.get_bus_volume_db(music_bus))
-	bar_sfx.value = _db_to_percent(AudioServer.get_bus_volume_db(sfx_bus))
 
-	btn_musica_menos.pressed.connect(_on_musica_menos)
-	btn_musica_mais.pressed.connect(_on_musica_mais)
-	btn_sfx_menos.pressed.connect(_on_sfx_menos)
-	btn_sfx_mais.pressed.connect(_on_sfx_mais)
+	music_bus = AudioServer.get_bus_index("Music")
+	sfx_bus   = AudioServer.get_bus_index("SFX")
+
+	slider_musica.value  = _db_para_percent(AudioServer.get_bus_volume_db(music_bus))
+	slider_efeitos.value = _db_para_percent(AudioServer.get_bus_volume_db(sfx_bus))
+
+	slider_musica.value_changed.connect(_on_musica_alterada)
+	slider_efeitos.value_changed.connect(_on_efeitos_alterados)
+
 	btn_voltar.pressed.connect(_on_voltar)
+	
+	label_musica.text  = "%d" % int(slider_musica.value)
+	label_efeitos.text = "%d" % int(slider_efeitos.value)
 
-func _on_musica_menos():
-	bar_musica.value = clamp(bar_musica.value - STEP, 0, 100)
-	_set_bus_volume(music_bus, bar_musica.value)
 
-func _on_musica_mais():
-	bar_musica.value = clamp(bar_musica.value + STEP, 0, 100)
-	_set_bus_volume(music_bus, bar_musica.value)
+func _on_musica_alterada(valor: float):
+	_set_volume(music_bus, valor)
+	label_musica.text = "%d" % int(valor)
 
-func _on_sfx_menos():
-	bar_sfx.value = clamp(bar_sfx.value - STEP, 0, 100)
-	_set_bus_volume(sfx_bus, bar_sfx.value)
+func _on_efeitos_alterados(valor: float):
+	_set_volume(sfx_bus, valor)
+	label_efeitos.text = "%d" % int(valor)
 
-func _on_sfx_mais():
-	bar_sfx.value = clamp(bar_sfx.value + STEP, 0, 100)
-	_set_bus_volume(sfx_bus, bar_sfx.value)
+
+func _set_volume(bus: int, percent: float):
+	if bus == -1:
+		return
+	if percent == 0:
+		AudioServer.set_bus_mute(bus, true)
+	else:
+		AudioServer.set_bus_mute(bus, false)
+		AudioServer.set_bus_volume_db(bus, linear_to_db(percent / 100.0))
+
+
+func _db_para_percent(db: float) -> float:
+	return db_to_linear(db) * 100.0
+
 
 func _on_voltar():
-	if modo_ingame:
-		queue_free()
-	else:
-		get_tree().change_scene_to_file("res://menus/mainmenu.tscn")
+	queue_free()
 
-# Converte percentual (0-100) para decibéis e aplica no bus
-func _set_bus_volume(bus_index: int, percent: float):
-	if percent == 0:
-		AudioServer.set_bus_mute(bus_index, true)
-	else:
-		AudioServer.set_bus_mute(bus_index, false)
-		var db = linear_to_db(percent / 100.0)
-		AudioServer.set_bus_volume_db(bus_index, db)
-
-# Converte decibéis de volta para percentual para exibir na barra
-func _db_to_percent(db: float) -> float:
-	return db_to_linear(db) * 100.0
+func _input(event):
+	if event.is_action_pressed("ui_cancel") and modo_ingame:
+		get_viewport().set_input_as_handled()
+		queue_free() 

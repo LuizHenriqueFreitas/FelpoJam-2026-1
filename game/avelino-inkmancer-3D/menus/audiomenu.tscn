@@ -1,8 +1,13 @@
-[gd_scene format=3 uid="uid://cia5j687okyy4"]
+[gd_scene format=3 uid="uid://b1m30asjrxaoi"]
 
-[ext_resource type="Script" uid="uid://ndqeorvuxnlx" path="res://menus/audiomenu.gd" id="1_10qct"]
+[ext_resource type="Script" uid="uid://bkgbng1565rre" path="res://menus/audiomenu.gd" id="1_10qct"]
+[ext_resource type="FontFile" uid="uid://bvaa2ggnhk1j2" path="res://utilitarios/EagleLake-Regular.ttf" id="2_m7vih"]
+[ext_resource type="Texture2D" uid="uid://bfsfven1sfotb" path="res://texturamenus/fundomenu.png" id="2_vckwj"]
+[ext_resource type="Texture2D" uid="uid://ey3rmpcatond" path="res://texturabotoes/voltar-preto.png" id="4_qxabv"]
+[ext_resource type="Texture2D" uid="uid://dr04x5owkkuon" path="res://texturabotoes/voltar-branco.png" id="5_u3gpo"]
 
-[node name="audiomenu" type="Control" unique_id=422398999]
+[node name="audiomenu" type="Control" unique_id=407589781]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,67 +16,102 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_10qct")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1903310164]
+[node name="Overlay" type="ColorRect" parent="." unique_id=1736346289]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="Pergaminho" type="TextureRect" parent="." unique_id=1512851963]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -137.0
-offset_top = -88.0
-offset_right = 160.0
-offset_bottom = 88.0
+offset_left = -273.0
+offset_top = -401.5
+offset_right = 273.0
+offset_bottom = 401.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
-alignment = 1
+scale = Vector2(0.9986334, 0.9998069)
+texture = ExtResource("2_vckwj")
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=954545545]
-layout_mode = 2
-text = "ÁUDIO"
+[node name="Musica" type="Label" parent="Pergaminho" unique_id=1553160823]
+layout_mode = 0
+offset_left = 129.17651
+offset_top = 157.53044
+offset_right = 415.1765
+offset_bottom = 272.53046
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m7vih")
+theme_override_font_sizes/font_size = 70
+text = "Música"
+
+[node name="SliderMusica" type="HSlider" parent="Pergaminho" unique_id=754525858]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 0
+offset_left = 123.0
+offset_top = 245.5
+offset_right = 423.0
+offset_bottom = 275.5
+value = 100.0
+
+[node name="Efeitos" type="Label" parent="Pergaminho" unique_id=1567307814]
+layout_mode = 0
+offset_left = 129.17653
+offset_top = 357.56903
+offset_right = 406.1765
+offset_bottom = 472.56903
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m7vih")
+theme_override_font_sizes/font_size = 70
+text = "Efeitos"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2135611624]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1807425231]
-layout_mode = 2
-text = "MÚSICA"
-
-[node name="BtnMusicaMenos" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1123808827]
-layout_mode = 2
-text = "-"
-
-[node name="BarMusica" type="ProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=1988714351]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="SliderEfeitos" type="HSlider" parent="Pergaminho" unique_id=940958218]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 0
+offset_left = 116.0
+offset_top = 447.5
+offset_right = 416.0
+offset_bottom = 477.5
 value = 100.0
 
-[node name="BtnMusicaMais" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1143909353]
-layout_mode = 2
-text = "+"
+[node name="BtnVoltar" type="TextureButton" parent="Pergaminho" unique_id=1503548851]
+layout_mode = 0
+offset_left = 129.17653
+offset_top = 621.62006
+offset_right = 411.61432
+offset_bottom = 702.75397
+texture_normal = ExtResource("4_qxabv")
+texture_pressed = ExtResource("5_u3gpo")
+texture_hover = ExtResource("5_u3gpo")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=310669146]
-layout_mode = 2
+[node name="LabelMusica" type="Label" parent="Pergaminho" unique_id=252172661]
+layout_mode = 0
+offset_left = 233.31886
+offset_top = 261.5505
+offset_right = 317.31885
+offset_bottom = 328.5505
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m7vih")
+theme_override_font_sizes/font_size = 40
+text = "100"
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=489702343]
-layout_mode = 2
-text = "EFEITOS"
-
-[node name="BtnSFXMenos" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1744045235]
-layout_mode = 2
-text = "-"
-
-[node name="BarSFX" type="ProgressBar" parent="VBoxContainer/HBoxContainer2" unique_id=261980029]
-layout_mode = 2
-size_flags_horizontal = 3
-value = 100.0
-
-[node name="BtnSFXMais" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1595175725]
-layout_mode = 2
-text = "+"
-
-[node name="BtnVoltar" type="Button" parent="VBoxContainer" unique_id=417172998]
-layout_mode = 2
-text = "voltar"
+[node name="LabelEfeitos" type="Label" parent="Pergaminho" unique_id=1911553552]
+layout_mode = 0
+offset_left = 233.3189
+offset_top = 461.58917
+offset_right = 317.3189
+offset_bottom = 528.5892
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m7vih")
+theme_override_font_sizes/font_size = 40
+text = "100"

@@ -1,137 +1,238 @@
-[gd_scene format=3 uid="uid://kfgiwaxork6a"]
+[gd_scene format=3 uid="uid://cdylrp604bv4p"]
 
-[ext_resource type="Script" uid="uid://bhn8hhb243kju" path="res://menus/hud.gd" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://bhu820wn64wx4" path="res://texturamenus/fundohud.png" id="1_3si2t"]
+[ext_resource type="Script" uid="uid://bgoc2w2qyifgo" path="res://menus/hud.gd" id="1_f8bj2"]
+[ext_resource type="Texture2D" uid="uid://dv4o82hh57x2s" path="res://texturamenus/vida.png" id="2_6t5bw"]
+[ext_resource type="Texture2D" uid="uid://b12ridf43rxsd" path="res://texturamenus/vidavazia.png" id="3_rrt67"]
+[ext_resource type="Texture2D" uid="uid://cp2uoqsjpe4mq" path="res://texturamenus/mana.png" id="4_f8bj2"]
+[ext_resource type="Texture2D" uid="uid://btyode2226ri0" path="res://texturamenus/botaoatacar.png" id="4_ge3t8"]
+[ext_resource type="Texture2D" uid="uid://k2dcs6k01v7v" path="res://texturamenus/manavazia.png" id="5_2p8q6"]
+[ext_resource type="Texture2D" uid="uid://dq6g0gl4q6p8i" path="res://texturamenus/botaoinvocar.png" id="5_xhqt8"]
+[ext_resource type="Texture2D" uid="uid://2s37eic8voqd" path="res://texturamenus/fundovida.png" id="6_lgqb8"]
+[ext_resource type="Shader" uid="uid://bl5t4d3mf3u35" path="res://texturamenus/pocao_mascara.gdshader" id="7_2p8q6"]
+[ext_resource type="Texture2D" uid="uid://7js44xknoi47" path="res://texturamenus/fundomana.png" id="9_fqpyl"]
 
-[node name="HUD" type="CanvasLayer" unique_id=758513456]
-layer = 10
-script = ExtResource("1_37p78")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aoscq"]
+load_path = "res://.godot/imported/carimbo-jogar.png-a11d3e3b6a705fefa18f90cee4cab617.ctex"
 
-[node name="HUDRoot" type="MarginContainer" parent="." unique_id=276190026]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lgqb8"]
+shader = ExtResource("7_2p8q6")
+shader_parameter/mascara_tex = ExtResource("2_6t5bw")
+shader_parameter/fundo_vazio_tex = ExtResource("6_lgqb8")
+shader_parameter/percentual = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2p8q6"]
+shader = ExtResource("7_2p8q6")
+shader_parameter/mascara_tex = ExtResource("4_f8bj2")
+shader_parameter/fundo_vazio_tex = ExtResource("9_fqpyl")
+shader_parameter/percentual = 1.0
+
+[node name="HUDteste" type="CanvasLayer" unique_id=2128166582]
+script = ExtResource("1_f8bj2")
+
+[node name="HUDRoot" type="Control" parent="." unique_id=265594726]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CentroSection" type="Control" parent="HUDRoot" unique_id=1682705258]
+custom_minimum_size = Vector2(1100, 300)
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -171.0
-offset_top = -165.0
-offset_right = 171.0
+offset_left = 420.0
+offset_top = 702.0
+offset_right = 1520.0
+offset_bottom = 1002.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_bottom = 16
 
-[node name="HUDContainer" type="HBoxContainer" parent="HUDRoot" unique_id=908278307]
-layout_mode = 2
-theme_override_constants/separation = 12
-alignment = 1
+[node name="FundoPergaminho" type="TextureRect" parent="HUDRoot/CentroSection" unique_id=1068920289]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3si2t")
+expand_mode = 1
 
-[node name="VidaSection" type="VBoxContainer" parent="HUDRoot/HUDContainer" unique_id=1540100153]
-layout_mode = 2
-theme_override_constants/separation = 6
-alignment = 1
+[node name="Habilidades" type="Control" parent="HUDRoot/CentroSection" unique_id=1142249992]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="HP" type="Label" parent="HUDRoot/HUDContainer/VidaSection" unique_id=840789165]
-layout_mode = 2
-text = "Vida"
-horizontal_alignment = 1
+[node name="Hab1" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=1290554048]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.4
+anchor_top = 3.0500002
+anchor_right = 8.900001
+anchor_bottom = 6.05
+offset_right = -3.0517578e-05
+texture_normal = SubResource("CompressedTexture2D_aoscq")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BarraVida" type="ProgressBar" parent="HUDRoot/HUDContainer/VidaSection" unique_id=1467758459]
-custom_minimum_size = Vector2(40, 120)
-layout_mode = 2
-value = 100.0
-fill_mode = 2
-show_percentage = false
+[node name="Hab2" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=642766753]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.375
+anchor_top = 3.075
+anchor_right = 12.875001
+anchor_bottom = 6.05
+offset_right = -6.1035156e-05
+offset_bottom = 1.0
+texture_normal = SubResource("CompressedTexture2D_aoscq")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="CentroSection" type="VBoxContainer" parent="HUDRoot/HUDContainer" unique_id=2016441771]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
+[node name="Hab3" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=1082748491]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.375001
+anchor_top = 3.1000001
+anchor_right = 16.875
+anchor_bottom = 6.05
+offset_left = -6.1035156e-05
+offset_bottom = 2.0
+texture_normal = SubResource("CompressedTexture2D_aoscq")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="AcoesExtra" type="HBoxContainer" parent="HUDRoot/HUDContainer/CentroSection" unique_id=1420648604]
-layout_mode = 2
-theme_override_constants/separation = 135
-alignment = 1
+[node name="Hab4" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=905248056]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 17.400002
+anchor_top = 3.075
+anchor_right = 20.900002
+anchor_bottom = 6.05
+offset_left = -6.1035156e-05
+offset_right = -6.1035156e-05
+offset_bottom = 1.0
+texture_normal = SubResource("CompressedTexture2D_aoscq")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BtnAtaque" type="Button" parent="HUDRoot/HUDContainer/CentroSection/AcoesExtra" unique_id=709314023]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-text = "ATK"
+[node name="AcoesExtra" type="Control" parent="HUDRoot/CentroSection" unique_id=205694021]
+layout_mode = 1
+anchor_left = 0.171
+anchor_right = 0.28300002
+anchor_bottom = 0.333
+offset_left = -188.1
+offset_right = -271.30002
+offset_bottom = -59.9
 
-[node name="BtnInvocacao" type="Button" parent="HUDRoot/HUDContainer/CentroSection/AcoesExtra" unique_id=644032678]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-text = "INV"
+[node name="BtnAtaque" type="TextureButton" parent="HUDRoot/CentroSection/AcoesExtra" unique_id=1843661074]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.65
+anchor_top = 0.32500002
+anchor_right = 7.5910006
+anchor_bottom = 2.45
+offset_left = -4.0
+offset_top = 7.999999
+offset_right = -4.6400146
+offset_bottom = 8.0
+rotation = -0.098835655
+texture_normal = ExtResource("4_ge3t8")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Habilidades" type="HBoxContainer" parent="HUDRoot/HUDContainer/CentroSection" unique_id=1462823617]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
+[node name="BtnInvocacao" type="TextureButton" parent="HUDRoot/CentroSection/AcoesExtra" unique_id=2040970573]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 21.35
+anchor_top = 0.35000002
+anchor_right = 24.500002
+anchor_bottom = 2.4750001
+offset_left = -9.0
+offset_top = 6.999999
+offset_right = -18.000061
+offset_bottom = 6.9999924
+rotation = -0.109710984
+texture_normal = ExtResource("5_xhqt8")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUDRoot/HUDContainer/CentroSection/Habilidades" unique_id=1345611227]
-layout_mode = 2
-alignment = 1
+[node name="VidaSection" type="Control" parent="HUDRoot" unique_id=1597481420]
+clip_contents = true
+custom_minimum_size = Vector2(164, 438)
+anchors_preset = 0
+offset_left = 467.0
+offset_top = 596.0
+offset_right = 631.0
+offset_bottom = 1034.0
 
-[node name="Label" type="Label" parent="HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer" unique_id=1951395476]
-layout_mode = 2
-text = "1"
-horizontal_alignment = 1
+[node name="PocaoLiquido" type="TextureRect" parent="HUDRoot/VidaSection" unique_id=1443830020]
+material = SubResource("ShaderMaterial_lgqb8")
+custom_minimum_size = Vector2(164, 438)
+layout_mode = 1
+anchors_preset = -1
+offset_right = 164.0
+offset_bottom = 438.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6t5bw")
+expand_mode = 1
 
-[node name="Hab1" type="Button" parent="HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer" unique_id=597097152]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-text = "HAB1"
+[node name="PocaoFundo" type="TextureRect" parent="HUDRoot/VidaSection" unique_id=1054866290]
+custom_minimum_size = Vector2(164, 438)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = -3.65
+anchor_right = 4.775
+anchor_bottom = 7.3
+offset_left = -110.700005
+offset_top = 1598.7001
+offset_right = -619.10004
+offset_bottom = -2759.4001
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_rrt67")
+expand_mode = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HUDRoot/HUDContainer/CentroSection/Habilidades" unique_id=487930881]
-layout_mode = 2
+[node name="ManaSection" type="Control" parent="HUDRoot" unique_id=1053065020]
+clip_contents = true
+custom_minimum_size = Vector2(202, 338)
+layout_mode = 1
+anchor_left = 0.81000006
+anchor_top = -0.21300001
+anchor_right = 1.0
+anchor_bottom = 0.91300005
+offset_left = 1298.6
+offset_top = 686.52
+offset_right = 1493.0
+offset_bottom = 979.48
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="Label" type="Label" parent="HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer2" unique_id=1599914655]
-layout_mode = 2
-text = "2"
-horizontal_alignment = 1
+[node name="PocaoLiquido" type="TextureRect" parent="HUDRoot/ManaSection" unique_id=2103053904]
+material = SubResource("ShaderMaterial_2p8q6")
+custom_minimum_size = Vector2(202, 338)
+layout_mode = 1
+anchors_preset = -1
+offset_right = 202.0
+offset_bottom = 338.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_f8bj2")
+expand_mode = 1
 
-[node name="Hab2" type="Button" parent="HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer2" unique_id=1174531495]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-text = "HAB2"
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="HUDRoot/HUDContainer/CentroSection/Habilidades" unique_id=146615708]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer3" unique_id=1648632717]
-layout_mode = 2
-text = "3"
-horizontal_alignment = 1
-
-[node name="Hab3" type="Button" parent="HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer3" unique_id=1784415655]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-text = "HAB3"
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="HUDRoot/HUDContainer/CentroSection/Habilidades" unique_id=1581282926]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer4" unique_id=829868306]
-layout_mode = 2
-text = "4"
-horizontal_alignment = 1
-
-[node name="Hab4" type="Button" parent="HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer4" unique_id=351142067]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-text = "HAB4"
-
-[node name="ManaSection" type="VBoxContainer" parent="HUDRoot/HUDContainer" unique_id=1436752090]
-layout_mode = 2
-theme_override_constants/separation = 6
-alignment = 1
-
-[node name="MP" type="Label" parent="HUDRoot/HUDContainer/ManaSection" unique_id=302588949]
-layout_mode = 2
-text = "Mana"
-horizontal_alignment = 1
-
-[node name="BarraMana" type="ProgressBar" parent="HUDRoot/HUDContainer/ManaSection" unique_id=1969563994]
-custom_minimum_size = Vector2(40, 120)
-layout_mode = 2
-value = 100.0
-fill_mode = 2
-show_percentage = false
+[node name="PocaoFundo" type="TextureRect" parent="HUDRoot/ManaSection" unique_id=2127650673]
+custom_minimum_size = Vector2(202, 338)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 336.61203
+anchor_bottom = 7.471
+offset_right = -67793.63
+offset_bottom = -2187.198
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2p8q6")
+expand_mode = 1

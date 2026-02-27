@@ -1,50 +1,67 @@
 extends Control
 
-# Velocidade e escala da animação do menu
-const ESCALA_HOVER: float = 1.08
-const VELOCIDADE: float = 8.0
+const ESCALA_MIN: float = 1.0
+const ESCALA_MAX: float = 1.08
+const VELOCIDADE_PULSO: float = 3.0
 
 var botoes: Array
-var escalas_alvo: Dictionary
+var hover_ativo: Dictionary
+var tempo: float = 0.0
+
+@onready var sub_menu_container = $SubMenuContainer
+@onready var animated_sprite = $AnimatedSprite2D
+
+@onready var btn_jogar          = $BtnJogar
+@onready var btn_controles      = $BtnControles
+@onready var btn_audio          = $BtnAudio
+@onready var btn_sair           = $BtnSair
 
 const IMAGENS = {
-	"BtnJogar":    "res://texturacarimbos/carimbo-jogar.png",
-	"BtnControles":"res://texturacarimbos/carimbo-controles.png",
-	"BtnAudio":    "res://texturacarimbos/carimbo-audio.png",
-	"BtnSair":     "res://texturacarimbos/carimbo-sair.png",
+	"BtnJogar":     "res://texturacarimbos/carimbo-jogar.png",
+	"BtnControles": "res://texturacarimbos/carimbo-controles.png",
+	"BtnAudio":     "res://texturacarimbos/carimbo-audio.png",
+	"BtnSair":      "res://texturacarimbos/carimbo-sair.png",
 }
-
-var carimbos_ativos: Array = []
 
 
 func _ready():
-	botoes = [$BtnJogar, $BtnControles, $BtnAudio, $BtnSair]
-	
+	botoes = [btn_jogar, btn_controles, btn_audio, btn_sair]
+
 	for btn in botoes:
-		escalas_alvo[btn] = 1.0
-		btn.pivot_offset = btn.size / 2  # pivô no centro do botão
-		btn.mouse_entered.connect(func(): escalas_alvo[btn] = ESCALA_HOVER)
-		btn.mouse_exited.connect(func(): escalas_alvo[btn] = 1.0)
+		hover_ativo[btn] = false
+		btn.pivot_offset = btn.size / 2
+		btn.mouse_entered.connect(func(): hover_ativo[btn] = true)
+		btn.mouse_exited.connect(func():
+			hover_ativo[btn] = false
+			btn.scale = Vector2.ONE
+		)
+	$AnimatedSprite2D.set_meta("block_input", false)
+	$TextureRect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$SubMenuContainer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	animated_sprite.play("default")
 
 
 func _process(delta):
+	tempo += delta
 	for btn in botoes:
-		var alvo = Vector2(escalas_alvo[btn], escalas_alvo[btn])
-		btn.scale = btn.scale.lerp(alvo, VELOCIDADE * delta)
+		if hover_ativo[btn]:
+			var pulso = (sin(tempo * VELOCIDADE_PULSO) + 1.0) / 2.0
+			var escala = lerp(ESCALA_MIN, ESCALA_MAX, pulso)
+			btn.scale = Vector2(escala, escala)
 
 
 func _mostrar_carimbo(btn: Control, nome: String):
 	var carimbo = TextureRect.new()
 	carimbo.texture = load(IMAGENS[nome])
-	carimbo.expand_mode = TextureRect.EXPAND_IGNORE_SIZE  # ← adicione isso
-	carimbo.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED  # ← e isso
-	carimbo.custom_minimum_size = Vector2(150, 150)  # ← use custom_minimum_size
-	carimbo.size = Vector2(32, 32)
+	carimbo.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	carimbo.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	carimbo.custom_minimum_size = Vector2(150, 150)
+	carimbo.size = Vector2(150, 150)
 	carimbo.pivot_offset = carimbo.size / 2
+	carimbo.rotation_degrees = randf_range(-45.0, 45.0)
 
 	var pos_mouse = btn.get_local_mouse_position()
 	carimbo.position = btn.global_position + pos_mouse - carimbo.size / 2
-
 	get_tree().current_scene.add_child(carimbo)
 
 	var tween = create_tween()
@@ -54,22 +71,39 @@ func _mostrar_carimbo(btn: Control, nome: String):
 	tween.tween_property(carimbo, "modulate:a", 0.0, 0.2)
 	tween.tween_callback(carimbo.queue_free)
 
-func _on_btn_jogar_pressed() -> void:
-	_mostrar_carimbo($BtnJogar, "BtnJogar")
-	await get_tree().create_timer(0.4).timeout  # faz o jogo esperar o carimbo aparecer antes de iniciar/trocar de cena
-	get_tree().change_scene_to_file("res://game/game.tscn")
 
-func _on_btn_controles_pressed() -> void:
-	_mostrar_carimbo($BtnControles, "BtnControles")
+func _abrir_submenu(caminho: String):
+	for btn in botoes:
+		btn.visible = false
+
+	var submenu = load(caminho).instantiate()
+	submenu.modo_ingame = false
+	sub_menu_container.add_child(submenu)
+
+	submenu.tree_exited.connect(func():
+		for btn in botoes:
+			btn.visible = true
+	)
+
+
+func _on_btn_jogar_pressed() -> void:
+	_mostrar_carimbo(btn_jogar, "BtnJogar")
 	await get_tree().create_timer(0.4).timeout
-	get_tree().change_scene_to_file("res://menus/controlsmenu.tscn")
+	get_tree().change_scene_to_file("res://menus/main.tscn")
+
 
 func _on_btn_audio_pressed() -> void:
-	_mostrar_carimbo($BtnAudio, "BtnAudio")
-	await get_tree().create_timer(0.4).timeout
-	get_tree().change_scene_to_file("res://menus/audiomenu.tscn")
+	_mostrar_carimbo(btn_audio, "BtnAudio")
+	await get_tree().create_timer(0.2).timeout
+	_abrir_submenu("res://menus/audiomenu.tscn")
+
+func _on_btn_controles_pressed() -> void:
+	_mostrar_carimbo(btn_controles, "BtnControles")
+	await get_tree().create_timer(0.2).timeout
+	_abrir_submenu("res://menus/controlsmenu.tscn")
+
 
 func _on_btn_sair_pressed() -> void:
-	_mostrar_carimbo($BtnSair, "BtnSair")
+	_mostrar_carimbo(btn_sair, "BtnSair")
 	await get_tree().create_timer(0.4).timeout
 	get_tree().quit()

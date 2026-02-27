@@ -1,40 +1,73 @@
-[gd_scene format=3 uid="uid://cx5aui21n35j5"]
+[gd_scene format=3 uid="uid://cal2tdvbdw6is"]
 
-[ext_resource type="Script" uid="uid://bh7e3dybjpbf3" path="res://menus/controlsmenu.gd" id="1_w0ct3"]
+[ext_resource type="Script" uid="uid://bepinm3jjao6w" path="res://menus/controlsmenu.gd" id="1_yvrne"]
+[ext_resource type="Texture2D" uid="uid://bfsfven1sfotb" path="res://texturamenus/fundomenu.png" id="2_a7fst"]
+[ext_resource type="FontFile" uid="uid://bvaa2ggnhk1j2" path="res://utilitarios/EagleLake-Regular.ttf" id="3_5wlji"]
+[ext_resource type="Texture2D" uid="uid://ey3rmpcatond" path="res://texturabotoes/voltar-preto.png" id="4_g5efx"]
+[ext_resource type="Texture2D" uid="uid://dr04x5owkkuon" path="res://texturabotoes/voltar-branco.png" id="5_ah5ff"]
 
-[node name="controlsmenu" type="Control" unique_id=2071406324]
+[node name="controlsmenu" type="Control" unique_id=230318805]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_w0ct3")
+script = ExtResource("1_yvrne")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1308540211]
+[node name="Overlay" type="ColorRect" parent="." unique_id=1243513276]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="Pergaminho" type="TextureRect" parent="." unique_id=801429021]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -47.0
-offset_top = -31.0
-offset_right = 47.0
-offset_bottom = 31.0
+offset_left = -273.0
+offset_top = -401.5
+offset_right = 273.0
+offset_bottom = 401.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+texture = ExtResource("2_a7fst")
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=515104380]
-layout_mode = 2
-text = "CONTROLES"
-horizontal_alignment = 1
+[node name="Controles" type="Label" parent="Pergaminho" unique_id=687596357]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 125.5
+offset_right = 462.0
+offset_bottom = 240.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5wlji")
+theme_override_font_sizes/font_size = 70
+text = "Controles"
 
-[node name="GridControles" type="GridContainer" parent="VBoxContainer" unique_id=124665516]
-layout_mode = 2
+[node name="GridControles" type="GridContainer" parent="Pergaminho" unique_id=1089079849]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 229.5
+offset_right = 401.0
+offset_bottom = 597.5
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="BtnVoltar" type="Button" parent="VBoxContainer" unique_id=372632776]
-layout_mode = 2
-text = "voltar"
+[node name="BtnVoltar" type="TextureButton" parent="Pergaminho" unique_id=1827107292]
+layout_mode = 0
+offset_left = 128.99997
+offset_top = 621.5
+offset_right = 411.43777
+offset_bottom = 702.6339
+texture_normal = ExtResource("4_g5efx")
+texture_pressed = ExtResource("5_ah5ff")
+texture_hover = ExtResource("5_ah5ff")
+ignore_texture_size = true
+stretch_mode = 0

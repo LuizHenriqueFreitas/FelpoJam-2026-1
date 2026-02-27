@@ -1,33 +1,49 @@
-[gd_scene format=3 uid="uid://cbdo35joupfnb"]
+[gd_scene format=3 uid="uid://c2mocqrrsb34a"]
 
 [ext_resource type="Script" uid="uid://bcqe8ha8lch1s" path="res://menus/mainmenu.gd" id="1_2ydd5"]
-[ext_resource type="Texture2D" uid="uid://dika117rp476w" path="res://texturabotoes/jogar-preto.png" id="2_1pjrb"]
-[ext_resource type="Texture2D" uid="uid://wu41ncxpviyd" path="res://texturabotoes/jogar-branco.png" id="3_7gycx"]
-[ext_resource type="Texture2D" uid="uid://bdskycn8veffa" path="res://texturabotoes/controles-preto.png" id="4_070k2"]
-[ext_resource type="Texture2D" uid="uid://c5y8bei1h7y3m" path="res://texturabotoes/controels-branco.png" id="5_noxst"]
-[ext_resource type="Texture2D" uid="uid://c3ddv0s3kcies" path="res://texturabotoes/audio-preto.png" id="6_gkrlc"]
-[ext_resource type="Texture2D" uid="uid://5lhu1qrncces" path="res://texturabotoes/audio-branco.png" id="7_qsejf"]
-[ext_resource type="Texture2D" uid="uid://1qdqp63r8mcj" path="res://texturabotoes/sair-preto.png" id="8_36xnw"]
-[ext_resource type="Texture2D" uid="uid://finh3jyan3t8" path="res://texturabotoes/sair-vermelho.png" id="9_t1j7i"]
+[ext_resource type="Texture2D" uid="uid://br05tidokboec" path="res://texturabotoes/jogar-preto.png" id="2_1pjrb"]
+[ext_resource type="Texture2D" uid="uid://ffl0avkvk7om" path="res://texturamenus/logoinkmancer.png" id="2_7gycx"]
+[ext_resource type="PackedScene" uid="uid://doy7p72avdjy0" path="res://menus/gifMainMenu.tscn" id="2_070k2"]
+[ext_resource type="Texture2D" uid="uid://byg31ntyumyva" path="res://texturabotoes/jogar-branco.png" id="3_7gycx"]
+[ext_resource type="Texture2D" uid="uid://ckbpgm5uq1dyp" path="res://texturabotoes/controles-preto.png" id="4_070k2"]
+[ext_resource type="Texture2D" uid="uid://oqi6vcea7urd" path="res://texturabotoes/audio-preto.png" id="6_gkrlc"]
+[ext_resource type="Texture2D" uid="uid://dfv2gua6jhact" path="res://texturabotoes/audio-branco.png" id="7_qsejf"]
+[ext_resource type="Texture2D" uid="uid://cg5udiyygj4hf" path="res://texturabotoes/controles-branco.png" id="7_vgium"]
+[ext_resource type="Texture2D" uid="uid://c354lacctqxao" path="res://texturabotoes/sair-preto.png" id="8_36xnw"]
+[ext_resource type="Texture2D" uid="uid://c71qgbyg4w7s4" path="res://texturabotoes/sair-vermelho.png" id="9_t1j7i"]
 
 [node name="menu" type="Control" unique_id=1648596554]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1920.0
-offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2ydd5")
 
+[node name="AnimatedSprite2D" parent="." unique_id=102062100 instance=ExtResource("2_070k2")]
+position = Vector2(960, 540)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=49337186]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -511.4646
+offset_right = 511.4646
+offset_bottom = 328.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("2_7gycx")
+expand_mode = 1
+
 [node name="BtnJogar" type="TextureButton" parent="." unique_id=853706611]
 layout_mode = 0
-offset_left = 1326.0
-offset_top = 429.18814
-offset_right = 1770.8713
-offset_bottom = 523.1882
-rotation = -0.0882031
+offset_left = 1367.0
+offset_top = 323.0
+offset_right = 1845.3678
+offset_bottom = 492.0
+rotation = -0.07852968
 texture_normal = ExtResource("2_1pjrb")
 texture_pressed = ExtResource("3_7gycx")
 texture_hover = ExtResource("3_7gycx")
@@ -36,24 +52,24 @@ stretch_mode = 0
 
 [node name="BtnControles" type="TextureButton" parent="." unique_id=1629145105]
 layout_mode = 0
-offset_left = 1070.0
-offset_top = 583.0
-offset_right = 1793.1818
-offset_bottom = 678.0
-rotation = -0.08935235
+offset_left = 1075.0001
+offset_top = 519.0
+offset_right = 1858.6605
+offset_bottom = 671.0
+rotation = -0.07853982
 texture_normal = ExtResource("4_070k2")
-texture_pressed = ExtResource("5_noxst")
-texture_hover = ExtResource("5_noxst")
+texture_pressed = ExtResource("7_vgium")
+texture_hover = ExtResource("7_vgium")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="BtnAudio" type="TextureButton" parent="." unique_id=66944462]
 layout_mode = 0
-offset_left = 1406.0
-offset_top = 706.18823
-offset_right = 1803.1387
-offset_bottom = 800.18823
-rotation = -0.086087786
+offset_left = 1381.0
+offset_top = 693.00006
+offset_right = 1862.8396
+offset_bottom = 843.00006
+rotation = -0.07853982
 texture_normal = ExtResource("6_gkrlc")
 texture_pressed = ExtResource("7_qsejf")
 texture_hover = ExtResource("7_qsejf")
@@ -62,16 +78,24 @@ stretch_mode = 0
 
 [node name="BtnSair" type="TextureButton" parent="." unique_id=2122151332]
 layout_mode = 0
-offset_left = 1506.0
-offset_top = 835.1882
-offset_right = 1806.6086
-offset_bottom = 932.1882
-rotation = -0.08551744
+offset_left = 1534.0001
+offset_top = 861.00006
+offset_right = 1869.387
+offset_bottom = 1007.0
+rotation = -0.07853982
 texture_normal = ExtResource("8_36xnw")
 texture_pressed = ExtResource("9_t1j7i")
 texture_hover = ExtResource("9_t1j7i")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="SubMenuContainer" type="Control" parent="." unique_id=92005001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="BtnJogar" to="." method="_on_btn_jogar_pressed"]
 [connection signal="pressed" from="BtnControles" to="." method="_on_btn_controles_pressed"]

@@ -1,20 +1,24 @@
 extends Control
 
-@onready var btn_voltar    = $Panel/VBoxContainer/BtnVoltar
-@onready var btn_audio     = $Panel/VBoxContainer/BtnAudio
-@onready var btn_controles = $Panel/VBoxContainer/BtnControles
-@onready var btn_sair      = $Panel/VBoxContainer/BtnSair
+const MAIN_MENU_SCENE = "res://menus/mainmenu.tscn"
 
-# Popup de confirmação
+@onready var btn_voltar    = $Pergaminho/voltar
+@onready var btn_controles = $Pergaminho/controle
+@onready var btn_audio     = $Pergaminho/audio
+@onready var btn_sair      = $Pergaminho/sair
+
 var confirm_dialog: ConfirmationDialog
+var modo_ingame := false
 
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 	btn_voltar.pressed.connect(_on_voltar)
-	btn_audio.pressed.connect(_on_audio)
 	btn_controles.pressed.connect(_on_controles)
+	btn_audio.pressed.connect(_on_audio)
 	btn_sair.pressed.connect(_on_sair)
-	
+
 	_criar_confirmacao()
 	_pausar()
 
@@ -33,34 +37,46 @@ func _criar_confirmacao():
 func _pausar():
 	get_tree().paused = true
 
+
 func _despausar():
 	get_tree().paused = false
 
+
 func _on_voltar():
-	_despausar()
-	queue_free()  # remove a cena do pause e volta pro jogo
+	queue_free()
+
 
 func _on_audio():
 	visible = false
 	var audio_menu = preload("res://menus/audiomenu.tscn").instantiate()
 	audio_menu.modo_ingame = true
-	audio_menu.tree_exited.connect(func(): visible = true)
+	audio_menu.tree_exited.connect(func():
+		visible = true
+		get_tree().paused = true
+	)
 	get_tree().root.add_child(audio_menu)
 
 func _on_controles():
 	visible = false
 	var controls_menu = preload("res://menus/controlsmenu.tscn").instantiate()
 	controls_menu.modo_ingame = true
-	controls_menu.tree_exited.connect(func(): visible = true)
+	controls_menu.tree_exited.connect(func():
+		visible = true
+		get_tree().paused = true
+	)
 	get_tree().root.add_child(controls_menu)
+
 
 func _on_sair():
 	confirm_dialog.popup_centered()
 
+
 func _confirmar_saida():
 	_despausar()
-	get_tree().change_scene_to_file("res://menus/mainmenu.tscn")
+	get_tree().change_scene_to_file(MAIN_MENU_SCENE)
+
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"): # Fecha o menu de pause com o esc também
-		_on_voltar()
+	if event.is_action_pressed("ui_cancel"):
+		if visible:
+			_on_voltar()

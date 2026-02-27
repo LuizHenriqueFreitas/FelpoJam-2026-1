@@ -1,18 +1,20 @@
 extends CanvasLayer
 
-@onready var barra_vida    = $HUDRoot/HUDContainer/VidaSection/BarraVida
-@onready var barra_mana    = $HUDRoot/HUDContainer/ManaSection/BarraMana
-@onready var summon_system = get_node_or_null("res://SummonSystem.gd")
+@onready var pocao_vida_liquido = $HUDRoot/VidaSection/PocaoLiquido
+@onready var pocao_mana_liquido = $HUDRoot/ManaSection/PocaoLiquido
+
+@onready var vida_section = $HUDRoot/VidaSection
+@onready var mana_section = $HUDRoot/ManaSection
 
 @onready var btn_habilidade = [
-	$HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer/Hab1,
-	$HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer2/Hab2,
-	$HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer3/Hab3,
-	$HUDRoot/HUDContainer/CentroSection/Habilidades/VBoxContainer4/Hab4,
+	$HUDRoot/CentroSection/Habilidades/Hab1,
+	$HUDRoot/CentroSection/Habilidades/Hab2,
+	$HUDRoot/CentroSection/Habilidades/Hab3,
+	$HUDRoot/CentroSection/Habilidades/Hab4,
 ]
 
-@onready var btn_ataque    = $HUDRoot/HUDContainer/CentroSection/AcoesExtra/BtnAtaque
-@onready var btn_invocacao = $HUDRoot/HUDContainer/CentroSection/AcoesExtra/BtnInvocacao
+@onready var btn_ataque    = $HUDRoot/CentroSection/AcoesExtra/BtnAtaque
+@onready var btn_invocacao = $HUDRoot/CentroSection/AcoesExtra/BtnInvocacao
 
 var habilidade_selecionada: int = 0
 var vida_atual: float = 100.0
@@ -20,15 +22,18 @@ var mana_atual: float = 100.0
 
 
 func _ready():
-	barra_vida.show_percentage = false
-	barra_mana.show_percentage = false
+	vida_section.mouse_filter = Control.MOUSE_FILTER_STOP
+	mana_section.mouse_filter = Control.MOUSE_FILTER_STOP
+	vida_section.mouse_entered.connect(_on_vida_hover_enter)
+	vida_section.mouse_exited.connect(_on_vida_hover_exit)
+	mana_section.mouse_entered.connect(_on_mana_hover_enter)
+	mana_section.mouse_exited.connect(_on_mana_hover_exit)
 
-	barra_vida.mouse_entered.connect(_on_vida_hover_enter)
-	barra_vida.mouse_exited.connect(_on_vida_hover_exit)
+	# Inicializa líquido cheio
+	_atualizar_liquido(pocao_vida_liquido, 100.0)
+	_atualizar_liquido(pocao_mana_liquido, 100.0)
 
-	barra_mana.mouse_entered.connect(_on_mana_hover_enter)
-	barra_mana.mouse_exited.connect(_on_mana_hover_exit)
-
+	# Botões de habilidade
 	for i in btn_habilidade.size():
 		var idx = i
 		btn_habilidade[i].pressed.connect(func(): _selecionar_habilidade(idx))
@@ -40,41 +45,48 @@ func _ready():
 	# Seleciona habilidade 1 por padrão
 	_selecionar_habilidade(0)
 
-# Hover barra de vida e tinta
+
+
 func _on_vida_hover_enter():
-	barra_vida.show_percentage = true
+	vida_section.tooltip_text = "Vida: %d / 100" % int(vida_atual)
 
 func _on_vida_hover_exit():
-	barra_vida.show_percentage = false
+	vida_section.tooltip_text = ""
 
 func _on_mana_hover_enter():
-	barra_mana.show_percentage = true
+	mana_section.tooltip_text = "Mana: %d / 100" % int(mana_atual)
 
 func _on_mana_hover_exit():
-	barra_mana.show_percentage = false
+	mana_section.tooltip_text = ""
 
 
-# Atualização de vida e tinta
+
 func atualizar_vida(valor: float):
 	vida_atual = clamp(valor, 0, 100)
-	barra_vida.value = vida_atual
+	_atualizar_liquido(pocao_vida_liquido, vida_atual)
+
 
 func atualizar_mana(valor: float):
 	mana_atual = clamp(valor, 0, 100)
-	barra_mana.value = mana_atual
+	_atualizar_liquido(pocao_mana_liquido, mana_atual)
 
 
-# Seleção de habilidade
+func _atualizar_liquido(liquido: TextureRect, percentual: float):
+	var mat = liquido.material as ShaderMaterial
+	if mat:
+		mat.set_shader_parameter("percentual", percentual / 100.0)
+	else:
+		push_error("PocaoLiquido '%s' nao tem ShaderMaterial!" % liquido.name)
+
+
 func _selecionar_habilidade(idx: int):
 	for i in btn_habilidade.size():
 		btn_habilidade[i].modulate = Color(1, 1, 1, 1)
 	habilidade_selecionada = idx
 	btn_habilidade[idx].modulate = Color(1.5, 1.2, 0.2, 1)
-	if summon_system:
-		summon_system.set_habilidade(idx)
 
 
-# Input por teclado e mouse
+
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
@@ -88,15 +100,25 @@ func _input(event):
 			if not _mouse_sobre_hud():
 				_on_ataque()
 
-func _on_ataque():
-	pass
-	
-func _on_invocacao():
-	pass
 
-# Pra não conseguir atacar clicando nos botões do HUD
+
+func _on_ataque():
+	print("Ataque executado!")
+
+func _on_invocacao():
+	print("Invocando habilidade: ", habilidade_selecionada + 1)
+
+
 func _mouse_sobre_hud():
 	var mouse_pos = get_viewport().get_mouse_position()
 	var hud_root = $HUDRoot
 	var rect = Rect2(hud_root.global_position, hud_root.size)
 	return rect.has_point(mouse_pos)
+
+
+# etste par ver se tava funcionando a barra de vida
+func _process(delta):
+	vida_atual -= 10 * delta
+	mana_atual -= 5 * delta
+	atualizar_vida(vida_atual)
+	atualizar_mana(mana_atual)

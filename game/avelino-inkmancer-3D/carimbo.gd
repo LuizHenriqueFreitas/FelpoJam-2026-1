@@ -22,7 +22,7 @@ const PONTOS_POR_RARIDADE = {
 	Raridade.RARO:    12,
 }
 
-# Mínimo de pontos LIVRES por atributo que o carimbo SEMPRE deve ter
+# Mínimo de pontos livres por atributo que o carimbo pode ter
 # Comum: 4 livres (pode ter no max 1 pré-gasto)
 # Incomum: 3 livres (pode ter no max 2 pré-gastos)
 # Raro: 2 livres (pode ter no max 3 pré-gastos)
@@ -34,9 +34,9 @@ const PONTOS_LIVRES_MIN = {
 
 # Chance de vir com pontos pré-distribuídos
 const CHANCE_PRE_DISTRIBUIDO = {
-	Raridade.COMUM:   0.2,   # 20%
-	Raridade.INCOMUM: 0.5,   # 50%
-	Raridade.RARO:    0.8,   # 80%
+	Raridade.COMUM:   0.2,   
+	Raridade.INCOMUM: 0.5,   
+	Raridade.RARO:    0.8,   
 }
 
 const NOMES_RARIDADE = {

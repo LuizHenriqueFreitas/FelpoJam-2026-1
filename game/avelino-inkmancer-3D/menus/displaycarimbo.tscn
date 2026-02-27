@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://bo5k7jx2hc167"]
+
+[ext_resource type="Script" uid="uid://ceag1t7cq8cxw" path="res://menus/displaycarimbo.gd" id="1_1c4y8"]
+[ext_resource type="FontFile" uid="uid://bvaa2ggnhk1j2" path="res://utilitarios/EagleLake-Regular.ttf" id="1_nxa87"]
+[ext_resource type="Texture2D" uid="uid://ctqiorqt72am1" path="res://texturamenus/fundodisplay.png" id="3_1s4hs"]
+[ext_resource type="Texture2D" uid="uid://1qx1kjw7g15l" path="res://texturacarimbos/comum.png" id="3_fmn1s"]
+[ext_resource type="Texture2D" uid="uid://b241l28ywx55p" path="res://texturacarimbos/incomum.png" id="4_ff5wo"]
+[ext_resource type="Texture2D" uid="uid://b448akx10o25c" path="res://texturacarimbos/raro.png" id="5_6l8xi"]
+[ext_resource type="Texture2D" uid="uid://cbr4d7bog8rny" path="res://texturacarimbos/meele.png" id="6_64ien"]
+[ext_resource type="Texture2D" uid="uid://bl75mq8ba8xc2" path="res://texturacarimbos/arco.png" id="7_0u4lo"]
+[ext_resource type="Texture2D" uid="uid://t2eky0qiwisf" path="res://texturacarimbos/canhao.png" id="8_iive7"]
+
+[sub_resource type="Theme" id="Theme_1s4hs"]
+default_font = ExtResource("1_nxa87")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1s4hs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="DisplayCarimbo" type="Control" unique_id=1972376072]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1s4hs")
+script = ExtResource("1_1c4y8")
+borda_comum = ExtResource("3_fmn1s")
+borda_incomum = ExtResource("4_ff5wo")
+borda_raro = ExtResource("5_6l8xi")
+icone_guerreiro = ExtResource("6_64ien")
+icone_arqueiro = ExtResource("7_0u4lo")
+icone_canhao = ExtResource("8_iive7")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=791557648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1205166307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -526.1234
+offset_top = -358.75
+offset_right = 526.1234
+offset_bottom = 358.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1s4hs")
+
+[node name="Painel" type="PanelContainer" parent="." unique_id=2080764753]
+custom_minimum_size = Vector2(680, 410)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.5
+offset_top = -257.0
+offset_right = 363.5
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1s4hs")
+
+[node name="MarginContainer" type="MarginContainer" parent="Painel" unique_id=402012471]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Painel/MarginContainer" unique_id=962857282]
+layout_mode = 2
+
+[node name="Cabecalho" type="HBoxContainer" parent="Painel/MarginContainer/VBoxContainer" unique_id=609811139]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Cabecalho" unique_id=638017567]
+layout_mode = 2
+
+[node name="LabelRaridade" type="Label" parent="Painel/MarginContainer/VBoxContainer/Cabecalho/VBoxContainer" unique_id=133185335]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "RARO"
+
+[node name="LabelPreAlocado" type="Label" parent="Painel/MarginContainer/VBoxContainer/Cabecalho/VBoxContainer" unique_id=1953783453]
+layout_mode = 2
+text = "+3 PRÉ-ALOCADOS"
+
+[node name="LabelPontos" type="Label" parent="Painel/MarginContainer/VBoxContainer/Cabecalho" unique_id=211713220]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pontos livres: 9 / 12"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="Painel/MarginContainer/VBoxContainer" unique_id=1853479416]
+layout_mode = 2
+
+[node name="Corpo" type="HBoxContainer" parent="Painel/MarginContainer/VBoxContainer" unique_id=1700738369]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ColunaEsquerda" type="VBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Corpo" unique_id=1046771915]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PreviewGravura" type="Control" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda" unique_id=1060014326]
+custom_minimum_size = Vector2(100, 190)
+layout_mode = 2
+
+[node name="ImgBorda" type="TextureRect" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/PreviewGravura" unique_id=480047910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="ImgIcone" type="TextureRect" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/PreviewGravura" unique_id=632580723]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Atributos" type="VBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda" unique_id=193962120]
+layout_mode = 2
+
+[node name="LinhaAtaque" type="HBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos" unique_id=1153622062]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Ataque" type="Label" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaAtaque" unique_id=1976594054]
+layout_mode = 2
+text = "Ataque"
+horizontal_alignment = 1
+
+[node name="BtnAtaqueMenos" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaAtaque" unique_id=104505375]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+text = "-"
+
+[node name="BarraAtaque" type="ProgressBar" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaAtaque" unique_id=1126650671]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+max_value = 5.0
+show_percentage = false
+
+[node name="BtnAtaqueMais" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaAtaque" unique_id=1315706063]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+text = "+"
+
+[node name="LabelAtaque" type="Label" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaAtaque" unique_id=408695583]
+layout_mode = 2
+text = "0"
+
+[node name="LinhaVida" type="HBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos" unique_id=79487360]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Vida" type="Label" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVida" unique_id=895807656]
+layout_mode = 2
+text = "Vida"
+
+[node name="BtnVidaMenos" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVida" unique_id=339202901]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+text = "-"
+
+[node name="BarraVida" type="ProgressBar" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVida" unique_id=1770075318]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+max_value = 5.0
+show_percentage = false
+
+[node name="BtnVidaMais" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVida" unique_id=256323103]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+text = "+"
+
+[node name="LabelVida" type="Label" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVida" unique_id=1502104161]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+text = "0"
+
+[node name="LinhaVelocidade" type="HBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos" unique_id=1769570931]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Velocidade" type="Label" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVelocidade" unique_id=1183409010]
+layout_mode = 2
+text = "Velocidade"
+
+[node name="BtnVelMenos" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVelocidade" unique_id=1732453959]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+text = "-"
+
+[node name="BarraVelocidade" type="ProgressBar" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVelocidade" unique_id=2128299594]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+max_value = 5.0
+show_percentage = false
+
+[node name="BtnVelMais" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVelocidade" unique_id=1848805759]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+text = "+"
+
+[node name="LabelVelocidade" type="Label" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/Atributos/LinhaVelocidade" unique_id=1899009582]
+layout_mode = 2
+text = "0"
+
+[node name="VSeparator" type="VSeparator" parent="Painel/MarginContainer/VBoxContainer/Corpo" unique_id=5175151]
+layout_mode = 2
+
+[node name="ColunaDireita" type="VBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Corpo" unique_id=958376276]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Tipo" type="Label" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaDireita" unique_id=2117010893]
+layout_mode = 2
+text = "TIPO DE UNIDADE"
+horizontal_alignment = 1
+
+[node name="TipoUnidade" type="VBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaDireita" unique_id=1254490858]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BtnGuerreiro" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaDireita/TipoUnidade" unique_id=1326179136]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "Guerreiro"
+
+[node name="BtnArqueiro" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaDireita/TipoUnidade" unique_id=166717810]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "Arqueiro"
+
+[node name="BtnCanhao" type="Button" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaDireita/TipoUnidade" unique_id=970696154]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "Canhão"
+
+[node name="HSeparator2" type="HSeparator" parent="Painel/MarginContainer/VBoxContainer" unique_id=1765622597]
+layout_mode = 2
+
+[node name="Rodape" type="HBoxContainer" parent="Painel/MarginContainer/VBoxContainer" unique_id=216259231]
+layout_mode = 2
+alignment = 2
+
+[node name="BtnConfirmar" type="Button" parent="Painel/MarginContainer/VBoxContainer/Rodape" unique_id=869314247]
+custom_minimum_size = Vector2(140, 42)
+layout_mode = 2
+text = "CONFIRMAR"
