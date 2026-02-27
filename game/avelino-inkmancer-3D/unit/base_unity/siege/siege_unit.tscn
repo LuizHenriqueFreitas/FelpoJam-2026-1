@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bgjwsh30jfe0w" path="res://unit/base_unity/base_unit.tscn" id="1_tc1g6"]
 [ext_resource type="Script" uid="uid://df5ikr5fn7b8u" path="res://unit/base_unity/siege/siege_unit.gd" id="2_hnqmu"]
 [ext_resource type="PackedScene" uid="uid://prcg8jmpn5m5" path="res://unit/projectiles/siege_projectile.tscn" id="3_jow1q"]
-[ext_resource type="PackedScene" uid="uid://cj160ogln68c8" path="res://unit/projectiles/explosion/explosion.tscn" id="4_yh0je"]
+[ext_resource type="PackedScene" uid="uid://buvwcvjm4prgr" path="res://unit/health_bar_3d.tscn" id="4_yh0je"]
 
 [node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_tc1g6")]
 script = ExtResource("2_hnqmu")

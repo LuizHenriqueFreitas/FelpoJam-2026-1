@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dls1xxohtygxr" path="res://props/bush/bush1.tscn" id="7_rv6jy"]
 [ext_resource type="PackedScene" uid="uid://bj7g1s6a3tm0f" path="res://props/bush/bush2.tscn" id="8_4yay7"]
 [ext_resource type="PackedScene" uid="uid://q6iwmqy0dv32" path="res://spawner/unit_spawner.tscn" id="9_4yay7"]
+[ext_resource type="PackedScene" uid="uid://bpy12pr2xnnvn" path="res://carimbo/carimbo_spawner.tscn" id="10_xer4n"]
 
 [node name="Chunk" unique_id=1907970453 instance=ExtResource("1_kleyr")]
 
@@ -80,3 +81,6 @@ transform = Transform3D(-0.18794192, 0.0104088755, 0.2336011, 0.016589615, 0.299
 
 [node name="UnitSpawner" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="22" unique_id=108467292 instance=ExtResource("9_4yay7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.83, 1, 0)
+
+[node name="CarimboSpawner" parent="prop_container" parent_id_path=PackedInt32Array(2120614474) index="23" unique_id=1274686265 instance=ExtResource("10_xer4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.79503, 6.4453926, -44.494183)

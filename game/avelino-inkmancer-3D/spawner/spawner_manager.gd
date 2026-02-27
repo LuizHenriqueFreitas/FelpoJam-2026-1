@@ -3,7 +3,6 @@ class_name SpawnManager
 	
 	
 @export var check_interval: float = 1.0
-	
 @export var part1: Array[PackedScene]
 @export var part2: Array[PackedScene]
 @export var part3: Array[PackedScene]

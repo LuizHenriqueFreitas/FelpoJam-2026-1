@@ -3,7 +3,7 @@ extends Node3D
 @export var chunk_size : int = 128
 @export var world_radius : int = 10   # Quantas chunk pra cada lado
 @export var world_seed : int = 12345
-
+@export var carimbo_scene : PackedScene
 
 var chunk_pool : Array = [] # Pool de chunks (definida no _ready)
 
@@ -15,6 +15,7 @@ func _ready():
 	randomize_seed()
 	setup_chunk_pool()
 	generate_world()
+	spawn_carimbos()
 
 
 func randomize_seed():
@@ -90,3 +91,23 @@ func get_weighted_chunk() -> PackedScene:
 
 	# fallback
 	return chunk_pool[0][0]
+
+func spawn_carimbos():
+
+	var spawners = get_tree().get_nodes_in_group("carimbo_spawner")
+
+	if spawners.size() < 3:
+		push_warning("Menos de 3 carimbo_spawner encontrados!")
+		return
+
+	# Embaralha usando seu RNG procedural
+	spawners.shuffle()
+
+	for i in range(3):
+		var spawner = spawners[i]
+		var instance = carimbo_scene.instantiate()
+		spawner.add_child(instance)
+		ArrowManager.carimbos.append(instance)
+		instance.transform = Transform3D.IDENTITY
+		
+		

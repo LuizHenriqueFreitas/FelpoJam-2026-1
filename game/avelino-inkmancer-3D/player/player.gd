@@ -7,6 +7,7 @@ func _ready() -> void:
 	current_health = max_health
 	hud = get_node("../HUD")
 	add_to_group("player")
+	ArrowManager.player = self
 	 
 	
 func _physics_process(delta: float) -> void:

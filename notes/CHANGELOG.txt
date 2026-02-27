@@ -24,4 +24,7 @@ Detalhes sobre /unit
    /ally -> mesma coisa que /enemy, mas pros aliados
 
 NOTA: Se precisar mexer nos scripts dentro de /enemy ou /ally pra configurar algo das animações, tome cuidado 😢
+
+27/02/2026
+Tiago - Criação dos carimbos, seta q aponta pros carimbos, uns script aí e é isso
  
