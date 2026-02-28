@@ -4,10 +4,6 @@ extends Control
 
 signal carimbo_confirmado(carimbo: Carimbo)
 
-@export var textura_guerreiro: Texture2D
-@export var textura_arqueiro:  Texture2D
-@export var textura_canhao:    Texture2D
-
 # Bordas por raridade
 @export var borda_comum:   Texture2D
 @export var borda_incomum: Texture2D
@@ -74,27 +70,10 @@ func _ready():
 
 	btn_confirmar.pressed.connect(_on_confirmar)
 	
-	var cor_fonte = Color(0, 0, 0)
-
-	label_raridade.add_theme_color_override("font_color", cor_fonte)
 	label_pre_alocado.add_theme_color_override("font_color", Color(0, 0, 0))
-	label_pontos.add_theme_color_override("font_color", cor_fonte)
 	label_ataque.add_theme_color_override("font_color", Color(0.87, 0.31, 0.31))
 	label_vida.add_theme_color_override("font_color", Color(0.31, 0.75, 0.31))
 	label_velocidade.add_theme_color_override("font_color", Color(0.31, 0.56, 0.87))
-	
-	var cor_botao = Color(0, 0, 0)
-
-	btn_guerreiro.add_theme_color_override("font_color", cor_botao)
-	btn_arqueiro.add_theme_color_override("font_color", cor_botao)
-	btn_canhao.add_theme_color_override("font_color", cor_botao)
-	btn_confirmar.add_theme_color_override("font_color", cor_botao)
-	btn_ataque_mais.add_theme_color_override("font_color", cor_botao)
-	btn_ataque_menos.add_theme_color_override("font_color", cor_botao)
-	btn_vida_mais.add_theme_color_override("font_color", cor_botao)
-	btn_vida_menos.add_theme_color_override("font_color", cor_botao)
-	btn_vel_mais.add_theme_color_override("font_color", cor_botao)
-	btn_vel_menos.add_theme_color_override("font_color", cor_botao)
 
 
 func carregar_carimbo(c: Carimbo):

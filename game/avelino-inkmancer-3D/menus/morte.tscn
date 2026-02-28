@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dwursdi3ldswx"]
+
+[ext_resource type="Script" uid="uid://b1swckin71fwl" path="res://menus/morte.gd" id="1_0kp72"]
+[ext_resource type="FontFile" uid="uid://bvaa2ggnhk1j2" path="res://utilitarios/EagleLake-Regular.ttf" id="2_klw0m"]
+
+[node name="Control" type="Control" unique_id=1315191700]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kp72")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=824509945]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="Conteudo" type="VBoxContainer" parent="." unique_id=505959293]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -23.5
+offset_right = 20.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="Conteudo" unique_id=1638275173]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klw0m")
+theme_override_font_sizes/font_size = 48
+text = "VOCÊ MORREU!"
+horizontal_alignment = 1
+
+[node name="BtnPrimario" type="Button" parent="Conteudo" unique_id=403085938]
+custom_minimum_size = Vector2(240, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klw0m")
+theme_override_font_sizes/font_size = 30
+text = "Tentar novamente"
+
+[node name="BtnSair" type="Button" parent="Conteudo" unique_id=169346517]
+custom_minimum_size = Vector2(240, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klw0m")
+theme_override_font_sizes/font_size = 30
+text = "Sair para o menu"
