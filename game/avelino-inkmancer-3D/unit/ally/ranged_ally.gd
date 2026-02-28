@@ -9,6 +9,21 @@ func _ready():
 	super._ready()
 	player = get_tree().get_first_node_in_group("player")
 
+func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
+	match state:
+		UnitState.MOVING:
+			get_node("arqueiro/AnimationPlayer").play("walk")
+		UnitState.CHASING:
+			get_node("arqueiro/AnimationPlayer").play("walk")
+		UnitState.DEAD:
+			get_node("arqueiro/AnimationPlayer").play("morte")
+			queue_free()
+		UnitState.ATTACKING:
+			get_node("arqueiro/AnimationPlayer").play("atirar_flecha")
+		UnitState.IDLE:
+			get_node("arqueiro/AnimationPlayer").play("idle")
+
 func behavior_ai(delta: float):
 
 	if state == UnitState.DEAD:

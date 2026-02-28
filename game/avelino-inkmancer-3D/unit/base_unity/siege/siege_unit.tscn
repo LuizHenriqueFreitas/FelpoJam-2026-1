@@ -3,10 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://bgjwsh30jfe0w" path="res://unit/base_unity/base_unit.tscn" id="1_tc1g6"]
 [ext_resource type="Script" uid="uid://df5ikr5fn7b8u" path="res://unit/base_unity/siege/siege_unit.gd" id="2_hnqmu"]
 [ext_resource type="PackedScene" uid="uid://prcg8jmpn5m5" path="res://unit/projectiles/siege_projectile.tscn" id="3_jow1q"]
-[ext_resource type="PackedScene" uid="uid://buvwcvjm4prgr" path="res://unit/health_bar_3d.tscn" id="4_yh0je"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yh0je"]
+size = Vector3(0.61938477, 0.8300781, 1)
 
 [node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_tc1g6")]
 script = ExtResource("2_hnqmu")
 projectile_scene = ExtResource("3_jow1q")
-explosion_scene = ExtResource("4_yh0je")
-death_explosion_damage = 30.0
+projectile_arc_time = 0.6
+projectile_offset_distance = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=968182862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008178711, 0.4060669, 0)
+shape = SubResource("BoxShape3D_yh0je")

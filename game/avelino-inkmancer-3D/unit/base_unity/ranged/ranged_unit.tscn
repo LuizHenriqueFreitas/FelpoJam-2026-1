@@ -4,8 +4,18 @@
 [ext_resource type="Script" uid="uid://dmldn8gcuxmgs" path="res://unit/base_unity/ranged/ranged_unit.gd" id="2_e3f8q"]
 [ext_resource type="PackedScene" uid="uid://dmxwlcmbon73" path="res://unit/projectiles/ranged_projectile.tscn" id="3_wrf56"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8dsmg"]
+size = Vector3(0.5574951, 1.6447754, 0.4734497)
+
 [node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_adcr4")]
 script = ExtResource("2_e3f8q")
 projectile_scene = ExtResource("3_wrf56")
 projectile_arc_time = 0.8
 projectile_offset_distance = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=553810741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0044555664, 0.8265381, 0.05203247)
+shape = SubResource("BoxShape3D_8dsmg")
+
+[node name="AttackOrigin" parent="." index="1" unique_id=1486245529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01642704, 0.9830629, 0.6940079)

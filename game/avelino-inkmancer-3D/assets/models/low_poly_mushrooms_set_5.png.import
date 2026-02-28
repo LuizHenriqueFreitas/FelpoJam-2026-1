@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc4h8mh4dtfdc"
+uid="uid://ddcxuajxw8kxx"
 path.s3tc="res://.godot/imported/low_poly_mushrooms_set_5.png-5af8c39ee2120698f5326ca31f82a51e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "23eefd3e9014a35561570bd996267ff7"
 }
 
 [deps]

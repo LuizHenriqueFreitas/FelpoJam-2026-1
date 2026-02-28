@@ -157,6 +157,10 @@ func _invocar():
 	if player == null:
 		return
 
+	var hud = get_tree().root.find_child("HUD", true, false)
+	if hud:
+		habilidade_selecionada = hud.habilidade_selecionada
+
 	if button_manager == null:
 		push_warning("ButtonManager não encontrado para invocação.")
 		return

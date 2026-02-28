@@ -1,8 +1,1 @@
-res://menus/button_manager/button_mark.tscn
-res://game/game.gd
 res://game/game.tscn
-res://SummonSystem.gd
-res://menus/button_manager/button_manager.gd
-res://spawner/spawner_manager.tscn
-res://menus/button_manager/button_manager.tscn
-res://player/player.gd

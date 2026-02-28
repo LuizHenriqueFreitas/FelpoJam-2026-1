@@ -2,17 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://kmmhwv81607f" path="res://unit/base_unity/siege/siege_unit.tscn" id="1_h2xl1"]
 [ext_resource type="Script" uid="uid://dnon7xfajlqc7" path="res://unit/enemy/siege_enemy.gd" id="2_c0l67"]
+[ext_resource type="PackedScene" uid="uid://bfnasyvnsgdtl" path="res://props/personagens/modelo_canhao.tscn" id="3_c0l67"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wm5j8"]
 radius = 30.0
 
 [node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_h2xl1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 script = ExtResource("2_c0l67")
-projectile_arc_time = 0.6
-projectile_offset_distance = 1.0
-faction = 1
 attack_speed = 0.4
 attack_range = 40.0
+
+[node name="canhao" parent="." index="0" unique_id=186391720 instance=ExtResource("3_c0l67")]
+transform = Transform3D(-2.5, 0, -3.774895e-07, 0, 2.5, 0, 3.774895e-07, 0, -2.5, 0, 0, 0)
 
 [node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6064453, 0)
