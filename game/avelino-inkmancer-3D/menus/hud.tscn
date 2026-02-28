@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://2s37eic8voqd" path="res://texturamenus/fundovida.png" id="6_lgqb8"]
 [ext_resource type="Shader" uid="uid://bl5t4d3mf3u35" path="res://texturamenus/pocao_mascara.gdshader" id="7_2p8q6"]
 [ext_resource type="Texture2D" uid="uid://7js44xknoi47" path="res://texturamenus/fundomana.png" id="9_fqpyl"]
+[ext_resource type="PackedScene" uid="uid://cw5pm78sy0cji" path="res://menus/button_manager/button_mark.tscn" id="12_45ana"]
+[ext_resource type="PackedScene" uid="uid://bd5iiq2oudvt3" path="res://menus/button_manager/button_scenes/slot_selecter.tscn" id="13_h50hu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aoscq"]
 load_path = "res://.godot/imported/carimbo-jogar.png-a11d3e3b6a705fefa18f90cee4cab617.ctex"
@@ -66,7 +68,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Hab1" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=1290554048]
+[node name="Hab0" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=1290554048]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 5.4
@@ -78,7 +80,7 @@ texture_normal = SubResource("CompressedTexture2D_aoscq")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Hab2" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=642766753]
+[node name="Hab1" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=642766753]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 9.375
@@ -91,7 +93,7 @@ texture_normal = SubResource("CompressedTexture2D_aoscq")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Hab3" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=1082748491]
+[node name="Hab2" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=1082748491]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 13.375001
@@ -104,7 +106,7 @@ texture_normal = SubResource("CompressedTexture2D_aoscq")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Hab4" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=905248056]
+[node name="Hab3" type="TextureButton" parent="HUDRoot/CentroSection/Habilidades" unique_id=905248056]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 17.400002
@@ -236,3 +238,63 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_2p8q6")
 expand_mode = 1
+
+[node name="Slot0" parent="HUDRoot" unique_id=1752071099 instance=ExtResource("12_45ana")]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 925.0
+offset_right = 725.0
+offset_bottom = 925.0
+script = null
+
+[node name="Slot1" parent="HUDRoot" unique_id=1383057614 instance=ExtResource("12_45ana")]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 924.0
+offset_right = 885.0
+offset_bottom = 924.0
+script = null
+
+[node name="Slot2" parent="HUDRoot" unique_id=71575518 instance=ExtResource("12_45ana")]
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 924.0
+offset_right = 1045.0
+offset_bottom = 924.0
+script = null
+
+[node name="Slot3" parent="HUDRoot" unique_id=1773934177 instance=ExtResource("12_45ana")]
+layout_mode = 0
+offset_left = 1207.0
+offset_top = 925.0
+offset_right = 1207.0
+offset_bottom = 925.0
+script = null
+
+[node name="SlotSelecter1" parent="HUDRoot" unique_id=1769109193 instance=ExtResource("13_h50hu")]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 925.0
+offset_right = 725.0
+offset_bottom = 925.0
+
+[node name="SlotSelecter2" parent="HUDRoot" unique_id=91036231 instance=ExtResource("13_h50hu")]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 924.0
+offset_right = 885.0
+offset_bottom = 924.0
+
+[node name="SlotSelecter3" parent="HUDRoot" unique_id=800408567 instance=ExtResource("13_h50hu")]
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 924.0
+offset_right = 1045.0
+offset_bottom = 924.0
+
+[node name="SlotSelecter4" parent="HUDRoot" unique_id=891586355 instance=ExtResource("13_h50hu")]
+layout_mode = 0
+offset_left = 1207.0
+offset_top = 925.0
+offset_right = 1207.0
+offset_bottom = 925.0

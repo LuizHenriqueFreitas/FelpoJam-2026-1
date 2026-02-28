@@ -7,6 +7,7 @@ class_name SpawnManager
 @export var part2: Array[PackedScene]
 @export var part3: Array[PackedScene]
 @export var part4: Array[PackedScene]
+@export var enemy_limit: int = 100
 	
 	
 class SpawnStage:
@@ -47,13 +48,21 @@ func _setup_timer() -> void:
 	
 func _on_tick() -> void:
 	_match_time += check_interval
-	
 	_update_stage()
+
+	var enemy_count := 0
 	
+	for unit in get_tree().get_nodes_in_group("base_unit"):
+		if unit.faction == BaseUnit.Faction.ENEMY:
+			enemy_count += 1
+			
+			if enemy_count > enemy_limit:
+				return
+
 	for spawner in _spawners:
 		spawner.try_spawn(_player, _match_time)
-	
-	
+		
+		
 func _setup_stages() -> void:
 	stages = [
 		SpawnStage.new(0.0,    5.0, part1),

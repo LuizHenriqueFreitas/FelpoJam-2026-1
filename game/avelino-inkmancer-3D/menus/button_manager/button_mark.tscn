@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cw5pm78sy0cji"]
+
+[ext_resource type="Script" uid="uid://df74okb7vrvjq" path="res://menus/button_manager/button_mark.gd" id="1_1s43c"]
+
+[node name="ButtonMark" type="Control" unique_id=1752071099]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1s43c")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bd5iiq2oudvt3"]
+
+[ext_resource type="Script" uid="uid://boraqoxchagyy" path="res://menus/button_manager/button_scenes/control.gd" id="1_errup"]
+
+[node name="SlotSelecter" type="TextureRect" unique_id=1769109193]
+
+[node name="Control" type="Control" parent="." unique_id=857019404]
+anchors_preset = 0
+script = ExtResource("1_errup")
+color = Color(16.345173, 16.345175, 0, 0.384)

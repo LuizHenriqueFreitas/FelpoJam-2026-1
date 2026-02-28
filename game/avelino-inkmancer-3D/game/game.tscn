@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bwvx3yf77fesd" path="res://game/camera_3d.gd" id="2_dxrkv"]
 [ext_resource type="PackedScene" uid="uid://ccwtc3kto5acf" path="res://chunks/spawn_chunk.tscn" id="3_dakft"]
 [ext_resource type="Script" uid="uid://dix7o7ep5011h" path="res://game/chunk_manager.gd" id="4_u5opy"]
-[ext_resource type="PackedScene" uid="uid://kfgiwaxork6a" path="res://menus/hud.tscn" id="6_dakft"]
+[ext_resource type="PackedScene" uid="uid://cdylrp604bv4p" path="res://menus/hud.tscn" id="6_dakft"]
 [ext_resource type="Script" uid="uid://xk4elh7o4jwn" path="res://SummonSystem.gd" id="7_u5opy"]
 [ext_resource type="PackedScene" uid="uid://bqrebuirs0pxa" path="res://carimbo/arrow.tscn" id="8_3vho3"]
 [ext_resource type="PackedScene" uid="uid://bmyvgn3wqtkmd" path="res://unit/enemy/siege_enemy.tscn" id="8_l8g03"]

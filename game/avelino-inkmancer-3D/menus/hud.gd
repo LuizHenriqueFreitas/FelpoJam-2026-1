@@ -7,10 +7,10 @@ extends CanvasLayer
 @onready var mana_section = $HUDRoot/ManaSection
 
 @onready var btn_habilidade = [
+	$HUDRoot/CentroSection/Habilidades/Hab0,
 	$HUDRoot/CentroSection/Habilidades/Hab1,
 	$HUDRoot/CentroSection/Habilidades/Hab2,
 	$HUDRoot/CentroSection/Habilidades/Hab3,
-	$HUDRoot/CentroSection/Habilidades/Hab4,
 ]
 
 @onready var btn_ataque    = $HUDRoot/CentroSection/AcoesExtra/BtnAtaque

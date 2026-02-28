@@ -27,6 +27,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	current_health = max_health
+	add_to_group("base_unit")
 
 	if show_health_bar and health_bar_scene != null:
 		call_deferred("_spawn_health_bar")

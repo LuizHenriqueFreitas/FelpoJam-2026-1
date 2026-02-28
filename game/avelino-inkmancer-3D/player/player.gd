@@ -7,13 +7,16 @@ class_name Player
 
 var current_mana: float
 var time_passed: float = 0.0
+var index_counter : int = 0
 
 var hud : CanvasLayer
+var button_manager: Node
 	
 func _ready() -> void:
 	current_health = max_health
 	current_mana = max_mana
 	hud = get_node("../HUD")
+	button_manager = get_node("../ButtonManager")
 	add_to_group("player")
 	ArrowManager.player = self
 	 
@@ -78,4 +81,10 @@ func add_carimbo(unit_type: Carimbo.TipoUnidade, unit_attack, unit_hp, unit_ms, 
 			"rarity": carimbo_rarity
 		}
 	)
+	button_manager.spawn_interface(index_counter, unit_type, carimbo_rarity)
+	var node_to_hide = hud.get_node_or_null("HUDRoot/CentroSection/Habilidades/Hab%d" % index_counter)
+	if node_to_hide:
+		node_to_hide.hide()
+	index_counter += 1
+	
 	

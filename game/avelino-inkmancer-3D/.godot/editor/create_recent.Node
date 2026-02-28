@@ -1,3 +1,5 @@
+Control
+MeshInstance2D
 TextureRect
 CanvasLayer
 MeshInstance3D
@@ -10,6 +12,3 @@ GPUParticles3D
 Sprite3D
 ProgressBar
 SubViewport
-SubViewportContainer
-CharacterBody3D
-Node

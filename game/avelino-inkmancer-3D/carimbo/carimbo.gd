@@ -14,14 +14,14 @@ enum TipoUnidade { GUERREIRO, ARQUEIRO, CANHAO }
 @export var vida: int = 0
 @export var velocidade: int = 0
 
-const MAX_POR_ATRIBUTO: int = 10
+const MAX_POR_ATRIBUTO: int = 5
 
 const DISPLAY_SCENE = preload("res://menus/displaycarimbo.tscn")
 
 const PONTOS_POR_RARIDADE = {
-	Raridade.COMUM:   5,
-	Raridade.INCOMUM: 8,
-	Raridade.RARO:    12,
+	"comum":   3,
+	"incomum": 6,
+	"raro":    9,
 }
 
 # Mínimo de pontos livres por atributo que o carimbo pode ter
@@ -61,6 +61,17 @@ const NOMES_UNIDADE = {
 
 func _ready():
 	body_entered.connect(_on_body_entered)
+	var _raridade = randi_range(1, 3)
+	match _raridade:
+		1: 
+			self.raridade = Raridade.COMUM
+			pontos_totais = PONTOS_POR_RARIDADE.comum
+		2: 
+			self.raridade = Raridade.INCOMUM
+			pontos_totais = PONTOS_POR_RARIDADE.incomum
+		3: 
+			self.raridade = Raridade.RARO
+			pontos_totais = PONTOS_POR_RARIDADE.raro
 	
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bcqe8ha8lch1s" path="res://menus/mainmenu.gd" id="1_2ydd5"]
 [ext_resource type="Texture2D" uid="uid://br05tidokboec" path="res://texturabotoes/jogar-preto.png" id="2_1pjrb"]
 [ext_resource type="Texture2D" uid="uid://ffl0avkvk7om" path="res://texturamenus/logoinkmancer.png" id="2_7gycx"]
-[ext_resource type="PackedScene" uid="uid://doy7p72avdjy0" path="res://menus/gifMainMenu.tscn" id="2_070k2"]
+[ext_resource type="PackedScene" path="res://menus/gifMainMenu.tscn" id="2_070k2"]
 [ext_resource type="Texture2D" uid="uid://byg31ntyumyva" path="res://texturabotoes/jogar-branco.png" id="3_7gycx"]
 [ext_resource type="Texture2D" uid="uid://ckbpgm5uq1dyp" path="res://texturabotoes/controles-preto.png" id="4_070k2"]
 [ext_resource type="Texture2D" uid="uid://oqi6vcea7urd" path="res://texturabotoes/audio-preto.png" id="6_gkrlc"]

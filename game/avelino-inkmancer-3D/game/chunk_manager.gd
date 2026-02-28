@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var chunk_size : int = 128
-@export var world_radius : int = 10   # Quantas chunk pra cada lado
+@export var world_radius : int = 5   # Quantas chunk pra cada lado
 @export var world_seed : int = 12345
 @export var carimbo_scene : PackedScene
 
