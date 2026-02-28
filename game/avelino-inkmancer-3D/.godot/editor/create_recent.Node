@@ -4,6 +4,9 @@ TextureRect
 CanvasLayer
 MeshInstance3D
 CollisionShape3D
+CharacterBody3D
+AnimationTree
+Marker3D
 Area3D
 Marker3D
 RigidBody3D
@@ -12,3 +15,6 @@ GPUParticles3D
 Sprite3D
 ProgressBar
 SubViewport
+SubViewportContainer
+Node
+

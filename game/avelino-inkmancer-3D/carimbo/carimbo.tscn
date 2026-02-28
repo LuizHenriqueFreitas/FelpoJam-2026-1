@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://righ50d3jwtv"]
 
 [ext_resource type="Script" uid="uid://b8ru31prbflac" path="res://carimbo/carimbo.gd" id="1_dvkep"]
+[ext_resource type="PackedScene" uid="uid://hvt5qg1dkb1b" path="res://assets/models/personagens/Carimbo.glb" id="2_8k063"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i12rq"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_dvkep"]
 
 [node name="Carimbo" type="Area3D" unique_id=50033548]
 script = ExtResource("1_dvkep")
 
+[node name="Carimbo" parent="." unique_id=1659697566 instance=ExtResource("2_8k063")]
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.45, -1.025, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=659034950]
 shape = SubResource("BoxShape3D_i12rq")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=137850961]
-mesh = SubResource("BoxMesh_dvkep")

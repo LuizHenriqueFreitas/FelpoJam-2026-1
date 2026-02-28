@@ -3,6 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://bgjwsh30jfe0w" path="res://unit/base_unity/base_unit.tscn" id="1_l1i6f"]
 [ext_resource type="Script" uid="uid://dtxyugwrt2ten" path="res://unit/base_unity/melee/melee_unit.gd" id="2_mxhcm"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fys5v"]
+size = Vector3(0.75390625, 1.5888062, 0.49206543)
+
 [node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_l1i6f")]
 script = ExtResource("2_mxhcm")
 attack_range = 4.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=1581324574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0146484375, 0.79922485, 0.08001709)
+shape = SubResource("BoxShape3D_fys5v")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://kmmhwv81607f" path="res://unit/base_unity/siege/siege_unit.tscn" id="1_ijx5d"]
 [ext_resource type="Script" uid="uid://dnxguunr1loar" path="res://unit/ally/siege_ally.gd" id="2_tp0qu"]
+[ext_resource type="PackedScene" uid="uid://q8x4hc227qk5" path="res://props/personagens/modelo_canhao_minion.tscn" id="3_f1hd1"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tp0qu"]
 radius = 40.0
@@ -9,10 +10,15 @@ radius = 40.0
 [node name="SiegeAlly" unique_id=1076276240 instance=ExtResource("1_ijx5d")]
 script = ExtResource("2_tp0qu")
 leash_distance = 20.0
-projectile_arc_time = 0.6
-projectile_offset_distance = 1.0
-attack_speed = 0.4
-attack_range = 40.0
+projectile_arc_time = 0.004
+max_health = 70.0
+move_speed = 8.0
+damage = 50.0
+attack_speed = 5.0
+attack_range = 100.0
+
+[node name="canhaoMinion" parent="." index="0" unique_id=2039229285 instance=ExtResource("3_f1hd1")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 1.2160645, 0)
 
 [node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7035522, 0)

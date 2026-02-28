@@ -128,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4746869, 0)
 max_mana = 100.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=305135476]
-transform = Transform3D(0.7071068, 0.5, -0.5, 0, 0.7071068, 0.70710677, 0.7071068, -0.5, 0.5, -9, 14.897191, 9)
+transform = Transform3D(0.7054878, 0.54667836, -0.451032, -0.047823194, 0.6716717, 0.7393038, 0.7071068, -0.5, 0.50000006, -9, 23.144016, 9)
 projection = 1
 size = 39.514
 script = ExtResource("2_dxrkv")
@@ -154,10 +154,11 @@ player = NodePath("../Player")
 camera = NodePath("../Camera3D")
 
 [node name="SpawnerManager" parent="." unique_id=2022992341 instance=ExtResource("10_j8tme")]
-part1 = Array[PackedScene]([ExtResource("11_vsp63")])
+part1 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_l8g03")])
 part2 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6")])
 part3 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_y36n6")])
 part4 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), ExtResource("8_l8g03")])
+enemy_limit = 30
 
 [node name="Carimbo" parent="." unique_id=50033548 instance=ExtResource("11_qf6n1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.214233, 0.9999999, -1.425293)

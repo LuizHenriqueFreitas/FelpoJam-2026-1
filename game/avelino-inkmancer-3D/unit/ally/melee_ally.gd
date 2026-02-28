@@ -10,6 +10,21 @@ func _ready():
 	super._ready()
 	player = get_tree().get_first_node_in_group("player")
 	
+func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
+	match state:
+		UnitState.MOVING:
+			get_node("minion/AnimationPlayer").play("walk")
+		UnitState.CHASING:
+			get_node("minion/AnimationPlayer").play("walk")
+		UnitState.DEAD:
+			get_node("minion/AnimationPlayer").play("morte")
+			queue_free()
+		UnitState.ATTACKING:
+			get_node("minion/AnimationPlayer").play("stamp_attack")
+		UnitState.IDLE:
+			get_node("minion/AnimationPlayer").play("idle")
+	
 func behavior_ai(delta):
 
 	if state == UnitState.DEAD:

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cpeea7mf7t6sx" path="res://unit/base_unity/ranged/ranged_unit.tscn" id="1_wvtbg"]
 [ext_resource type="Script" uid="uid://bpjf5hs0ecinq" path="res://unit/ally/ranged_ally.gd" id="2_w8eep"]
 [ext_resource type="Script" uid="uid://b13g4vti0kldv" path="res://unit/projectiles/ranged_projectile.gd" id="3_fksd3"]
+[ext_resource type="PackedScene" uid="uid://cn7jitt6prry8" path="res://props/personagens/modelo_minion_arco.tscn" id="4_dv31n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51fgg"]
 size = Vector3(0.2, 0.2, 1)
@@ -33,11 +34,17 @@ script = ExtResource("2_w8eep")
 player_min_distance = 20.0
 projectile_scene = SubResource("PackedScene_dv31n")
 projectile_arc_time = 0.4
-projectile_offset_distance = 5.0
-attack_range = 50.0
+max_health = 60.0
+move_speed = 12.0
+damage = 15.0
+attack_speed = 6.0
+attack_range = 100.0
+
+[node name="minion" parent="." index="0" unique_id=210322666 instance=ExtResource("4_dv31n")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 0, 0)
 
 [node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.057434082, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.418518, -1.6953125)
 
 [node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
 shape = SubResource("CylinderShape3D_wvtbg")

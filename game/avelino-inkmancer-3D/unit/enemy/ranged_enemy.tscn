@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cpeea7mf7t6sx" path="res://unit/base_unity/ranged/ranged_unit.tscn" id="1_42nyi"]
 [ext_resource type="Script" uid="uid://d1ts1rfitgcac" path="res://unit/enemy/ranged_enemy.gd" id="2_at4ds"]
 [ext_resource type="Script" uid="uid://b13g4vti0kldv" path="res://unit/projectiles/ranged_projectile.gd" id="3_m8glh"]
+[ext_resource type="PackedScene" uid="uid://btw4t07frla54" path="res://props/personagens/modelo_arqueiro.tscn" id="4_tq11m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51fgg"]
 size = Vector3(0.2, 0.2, 1)
@@ -29,14 +30,19 @@ margin = 0.05
 radius = 15.0
 
 [node name="RangedEnemy" unique_id=1076276240 instance=ExtResource("1_42nyi")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 script = ExtResource("2_at4ds")
 retreat_time = 2.0
 retreat_speed_multiplier = 2.5
 projectile_scene = SubResource("PackedScene_tq11m")
 projectile_arc_time = 0.4
-projectile_offset_distance = 5.0
-faction = 1
-attack_range = 30.0
+max_health = 60.0
+move_speed = 7.0
+damage = 9.0
+attack_range = 40.0
+
+[node name="arqueiro" parent="." index="0" unique_id=682006127 instance=ExtResource("4_tq11m")]
+transform = Transform3D(-2.5, 0, -2.1855695e-07, 0, 2.5, 0, 2.1855695e-07, 0, -2.5, 0, 0, 0)
 
 [node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06064129, 0)

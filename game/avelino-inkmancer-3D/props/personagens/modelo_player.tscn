@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cm5wmol3rxixe"]
+
+[ext_resource type="PackedScene" uid="uid://e5xseydr1mba" path="res://assets/models/personagens/mago.glb" id="1_cc5g5"]
+[ext_resource type="Script" uid="uid://1dvled0ahm2c" path="res://player/animation_manager_player.gd" id="2_2kebp"]
+[ext_resource type="PackedScene" uid="uid://hvt5qg1dkb1b" path="res://assets/models/personagens/Carimbo.glb" id="2_o3uh5"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_o3uh5"]
+
+[node name="mago" unique_id=313601369 instance=ExtResource("1_cc5g5")]
+script = ExtResource("2_2kebp")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature_001/Skeleton3D" parent_id_path=PackedInt32Array(1380067807) index="0" unique_id=1208826665]
+transform = Transform3D(-0.10291578, 0.985672, 0.1336374, -0.9946434, -0.10327958, -0.0042255186, 0.009636998, -0.1333563, 0.99102104, 0.27356455, 1.1401111, -0.026082017)
+bone_name = "braco.L"
+bone_idx = 12
+
+[node name="Carimbo" parent="Armature_001/Skeleton3D/BoneAttachment3D" index="0" unique_id=582777017 instance=ExtResource("2_o3uh5")]
+transform = Transform3D(0.00020267963, -0.9999278, 0.01200106, 0.9933299, -0.0011824344, -0.115301505, 0.1153073, 0.011944385, 0.9932585, 1.0761517, -0.21875778, -0.21746847)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="1" unique_id=985097524]
+root_motion_track = NodePath("Armature_001/Skeleton3D:root")
+tree_root = SubResource("AnimationNodeStateMachine_o3uh5")
+anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
