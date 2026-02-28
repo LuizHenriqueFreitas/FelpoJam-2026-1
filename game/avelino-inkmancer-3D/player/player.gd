@@ -11,6 +11,7 @@ var index_counter : int = 0
 
 @onready var anim_tree: AnimationTree = $mago/AnimationTree
 @onready var anim_player: AnimationPlayer = $mago/AnimationPlayer
+const MORTE_SCENE = preload("res://menus/morte.tscn")
 
 var hud : CanvasLayer
 var button_manager: Node
@@ -108,7 +109,8 @@ func behavior_ai(delta):
 	pass
 	
 func die():
-	print("game over")
+	var tela = MORTE_SCENE.instantiate()
+	get_tree().root.add_child(tela)
 	
 func spend_mana(_mana: float):
 	current_mana -= _mana;
@@ -129,5 +131,3 @@ func add_carimbo(unit_type: Carimbo.TipoUnidade, unit_attack, unit_hp, unit_ms, 
 	if node_to_hide:
 		node_to_hide.hide()
 	index_counter += 1
-	
-	

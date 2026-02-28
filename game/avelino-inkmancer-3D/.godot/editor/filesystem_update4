@@ -13,3 +13,7 @@ res://game/game.tscn
 res://unit/enemy/melee_enemy.tscn
 res://unit/enemy/ranged_enemy.tscn
 res://player/player.gd
+res://menus/displaycarimbo.gd
+res://menus/displaycarimbo.tscn
+res://menus/hud.gd
+res://menus/hud.tscn

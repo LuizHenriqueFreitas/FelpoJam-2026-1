@@ -14,9 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cw5pm78sy0cji" path="res://menus/button_manager/button_mark.tscn" id="12_45ana"]
 [ext_resource type="PackedScene" uid="uid://bd5iiq2oudvt3" path="res://menus/button_manager/button_scenes/slot_selecter.tscn" id="13_h50hu"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aoscq"]
-load_path = "res://.godot/imported/carimbo-jogar.png-a11d3e3b6a705fefa18f90cee4cab617.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lgqb8"]
 shader = ExtResource("7_2p8q6")
 shader_parameter/mascara_tex = ExtResource("2_6t5bw")
@@ -76,7 +73,6 @@ anchor_top = 3.0500002
 anchor_right = 8.900001
 anchor_bottom = 6.05
 offset_right = -3.0517578e-05
-texture_normal = SubResource("CompressedTexture2D_aoscq")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -89,7 +85,6 @@ anchor_right = 12.875001
 anchor_bottom = 6.05
 offset_right = -6.1035156e-05
 offset_bottom = 1.0
-texture_normal = SubResource("CompressedTexture2D_aoscq")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -102,7 +97,6 @@ anchor_right = 16.875
 anchor_bottom = 6.05
 offset_left = -6.1035156e-05
 offset_bottom = 2.0
-texture_normal = SubResource("CompressedTexture2D_aoscq")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -116,7 +110,6 @@ anchor_bottom = 6.05
 offset_left = -6.1035156e-05
 offset_right = -6.1035156e-05
 offset_bottom = 1.0
-texture_normal = SubResource("CompressedTexture2D_aoscq")
 ignore_texture_size = true
 stretch_mode = 0
 

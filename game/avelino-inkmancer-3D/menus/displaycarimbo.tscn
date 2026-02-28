@@ -13,6 +13,8 @@
 [sub_resource type="Theme" id="Theme_1s4hs"]
 default_font = ExtResource("1_nxa87")
 default_font_size = 25
+Button/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1s4hs"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -131,14 +133,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
+stretch_mode = 5
 
 [node name="ImgIcone" type="TextureRect" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda/PreviewGravura" unique_id=632580723]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 138.5
+offset_right = -143.5
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Atributos" type="VBoxContainer" parent="Painel/MarginContainer/VBoxContainer/Corpo/ColunaEsquerda" unique_id=193962120]
 layout_mode = 2

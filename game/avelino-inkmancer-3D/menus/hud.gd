@@ -44,6 +44,8 @@ func _ready():
 
 	# Seleciona habilidade 1 por padrão
 	_selecionar_habilidade(0)
+	
+	call_deferred("_posicionar_hud")
 
 
 
@@ -114,3 +116,32 @@ func _mouse_sobre_hud():
 	var hud_root = $HUDRoot
 	var rect = Rect2(hud_root.global_position, hud_root.size)
 	return rect.has_point(mouse_pos)
+
+# não fale nada sobre isso
+func _posicionar_hud():
+	var escala = 0.7
+	var viewport = get_viewport().get_visible_rect().size
+	
+	var centro = $HUDRoot/CentroSection
+	var vida   = $HUDRoot/VidaSection
+	var mana   = $HUDRoot/ManaSection
+	
+	# Posições originais
+	var pos_centro = Vector2(440, 742)
+	var pos_vida   = Vector2(467, 596)
+	var pos_mana   = Vector2(1331, 678)
+	
+	# Tamanhos originais
+	var tam_centro = Vector2(1100, 300)
+	var _tam_vida   = Vector2(164, 438)
+	var _tam_mana   = Vector2(202, 338)
+	var centro_hud_x = pos_centro.x + tam_centro.x / 2
+	var offset_x = (viewport.x / 2) - (centro_hud_x * escala)
+	var offset_y = viewport.y - (1080 * escala)
+	
+	centro.scale    = Vector2(escala, escala)
+	centro.position = Vector2(pos_centro.x * escala + offset_x, pos_centro.y * escala + offset_y)
+	vida.scale      = Vector2(escala, escala)
+	vida.position   = Vector2(pos_vida.x * escala + offset_x, pos_vida.y * escala + offset_y)
+	mana.scale      = Vector2(escala, escala)
+	mana.position   = Vector2(pos_mana.x * escala + offset_x, pos_mana.y * escala + offset_y)
