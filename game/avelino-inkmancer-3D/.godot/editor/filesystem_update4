@@ -17,3 +17,10 @@ res://menus/displaycarimbo.gd
 res://menus/displaycarimbo.tscn
 res://menus/hud.gd
 res://menus/hud.tscn
+res://unit/base_unity/melee/melee_unit.tscn
+res://unit/base_unity/ranged/ranged_unit.tscn
+res://unit/base_unity/siege/siege_unit.tscn
+res://unit/enemy/melee_enemy.gd
+res://unit/enemy/ranged_enemy.gd
+res://player/player.tscn
+res://default_bus_layout.tres

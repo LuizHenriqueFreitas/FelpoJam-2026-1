@@ -45,7 +45,13 @@ attack_range = 40.0
 transform = Transform3D(-2.5, 0, -2.1855695e-07, 0, 2.5, 0, 2.1855695e-07, 0, -2.5, 0, 0, 0)
 
 [node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06064129, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.946349e-08, 2.2587762, -0.79456973)
 
 [node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
 shape = SubResource("CylinderShape3D_42nyi")
+
+[node name="AudioAndar" parent="." index="4" unique_id=607068490]
+volume_db = 80.0
+
+[node name="AudioFlecha" parent="." index="5" unique_id=1097576964]
+volume_db = 80.0

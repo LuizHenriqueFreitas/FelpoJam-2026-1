@@ -16,7 +16,20 @@ damage = 18.0
 attack_speed = 3.0
 
 [node name="minion" parent="." index="0" unique_id=210322666 instance=ExtResource("3_q5e5m")]
-transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 0, 0)
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 0.36544985, 0)
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=1581324574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07678223, 2.7469835, -0.2268982)
+
+[node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27789307, 1.8014987, -1.7496872)
 
 [node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.131794, 0)
 shape = SubResource("CylinderShape3D_q2kyk")
+
+[node name="AudioAndar" parent="." index="4" unique_id=261324519]
+volume_db = 80.0
+
+[node name="AudioAtaque" parent="." index="5" unique_id=826916092]
+volume_db = 80.0

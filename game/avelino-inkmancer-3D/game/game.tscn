@@ -161,7 +161,7 @@ part4 = Array[PackedScene]([ExtResource("11_vsp63"), ExtResource("8_y36n6"), Ext
 enemy_limit = 30
 
 [node name="Carimbo" parent="." unique_id=50033548 instance=ExtResource("11_qf6n1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.214233, 0.9999999, -1.425293)
+transform = Transform3D(0.38961428, -0.25952297, -0.1756375, 0.3082503, 0.36784378, 0.14025941, 0.05641325, -0.21757478, 0.44663045, 29.204956, -0.65181744, -1.500145)
 
 [node name="ButtonManager" parent="." unique_id=309044320 instance=ExtResource("14_b686c")]
 interface_scene_melee = ExtResource("15_u8s88")

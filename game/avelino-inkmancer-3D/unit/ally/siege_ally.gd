@@ -17,11 +17,15 @@ func _procces(delta: float) -> void:
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_002")
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_003")
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_004")
+			get_node("AudioAndar").play()
 		UnitState.CHASING:
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_001")
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_002")
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_003")
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_004")
+			get_node("AudioAndar").play()
+		UnitState.ATTACKING:
+			get_node("AudioTiro").play()
 		UnitState.DEAD:
 			queue_free()
 
@@ -46,3 +50,7 @@ func behavior_ai(delta):
 		chase(chosen)
 	else:
 		state = UnitState.IDLE
+
+func process_attack():
+	get_node("AudioTiro").play()
+	super.process_attack()
