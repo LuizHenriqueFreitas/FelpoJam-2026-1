@@ -2,7 +2,7 @@ extends BaseUnit
 class_name Player
 
 @export var max_mana: float
-@export var mana_regen: float = 2.0
+@export var mana_regen: float = 10
 @export var list_of_carimbos: Array[Dictionary]
 
 var current_mana: float
@@ -44,8 +44,9 @@ func _physics_process(delta: float) -> void:
 	
 func _process(delta: float) -> void:
 	time_passed += delta
-	if time_passed >= 1.0:
+	if time_passed >= 5.0:
 		current_mana += mana_regen
+		hud.atualizar_mana(current_mana)
 		time_passed = 0.0
 	
 	super._process(delta) # Isso aqui n faz nada, pois no momento o _process de base_unit n faz nada util pro player, mas deixando só  pra caso no futuro a gente inclua algo no process do pai

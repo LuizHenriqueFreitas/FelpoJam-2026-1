@@ -1,9 +1,16 @@
 extends Node3D
 
-@export var player: Node3D
+const MELEE_ALLY_SCENE := preload("res://unit/ally/melee_ally.tscn")
+const RANGED_ALLY_SCENE := preload("res://unit/ally/ranged_ally.tscn")
+const SIEGE_ALLY_SCENE := preload("res://unit/ally/siege_ally.tscn")
+
+@export var player: BaseUnit
 @export var camera: Camera3D
 @export var invocation_range: float = 10.0
 @export var cursor_circle_radius: float = 0.5
+@export var common_mana_cost: float = 30.0
+@export var uncommon_mana_cost: float = 50.0
+@export var rare_mana_cost: float = 80.0
 
 var em_modo_invocacao: bool = false
 var habilidade_selecionada: int = 0
@@ -12,9 +19,14 @@ var posicao_invocacao: Vector3 = Vector3.ZERO
 var range_mesh: MeshInstance3D
 var cursor_mesh: MeshInstance3D
 
+var button_manager: Node
+var hud
+
 
 func _ready():
 	call_deferred("_setup_circulos")
+	button_manager = get_node("../ButtonManager")
+	var hud = get_tree().root.find_child("HUD", true, false)
 
 
 func _setup_circulos():
@@ -142,12 +154,102 @@ func _get_mouse_world_position() -> Vector3:
 
 
 func _invocar():
-	# Busca a habilidade selecionada direto da HUD(tem que mudar pra ele pegar do player)
-	var hud = get_tree().root.find_child("HUD", true, false)
-	if hud:
-		habilidade_selecionada = hud.habilidade_selecionada
+	if player == null:
+		return
 
-	print("Invocando habilidade %d em %s" % [habilidade_selecionada + 1, posicao_invocacao])
+	if button_manager == null:
+		push_warning("ButtonManager não encontrado para invocação.")
+		return
+
+	var selected_slot: int = button_manager.slot_selected - 1
+	if selected_slot < 0:
+		push_warning("Nenhum slot selecionado para invocar.")
+		return
+
+	if selected_slot >= player.list_of_carimbos.size():
+		push_warning("Slot selecionado não possui carimbo.")
+		return
+
+	var carimbo_data: Dictionary = player.list_of_carimbos[selected_slot]
+	if carimbo_data.is_empty():
+		push_warning("Carimbo inválido no slot selecionado.")
+		return
+
+	var carimbo_rarity: int = int(carimbo_data.get("rarity", Carimbo.Raridade.COMUM))
+	if button_manager.is_slot_on_cooldown(selected_slot):
+		var remaining_cd: float = button_manager.get_slot_cooldown_remaining(selected_slot)
+		print("Slot em cooldown: %.1fs" % remaining_cd)
+		return
+
+	var mana_cost: float = _get_mana_cost_by_rarity(carimbo_rarity)
+	if player.current_mana < mana_cost:
+		print("Mana insuficiente para invocar. Necessário: %.0f" % mana_cost)
+		return
+
+	if not carimbo_data.has("unit_type"):
+		push_warning("Carimbo sem unit_type.")
+		return
+
+	var unit_scene: PackedScene
+	match carimbo_data["unit_type"]:
+		Carimbo.TipoUnidade.GUERREIRO:
+			unit_scene = MELEE_ALLY_SCENE
+		Carimbo.TipoUnidade.ARQUEIRO:
+			unit_scene = RANGED_ALLY_SCENE
+		Carimbo.TipoUnidade.CANHAO:
+			unit_scene = SIEGE_ALLY_SCENE
+		_:
+			push_warning("Tipo de unidade desconhecido no carimbo.")
+			return
+
+	var unit_instance := unit_scene.instantiate() as BaseUnit
+	if unit_instance == null:
+		push_warning("Falha ao instanciar unidade da invocação.")
+		return
+
+	var attack_points: int = int(carimbo_data.get("unit_attack", 0))
+	var hp_points: int = int(carimbo_data.get("unit_hp", 0))
+	var ms_points: int = int(carimbo_data.get("unit_ms", 0))
+
+	var attack_multiplier: float = pow(1.2, attack_points)
+	var hp_multiplier: float = pow(1.2, hp_points)
+	var ms_multiplier: float = pow(1.2, ms_points)
+
+	unit_instance.damage *= attack_multiplier
+	unit_instance.max_health *= hp_multiplier
+	unit_instance.move_speed *= ms_multiplier
+	unit_instance.faction = BaseUnit.Faction.ALLY
+
+	get_tree().current_scene.add_child(unit_instance)
+	unit_instance.global_position = posicao_invocacao
+	player.spend_mana(mana_cost)
+
+	var cooldown_duration: float = _get_cooldown_by_rarity(carimbo_rarity)
+	button_manager.start_slot_cooldown(selected_slot, cooldown_duration)
+
+
+func _get_cooldown_by_rarity(rarity: int) -> float:
+	match rarity:
+		Carimbo.Raridade.COMUM:
+			return 10.0
+		Carimbo.Raridade.INCOMUM:
+			return 14.0
+		Carimbo.Raridade.RARO:
+			return 20.0
+		_:
+			return 10.0
+
+
+func _get_mana_cost_by_rarity(rarity: int) -> float:
+	match rarity:
+		Carimbo.Raridade.COMUM:
+			return common_mana_cost
+		Carimbo.Raridade.INCOMUM:
+			return uncommon_mana_cost
+		Carimbo.Raridade.RARO:
+			return rare_mana_cost
+		_:
+			return common_mana_cost
 
 
 func set_habilidade(idx: int):
