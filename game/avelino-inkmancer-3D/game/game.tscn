@@ -20,6 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://tn5dx37iouva" path="res://menus/button_manager/button_scenes/rarity/common.tscn" id="18_5e03w"]
 [ext_resource type="PackedScene" uid="uid://bneh41qsast34" path="res://menus/button_manager/button_scenes/rarity/uncommon.tscn" id="19_leid8"]
 [ext_resource type="PackedScene" uid="uid://c5e5ahjfypvxw" path="res://menus/button_manager/button_scenes/rarity/rare.tscn" id="20_8bboj"]
+[ext_resource type="FontFile" uid="uid://bvaa2ggnhk1j2" path="res://utilitarios/EagleLake-Regular.ttf" id="21_j2xk1"]
+[ext_resource type="PackedScene" uid="uid://bdb31udpsgafy" path="res://unit/boss/boss.tscn" id="22_mhvfb"]
+[ext_resource type="PackedScene" uid="uid://buvwcvjm4prgr" path="res://unit/health_bar_3d.tscn" id="23_5e03w"]
+[ext_resource type="PackedScene" uid="uid://dmc1uy31mfsqe" path="res://menus/vitoria.tscn" id="23_leid8"]
 
 [sub_resource type="Shader" id="Shader_dakft"]
 code = "shader_type canvas_item;
@@ -108,6 +112,23 @@ script = ExtResource("1_l8g03")
 
 [node name="HUD" parent="." unique_id=758513456 instance=ExtResource("6_dakft")]
 
+[node name="GameTimerLayer" type="CanvasLayer" parent="." unique_id=109908821]
+layer = 90
+
+[node name="TimerLabel" type="Label" parent="GameTimerLayer" unique_id=1230459011]
+offset_left = 1760.0
+offset_top = 24.0
+offset_right = 1895.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("21_j2xk1")
+theme_override_font_sizes/font_size = 42
+text = "00:00"
+horizontal_alignment = 2
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1967377695]
 visible = false
 material = SubResource("ShaderMaterial_y36n6")
@@ -171,3 +192,10 @@ interface_scene_common = ExtResource("18_5e03w")
 interface_scene_uncommon = ExtResource("19_leid8")
 interface_scene_rare = ExtResource("20_8bboj")
 canvas_layer_path = NodePath("../HUD")
+
+[node name="Boss" parent="." unique_id=1147815765 instance=ExtResource("22_mhvfb")]
+transform = Transform3D(-0.5423243, 0, -0.84016925, 0, 1, 0, 0.84016925, 0, -0.5423243, 40.824585, 1.7799424, 19.914429)
+win_scene = ExtResource("23_leid8")
+faction = 1
+max_health = 1.0
+health_bar_scene = ExtResource("23_5e03w")

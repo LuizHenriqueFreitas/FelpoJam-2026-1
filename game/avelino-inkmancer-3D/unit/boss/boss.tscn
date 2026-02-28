@@ -2,12 +2,20 @@
 
 [ext_resource type="Script" uid="uid://mtxgj6etwgpb" path="res://unit/boss/boss.gd" id="1_h68hj"]
 [ext_resource type="PackedScene" uid="uid://fx1tcalfthad" path="res://props/personagens/modelo_anjo.tscn" id="1_w7ekg"]
+[ext_resource type="PackedScene" uid="uid://dmc1uy31mfsqe" path="res://menus/vitoria.tscn" id="2_460v6"]
+[ext_resource type="PackedScene" uid="uid://buvwcvjm4prgr" path="res://unit/health_bar_3d.tscn" id="3_i16oc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h68hj"]
-radius = 1.4054877
+radius = 4.3052073
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h68hj"]
+radius = 40.77832
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1147815765]
 script = ExtResource("1_h68hj")
+win_scene = ExtResource("2_460v6")
+faction = 1
+health_bar_scene = ExtResource("3_i16oc")
 
 [node name="anjo" parent="." unique_id=1924285470 instance=ExtResource("1_w7ekg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2399812, 0)
@@ -15,3 +23,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2399812, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1623184385]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2399812, 0)
 shape = SubResource("SphereShape3D_h68hj")
+
+[node name="AttackOrigin" type="Node3D" parent="." unique_id=122357488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1614542, 0.69397736)
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=1247354852]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=2120077470]
+shape = SubResource("CylinderShape3D_h68hj")

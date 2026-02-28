@@ -1,48 +1,69 @@
 extends SiegeUnit
 class_name SiegeAlly
 
-@export var leash_distance: float = 20.0
+@export var player_min_distance: float = 20.0
 
-var player: BaseUnit
+var player: Node3D
 
 func _ready():
 	super._ready()
 	player = get_tree().get_first_node_in_group("player")
 
-func _procces(delta: float) -> void:
-	super._process(delta)
+func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
 	match state:
 		UnitState.MOVING:
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_001")
-			get_node("canhaoMinion/AnimationPlayer").play("canhao_002")
-			get_node("canhaoMinion/AnimationPlayer").play("canhao_003")
-			get_node("canhaoMinion/AnimationPlayer").play("canhao_004")
 		UnitState.CHASING:
 			get_node("canhaoMinion/AnimationPlayer").play("canhao_001")
-			get_node("canhaoMinion/AnimationPlayer").play("canhao_002")
-			get_node("canhaoMinion/AnimationPlayer").play("canhao_003")
-			get_node("canhaoMinion/AnimationPlayer").play("canhao_004")
 		UnitState.DEAD:
 			queue_free()
 
 func behavior_ai(delta):
 
-	if player == null or state == UnitState.DEAD:
+	if state == UnitState.DEAD:
 		return
 
-	# Não sobrescrever combate
-	if state == UnitState.ATTACKING or state == UnitState.CHASING:
-		return
+	var enemies = get_valid_enemies()
 
-	var dist = global_position.distance_to(player.global_position)
-
-	if dist > leash_distance:
+	if player != null and not detection_area.get_overlapping_bodies().has(player):
 		move_to(player.global_position)
 		return
 
-	var chosen = get_farthest_target()
+	if enemies.size() > 0:
+		target = get_enemy_closest_to_player(enemies)
 
-	if chosen != null:
-		chase(chosen)
-	else:
-		state = UnitState.IDLE
+		var dist_to_player = global_position.distance_to(player.global_position)
+
+		if dist_to_player > player_min_distance:
+			move_to(player.global_position)
+			return
+
+		if state != UnitState.ATTACKING:
+			chase(target)
+		return
+
+	state = UnitState.IDLE
+
+
+func get_valid_enemies() -> Array[BaseUnit]:
+	var result: Array[BaseUnit] = []
+
+	for unit in detected_units:
+		if unit != null and unit.state != UnitState.DEAD and unit.faction != faction:
+			result.append(unit)
+
+	return result
+
+
+func get_enemy_closest_to_player(enemies: Array[BaseUnit]) -> BaseUnit:
+	var closest: BaseUnit = null
+	var min_distance := INF
+
+	for unit in enemies:
+		var dist = unit.global_position.distance_to(player.global_position)
+		if dist < min_distance:
+			min_distance = dist
+			closest = unit
+
+	return closest

@@ -25,6 +25,9 @@ _bundled = {
 "version": 3
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dv31n"]
+size = Vector3(3.1058044, 5.20813, 1.7959747)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wvtbg"]
 margin = 0.05
 radius = 22.0
@@ -43,8 +46,12 @@ attack_range = 100.0
 [node name="minion" parent="." index="0" unique_id=210322666 instance=ExtResource("4_dv31n")]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 0, 0)
 
+[node name="CollisionShape3D" parent="." index="1" unique_id=553810741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13807678, 2.6082153, 0.022285461)
+shape = SubResource("BoxShape3D_dv31n")
+
 [node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.418518, -1.6953125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2065306, -1.6080594)
 
 [node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
 shape = SubResource("CylinderShape3D_wvtbg")

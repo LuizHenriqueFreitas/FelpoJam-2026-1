@@ -18,4 +18,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0044555664, 0.8265381, 0.0
 shape = SubResource("BoxShape3D_8dsmg")
 
 [node name="AttackOrigin" parent="." index="1" unique_id=1486245529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01642704, 0.9830629, 0.6940079)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01642704, 1.2829897, 0.6940079)

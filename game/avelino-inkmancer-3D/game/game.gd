@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var hud = $HUD
 @onready var player: Node3D = $Player
+@onready var timer_label: Label = $GameTimerLayer/TimerLabel
 
 const PAUSE_MENU = preload("res://menus/pausemenu.tscn")
 var pause_menu_aberto := false
@@ -13,10 +14,27 @@ var pause_menu_aberto := false
 
 var _cleanup_timer: Timer
 var _enemy_motion_tracker: Dictionary = {}
+var _elapsed_time: float = 0.0
 
 
 func _ready() -> void:
 	_setup_enemy_cleanup()
+	_update_timer_label()
+
+
+func _process(delta: float) -> void:
+	_elapsed_time += delta
+	_update_timer_label()
+
+
+func _update_timer_label() -> void:
+	if timer_label == null:
+		return
+
+	var total_seconds: int = int(floor(_elapsed_time))
+	var minutes: int = total_seconds / 60
+	var seconds: int = total_seconds % 60
+	timer_label.text = "%02d:%02d" % [minutes, seconds]
 
 
 func _setup_enemy_cleanup() -> void:

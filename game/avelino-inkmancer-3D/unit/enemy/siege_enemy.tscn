@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://dnon7xfajlqc7" path="res://unit/enemy/siege_enemy.gd" id="2_c0l67"]
 [ext_resource type="PackedScene" uid="uid://bfnasyvnsgdtl" path="res://props/personagens/modelo_canhao.tscn" id="3_c0l67"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c0l67"]
+size = Vector3(2.4415588, 2.9190674, 4.4595947)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wm5j8"]
 radius = 30.0
 
@@ -16,6 +19,10 @@ attack_range = 40.0
 
 [node name="canhao" parent="." index="0" unique_id=186391720 instance=ExtResource("3_c0l67")]
 transform = Transform3D(-2.5, 0, -3.774895e-07, 0, 2.5, 0, 3.774895e-07, 0, -2.5, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=968182862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056900032, 0.305542, 0.2732544)
+shape = SubResource("BoxShape3D_c0l67")
 
 [node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6064453, 0)
