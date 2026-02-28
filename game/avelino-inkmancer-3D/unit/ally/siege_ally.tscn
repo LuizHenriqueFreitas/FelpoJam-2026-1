@@ -12,8 +12,13 @@ radius = 40.0
 
 [node name="SiegeAlly" unique_id=1076276240 instance=ExtResource("1_ijx5d")]
 script = ExtResource("2_tp0qu")
+<<<<<<< HEAD
 player_min_distance = 20.0
 projectile_arc_time = 0.004
+=======
+leash_distance = 20.0
+projectile_arc_time = 0.4
+>>>>>>> d4aff0fc3f74e00bf2f53cc9e085e1ab66b1cbff
 max_health = 70.0
 move_speed = 8.0
 damage = 50.0
@@ -24,11 +29,22 @@ attack_range = 100.0
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 1.2160645, 0)
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=968182862]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004890442, 1.6470337, -0.038024902)
 shape = SubResource("BoxShape3D_f1hd1")
 
 [node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0679607, -1.714829)
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000816226, 1.9691424, 0.16467285)
+
+[node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.268036, 0)
+>>>>>>> d4aff0fc3f74e00bf2f53cc9e085e1ab66b1cbff
 
 [node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9237938, 0)
 shape = SubResource("CylinderShape3D_tp0qu")
+
+[node name="AudioAndar" parent="." index="4" unique_id=1205376583]
+volume_db = 80.0

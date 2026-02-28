@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bfsfven1sfotb" path="res://texturamenus/fundomenu.png" id="2_vckwj"]
 [ext_resource type="Texture2D" uid="uid://ey3rmpcatond" path="res://texturabotoes/voltar-preto.png" id="4_qxabv"]
 [ext_resource type="Texture2D" uid="uid://dr04x5owkkuon" path="res://texturabotoes/voltar-branco.png" id="5_u3gpo"]
+[ext_resource type="AudioStream" uid="uid://bw1qyb606jfrb" path="res://assets/sfx/abrirmenu.ogg" id="6_qxabv"]
 
 [node name="audiomenu" type="Control" unique_id=407589781]
 process_mode = 3
@@ -115,3 +116,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_m7vih")
 theme_override_font_sizes/font_size = 40
 text = "100"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1547269272]
+stream = ExtResource("6_qxabv")
+volume_db = 24.0
+autoplay = true
+bus = &"SFX"

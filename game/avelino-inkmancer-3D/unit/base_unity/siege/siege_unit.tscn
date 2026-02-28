@@ -3,9 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bgjwsh30jfe0w" path="res://unit/base_unity/base_unit.tscn" id="1_tc1g6"]
 [ext_resource type="Script" uid="uid://df5ikr5fn7b8u" path="res://unit/base_unity/siege/siege_unit.gd" id="2_hnqmu"]
 [ext_resource type="PackedScene" uid="uid://prcg8jmpn5m5" path="res://unit/projectiles/siege_projectile.tscn" id="3_jow1q"]
+[ext_resource type="AudioStream" uid="uid://bgejbupdhs76f" path="res://assets/sfx/canhao.mp3" id="4_yh0je"]
+[ext_resource type="AudioStream" uid="uid://bt5rtm1cnpsvl" path="res://assets/sfx/canhaoTiro.mp3" id="5_h8yij"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yh0je"]
-size = Vector3(0.61938477, 0.8300781, 1)
+size = Vector3(2.6871796, 3.9066162, 4.0961914)
 
 [node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_tc1g6")]
 script = ExtResource("2_hnqmu")
@@ -16,3 +18,13 @@ projectile_offset_distance = 1.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=968182862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008178711, 0.4060669, 0)
 shape = SubResource("BoxShape3D_yh0je")
+
+[node name="AudioAndar" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1205376583]
+stream = ExtResource("4_yh0je")
+bus = &"SFX"
+
+[node name="AudioTiro" type="AudioStreamPlayer3D" parent="." index="4" unique_id=526825707]
+stream = ExtResource("5_h8yij")
+volume_db = 80.0
+max_db = 6.0
+bus = &"SFX"

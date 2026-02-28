@@ -29,3 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6064453, 0)
 
 [node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
 shape = SubResource("CylinderShape3D_wm5j8")
+
+[node name="AudioAndar" parent="." index="4" unique_id=1205376583]
+volume_db = 80.0

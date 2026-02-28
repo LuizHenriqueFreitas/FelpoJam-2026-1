@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 Node3D
 CollisionShape3D
 Area3D
+=======
+AudioStreamPlayer2D
+AudioStreamPlayer3D
+>>>>>>> d4aff0fc3f74e00bf2f53cc9e085e1ab66b1cbff
 Control
 MeshInstance2D
 TextureRect
@@ -11,4 +16,7 @@ AnimationTree
 Marker3D
 Marker3D
 RigidBody3D
+<<<<<<< HEAD
 GPUParticles3D
+=======
+>>>>>>> d4aff0fc3f74e00bf2f53cc9e085e1ab66b1cbff

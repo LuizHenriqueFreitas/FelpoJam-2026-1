@@ -38,12 +38,14 @@ func _physics_process(delta: float) -> void:
 	match state:
 		UnitState.MOVING:
 			get_node("mago/AnimationPlayer").play("walk-Armature_001")
+			get_node("AudioAndar").play
 		UnitState.DEAD:
 			get_node("mago/AnimationPlayer").play("morte")
 			get_tree().quit()
 		UnitState.ATTACKING:
 			if anim_player.current_animation != "stamp_attack-Armature_001":
 				anim_player.play("stamp_attack-Armature_001")
+				get_node("AudioCarimbo").play()
 			#tentando arrumar a animação de ataque
 		UnitState.IDLE:
 			get_node("mago/AnimationPlayer").play("idle-Armature_001")

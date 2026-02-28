@@ -4,12 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://hvt5qg1dkb1b" path="res://assets/models/personagens/Carimbo.glb" id="2_8k063"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i12rq"]
+size = Vector3(8.156372, 13.644409, 13.186401)
 
 [node name="Carimbo" type="Area3D" unique_id=50033548]
 script = ExtResource("1_dvkep")
 
 [node name="Carimbo" parent="." unique_id=1659697566 instance=ExtResource("2_8k063")]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.45, -1.025, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -0.29420444, -0.95120996, -0.24822998)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=659034950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4499617, 6.3222046, 1.1737671)
 shape = SubResource("BoxShape3D_i12rq")

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dok80wqjb1dxa" path="res://player/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://cm5wmol3rxixe" path="res://props/personagens/modelo_player.tscn" id="2_rkbax"]
+[ext_resource type="AudioStream" uid="uid://b03ym4k750e3s" path="res://assets/sfx/carimbo.mp3" id="3_yw30f"]
+[ext_resource type="AudioStream" uid="uid://c7348mfva0sv3" path="res://assets/sfx/andando.mp3" id="4_qjkh3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sh265"]
 size = Vector3(0.661499, 1.6329346, 0.4951172)
@@ -17,3 +19,11 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0.011796057, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1744900246]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079956055, 0.84585834, -0.060058594)
 shape = SubResource("BoxShape3D_sh265")
+
+[node name="AudioCarimbo" type="AudioStreamPlayer3D" parent="." unique_id=831265789]
+stream = ExtResource("3_yw30f")
+bus = &"SFX"
+
+[node name="AudioAndar" type="AudioStreamPlayer3D" parent="." unique_id=2070209136]
+stream = ExtResource("4_qjkh3")
+bus = &"SFX"

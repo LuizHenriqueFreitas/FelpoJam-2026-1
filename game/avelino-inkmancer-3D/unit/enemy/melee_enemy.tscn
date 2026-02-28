@@ -11,7 +11,7 @@ size = Vector3(2.4153137, 3.8501892, 1.3256226)
 radius = 10.241211
 
 [node name="MeleeEnemy" unique_id=1076276240 instance=ExtResource("1_lx7bi")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-0.9998595, 0.016581247, 0.0024526285, 0.01657538, 0.99985975, -0.002394088, -0.0024919778, -0.0023531024, -0.9999941, 0, 0, 0)
 script = ExtResource("2_d7gwc")
 max_health = 70.0
 move_speed = 6.0
@@ -21,8 +21,22 @@ damage = 8.0
 transform = Transform3D(-2.5, 0, -2.1855695e-07, 0, 2.5, 0, 2.1855695e-07, 0, -2.5, 0, 0, 0)
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=1581324574]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11177063, 1.9299164, -0.3367615)
 shape = SubResource("BoxShape3D_yeqgs")
+=======
+transform = Transform3D(0.99999404, 2.8057912e-10, -6.519258e-09, 1.1943348e-07, 1, -2.561137e-09, -1.6298145e-09, 0, 0.99999404, -0.0052757272, 1.9303519, -0.2419378)
+
+[node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
+transform = Transform3D(0.9999998, 2.8057912e-10, 0, 3.98677e-09, 1, -4.656613e-10, 0, 0, 0.9999998, 0.058156747, 2.1206803, -1.2054644)
+>>>>>>> d4aff0fc3f74e00bf2f53cc9e085e1ab66b1cbff
 
 [node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
+transform = Transform3D(0.99999994, 2.8057912e-10, 0, 2.1245796e-09, 1, -2.3283064e-10, 0, 0, 0.99999994, 0.018115409, 1.1077722, -0.0026165284)
 shape = SubResource("CylinderShape3D_d7gwc")
+
+[node name="AudioAndar" parent="." index="4" unique_id=261324519]
+volume_db = 80.0
+
+[node name="AudioAtaque" parent="." index="5" unique_id=826916092]
+volume_db = 80.0
