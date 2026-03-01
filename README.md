@@ -45,13 +45,13 @@ As ferramentas abaixo foram utilizadas no desenvolvimento do projeto, respeitand
 A maioria dos recursos visuais e sonoros foi produzida pela equipe especificamente para a FelpoJam 2026. As exceções estão listadas abaixo:
 
 ### Sons
-* **Efeito de espada**: [Inserir Link/Crédito]
+* **Efeito de espada**: [Ataque de espada](https://freesound.org/people/Merrick079/sounds/568170/): Créditos para Merrick079 (Licença CC0)
 * **Efeito de flecha**: [Inserir Link/Crédito]
 * **Efeito de canhão**: [Inserir Link/Crédito]
 * **Efeito de menus**: [Kenney - RPG Audio](https://kenney.nl/assets/rpg-audio) (Licença CC0)
 
 ### Modelos 3D
-* **Ambientação (Pedras, árvores e arbustos)**: [Inserir Link/Crédito]
+* **Ambientação (Pedras, árvores e arbustos)**: [Ultimate Low Poly Nature Pack](https://sketchfab.com/3d-models/ultimate-low-poly-nature-pack-f5442c75fcbd4ba283c9c5bbac1cc88d): Créditos para purepoly (Licença CC0)
 
 ### Tipografia
 * **Fonte utilizada**: [Eagle Lake](https://fonts.google.com/specimen/Eagle+Lake): Créditos para Brian J. Bonislawsky (Licença SIL Open Font License)
