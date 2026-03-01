@@ -54,3 +54,18 @@ A maioria dos recursos visuais e sonoros foi produzida pela equipe especificamen
 
 ### Tipografia
 * **Fonte utilizada**: [Eagle Lake](https://fonts.google.com/specimen/Eagle+Lake): Créditos para Brian J. Bonislawsky (Licença SIL Open Font License)
+
+---
+
+# AVISOS
+
+O jogo tá bem esquisitinho, é nosso primeiro jogo e nosso primeiro projeto como uma equipe completa, encontramos muitos desafios, muitos bugs, coisas que não cosneguimos fazer ou infelizmente deixamos de fazer, mas uma coisa que mais deixou a gente feliz é ter conseguido participar e ter conseguido pelo menos entregar um jogo para vocês! Ele tem alguns bugs e problemas que infelizmente não conseguimos concertar a tempo:
+- Os slots de carimbo no inventário por algum motivo estão trocados e não estão funcionando na ordem correta;
+- As vezes o personagem sai voando;
+- Carência de modelos 3D melhores;
+- Carência de uma estrutura de gameplay melhor;
+- Falta de mecânicas melhores.
+
+Mesmo com esses problemas, espero que tenham pelo menos dado algumas risadas com nosso jogo! Nos divertimos muito nesse projeto, e como dito antes, por ser nosso primeiro jogo, estamos orgulhosos do que conseguimos fazer em poucos dias!
+
+# OBRIGADO!
