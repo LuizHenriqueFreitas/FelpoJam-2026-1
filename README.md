@@ -46,12 +46,12 @@ A maioria dos recursos visuais e sonoros foi produzida pela equipe especificamen
 
 ### Sons
 * **Efeito de espada**: [Ataque de espada](https://freesound.org/people/Merrick079/sounds/568170/): Créditos para Merrick079 (Licença CC0)
-* **Efeito de flecha**: [Inserir Link/Crédito]
-* **Efeito de canhão**: [Inserir Link/Crédito]
+* **Efeito de flecha**: [Disparo de flecha 1](https://freesound.org/people/SonoFxAudio/sounds/649335/) e [Disparo de flecha 2](https://freesound.org/people/Lydmakeren/sounds/511490/): Créditos para SonoFxAudio e Lydmakeren (Ambos licença CC0)
+* **Efeito de canhão**: [Disparo de canhão 1](https://freesound.org/people/man/sounds/14615/) e [Disparo de canhão 2](https://freesound.org/people/Kastenfrosch/sounds/162455/): Créditos para man e Kastenfrosch (Ambos licença CC0)
 * **Efeito de menus**: [Kenney - RPG Audio](https://kenney.nl/assets/rpg-audio) (Licença CC0)
 
 ### Modelos 3D
-* **Ambientação (Pedras, árvores e arbustos)**: [Ultimate Low Poly Nature Pack](https://sketchfab.com/3d-models/ultimate-low-poly-nature-pack-f5442c75fcbd4ba283c9c5bbac1cc88d): Créditos para purepoly (Licença CC0)
+* **Ambientação (Pedras, árvores e arbustos)**: [Cogumelo](https://sketchfab.com/3d-models/low-poly-mushrooms-set-53755c7630754ac49b679e44a79c5a40), [Árvores](https://sketchfab.com/3d-models/low-poly-trees-51cae4a194344e8bbfbd0a4cff205f76) e [Pedras e Arbustos](https://sketchfab.com/3d-models/nature-environment-models-low-poly-b687543d05384ce1a8f0429baca02f67): Créditos para ClydeXYZ, Aditya Voxel e Saucy (Todos Licença CC0)
 
 ### Tipografia
 * **Fonte utilizada**: [Eagle Lake](https://fonts.google.com/specimen/Eagle+Lake): Créditos para Brian J. Bonislawsky (Licença SIL Open Font License)
