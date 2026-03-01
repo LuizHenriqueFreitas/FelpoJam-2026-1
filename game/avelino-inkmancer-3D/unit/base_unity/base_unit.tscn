@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bard256xwi5dv" path="res://unit/base_unity/base_unit.gd" id="1_duel4"]
 [ext_resource type="PackedScene" uid="uid://buvwcvjm4prgr" path="res://unit/health_bar_3d.tscn" id="2_5h0md"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5h0md"]
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bg0jo"]
 radius = 17.111816
 
@@ -14,6 +16,9 @@ health_bar_scale = Vector3(3, 3, 3)
 
 [node name="AttackOrigin" type="Node3D" parent="." unique_id=1486245529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27789307, 0.70573443, 0.6940079)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1636296707]
+shape = SubResource("BoxShape3D_5h0md")
 
 [node name="DetectionArea" type="Area3D" parent="." unique_id=324132409]
 

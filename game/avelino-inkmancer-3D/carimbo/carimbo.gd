@@ -1,6 +1,9 @@
 extends Area3D
 class_name Carimbo
 
+const LAYER_WORLD: int = 1
+const LAYER_ALLY_UNITS: int = 1 << 1
+
 enum Raridade { COMUM, INCOMUM, RARO }
 enum TipoUnidade { GUERREIRO, ARQUEIRO, CANHAO }
 
@@ -60,6 +63,8 @@ const NOMES_UNIDADE = {
 }
 
 func _ready():
+	collision_layer = LAYER_WORLD
+	collision_mask = LAYER_ALLY_UNITS
 	body_entered.connect(_on_body_entered)
 	var _raridade = randi_range(1, 3)
 	match _raridade:

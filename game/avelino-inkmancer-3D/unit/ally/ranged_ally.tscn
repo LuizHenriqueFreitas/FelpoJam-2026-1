@@ -30,7 +30,7 @@ size = Vector3(3.1058044, 5.20813, 1.7959747)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wvtbg"]
 margin = 0.05
-radius = 22.0
+radius = 25.085938
 
 [node name="RangedAlly" unique_id=1076276240 instance=ExtResource("1_wvtbg")]
 script = ExtResource("2_w8eep")
@@ -46,26 +46,16 @@ attack_range = 100.0
 [node name="minion" parent="." index="0" unique_id=210322666 instance=ExtResource("4_dv31n")]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 0.32596445, 0)
 
-[node name="CollisionShape3D" parent="." index="1" unique_id=553810741]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.086006165, 2.7221222, -0.20706743)
+[node name="AttackOrigin" parent="." index="1" unique_id=1486245529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9162292, -1.6953125)
 
-[node name="CollisionShape3D" parent="." index="1" unique_id=553810741]
+[node name="CollisionShape3D" parent="." index="2" unique_id=1636296707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13807678, 2.6082153, 0.022285461)
 shape = SubResource("BoxShape3D_dv31n")
 
-[node name="AttackOrigin" parent="." index="2" unique_id=1486245529]
-<<<<<<< HEAD
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2065306, -1.6080594)
-=======
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9162292, -1.6953125)
->>>>>>> d4aff0fc3f74e00bf2f53cc9e085e1ab66b1cbff
+[node name="AudioFlecha" parent="." index="3" unique_id=1097576964]
+volume_db = 80.0
 
 [node name="CollisionShape3D" parent="DetectionArea" parent_id_path=PackedInt32Array(324132409) index="0" unique_id=12795770]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1121359, 0)
 shape = SubResource("CylinderShape3D_wvtbg")
-
-[node name="AudioAndar" parent="." index="4" unique_id=607068490]
-volume_db = 80.0
-
-[node name="AudioFlecha" parent="." index="5" unique_id=1097576964]
-volume_db = 80.0

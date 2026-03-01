@@ -147,7 +147,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0599682, 0)
 max_mana = 100.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=305135476]
-transform = Transform3D(0.7067188, 0.5231452, -0.47630608, -0.023419604, 0.6901587, 0.7232789, 0.70710677, -0.49999994, 0.5, -9, 23.144016, 9)
+transform = Transform3D(0.7054878, 0.54667836, -0.451032, -0.047823194, 0.6716717, 0.7393038, 0.7071068, -0.5, 0.50000006, -9, 23.144016, 9)
 projection = 1
 size = 39.514
 script = ExtResource("2_dxrkv")
@@ -190,13 +190,9 @@ interface_scene_common = ExtResource("18_5e03w")
 interface_scene_uncommon = ExtResource("19_leid8")
 interface_scene_rare = ExtResource("20_8bboj")
 canvas_layer_path = NodePath("../HUD")
-cooldown_icon_alpha = 0.8
-slot_selector_scale = Vector2(1, 0.9)
-rarity_icon_scale = Vector2(0.55, 0.44)
-type_icon_scale = Vector2(0.5, 0.5)
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=1856458216]
 stream = ExtResource("21_dxwpq")
-volume_db = 12.81
+volume_db = 9.848
 autoplay = true
 bus = &"Music"

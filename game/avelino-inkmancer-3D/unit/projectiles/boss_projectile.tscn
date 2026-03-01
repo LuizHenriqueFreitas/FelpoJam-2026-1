@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://co5u1dmlyim4t"]
+
+[ext_resource type="Script" uid="uid://b13g4vti0kldv" path="res://unit/projectiles/ranged_projectile.gd" id="1_153w3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51fgg"]
+size = Vector3(0.2, 0.2, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_153w3"]
+
+[node name="BossProjectile" type="RigidBody3D" unique_id=1731104118]
+collision_layer = 4
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_153w3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=309752345]
+shape = SubResource("BoxShape3D_51fgg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2114561356]
+transform = Transform3D(0.19999999, 0, 0, 0, -0.0041031316, -0.15918422, 0, 0.97143763, -0.0006723581, 0, 0, 0)
+mesh = SubResource("PrismMesh_153w3")

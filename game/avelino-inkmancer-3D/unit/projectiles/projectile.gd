@@ -1,6 +1,11 @@
 extends RigidBody3D
 class_name Projectile
 
+const LAYER_ALLY_UNITS: int = 1 << 1
+const LAYER_ENEMY_UNITS: int = 1 << 2
+const LAYER_PROJECTILE_ALLY: int = 1 << 3
+const LAYER_PROJECTILE_ENEMY: int = 1 << 4
+
 @export var arc_time: float = 0.4
 @export var max_lifetime: float = 4
 
@@ -24,6 +29,14 @@ func initialize(start_position: Vector3, target_pos: Vector3, dmg: float, factio
 	target_position = target_pos
 	damage = dmg
 	shooter_faction = faction
+
+	if shooter_faction == BaseUnit.Faction.ALLY:
+		collision_layer = LAYER_PROJECTILE_ALLY
+		collision_mask = LAYER_ENEMY_UNITS
+	else:
+		collision_layer = LAYER_PROJECTILE_ENEMY
+		collision_mask = LAYER_ALLY_UNITS
+
 	launch()
 
 

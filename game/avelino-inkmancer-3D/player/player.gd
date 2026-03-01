@@ -2,11 +2,12 @@ extends BaseUnit
 class_name Player
 
 @export var max_mana: float
-@export var mana_regen: float = 10
+@export var mana_regen: float = 20
 @export var list_of_carimbos: Array[Dictionary]
 
 var current_mana: float
 var time_passed: float = 0.0
+var health_regen_time_passed: float = 0.0
 var index_counter : int = 0
 
 @onready var anim_tree: AnimationTree = $mago/AnimationTree
@@ -17,7 +18,7 @@ var hud : CanvasLayer
 var button_manager: Node
 	
 func _ready() -> void:
-	current_health = max_health
+	super._ready()
 	current_mana = max_mana
 	hud = get_node("../HUD")
 	button_manager = get_node("../ButtonManager")
@@ -38,7 +39,6 @@ func _physics_process(delta: float) -> void:
 	match state:
 		UnitState.MOVING:
 			get_node("mago/AnimationPlayer").play("walk-Armature_001")
-			get_node("AudioAndar").play
 		UnitState.DEAD:
 			get_node("mago/AnimationPlayer").play("morte")
 			get_tree().quit()
@@ -87,10 +87,17 @@ func _physics_process(delta: float) -> void:
 	
 func _process(delta: float) -> void:
 	time_passed += delta
+	health_regen_time_passed += delta
+
 	if time_passed >= 5.0:
 		current_mana += mana_regen
 		hud.atualizar_mana(current_mana)
 		time_passed = 0.0
+
+	if state != UnitState.DEAD and health_regen_time_passed >= 1.0:
+		current_health = min(current_health + 1.0, max_health)
+		hud.atualizar_vida(current_health)
+		health_regen_time_passed = 0.0
 	
 	super._process(delta) # Isso aqui n faz nada, pois no momento o _process de base_unit n faz nada util pro player, mas deixando só  pra caso no futuro a gente inclua algo no process do pai
 	
@@ -119,7 +126,7 @@ func spend_mana(_mana: float):
 	hud.atualizar_mana(current_mana)
 	
 func add_carimbo(unit_type: Carimbo.TipoUnidade, unit_attack, unit_hp, unit_ms, carimbo_rarity: Carimbo.Raridade):
-	list_of_carimbos.push_front(
+	list_of_carimbos.push_back(
 		{
 			"unit_type": unit_type,
 			"unit_attack": unit_attack,
@@ -129,7 +136,4 @@ func add_carimbo(unit_type: Carimbo.TipoUnidade, unit_attack, unit_hp, unit_ms, 
 		}
 	)
 	button_manager.spawn_interface(index_counter, unit_type, carimbo_rarity)
-	var node_to_hide = hud.get_node_or_null("HUDRoot/CentroSection/Habilidades/Hab%d" % index_counter)
-	if node_to_hide:
-		node_to_hide.hide()
 	index_counter += 1

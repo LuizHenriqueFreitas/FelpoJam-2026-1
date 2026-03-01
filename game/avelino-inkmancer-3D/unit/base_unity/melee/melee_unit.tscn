@@ -2,24 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://bgjwsh30jfe0w" path="res://unit/base_unity/base_unit.tscn" id="1_l1i6f"]
 [ext_resource type="Script" uid="uid://dtxyugwrt2ten" path="res://unit/base_unity/melee/melee_unit.gd" id="2_mxhcm"]
-[ext_resource type="AudioStream" uid="uid://c7348mfva0sv3" path="res://assets/sfx/andando.mp3" id="3_fys5v"]
 [ext_resource type="AudioStream" uid="uid://c247inwgt285a" path="res://assets/sfx/espada.wav" id="4_m6he4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fys5v"]
-size = Vector3(2.277832, 4.895239, 1.1332703)
 
 [node name="BaseUnit" unique_id=1076276240 instance=ExtResource("1_l1i6f")]
 script = ExtResource("2_mxhcm")
 attack_range = 4.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=1581324574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0146484375, 0.79922485, 0.08001709)
+[node name="CollisionShape3D" parent="." index="1" unique_id=1636296707]
 shape = SubResource("BoxShape3D_fys5v")
 
-[node name="AudioAndar" type="AudioStreamPlayer3D" parent="." index="3" unique_id=261324519]
-stream = ExtResource("3_fys5v")
-bus = &"SFX"
-
-[node name="AudioAtaque" type="AudioStreamPlayer3D" parent="." index="4" unique_id=826916092]
+[node name="AudioAtaque" type="AudioStreamPlayer3D" parent="." index="2" unique_id=826916092]
 stream = ExtResource("4_m6he4")
 bus = &"SFX"

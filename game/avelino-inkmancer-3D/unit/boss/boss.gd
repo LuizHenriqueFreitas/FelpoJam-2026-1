@@ -2,10 +2,15 @@ extends BaseUnit
 
 @export var win_scene: PackedScene
 @export var retreat_time: float = 3.0
+@export var projectile_scene: PackedScene
+@export var projectile_arc_time: float = 0.8
+@export var projectile_offset_distance: float = 5.0
+@export var attack_origin_path: NodePath = NodePath("AttackOrigin")
 
 var player: Node3D
 var retreat_timer: float = 0.0
 var retreated: float = 0.0
+var attack_origin: Node3D
 
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
@@ -18,6 +23,9 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	super._ready()
 	player = get_tree().get_first_node_in_group("player")
+	attack_origin = get_node_or_null(attack_origin_path)
+	if attack_origin == null:
+		attack_origin = self
 
 
 func _on_damaged() -> void:
@@ -42,6 +50,11 @@ func behavior_ai(delta: float) -> void:
 			chase(target)
 		return
 
+	if player is BaseUnit and player.state != UnitState.DEAD:
+		if target != player or state != UnitState.ATTACKING:
+			chase(player)
+		return
+
 	if player != null:
 		move_to(player.global_position)
 
@@ -50,8 +63,22 @@ func attack(enemy: BaseUnit) -> void:
 	if enemy == null:
 		return
 
+	if projectile_scene == null:
+		rotate_towards(enemy.global_position)
+		enemy.take_damage(damage)
+		return
+
 	rotate_towards(enemy.global_position)
-	enemy.take_damage(damage)
+
+	var projectile = projectile_scene.instantiate()
+	get_tree().current_scene.add_child(projectile)
+
+	var start_pos = attack_origin.global_position
+	var dir = (enemy.global_position - start_pos).normalized()
+	var target_point = enemy.global_position + dir * projectile_offset_distance
+
+	projectile.arc_time = projectile_arc_time
+	projectile.initialize(start_pos, target_point, damage, faction)
 
 
 func get_valid_enemies() -> Array[BaseUnit]:

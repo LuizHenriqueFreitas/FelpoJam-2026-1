@@ -12,10 +12,8 @@ func _physics_process(delta: float) -> void:
 	match state:
 		UnitState.MOVING:
 			get_node("guerreiro/AnimationPlayer").play("walk")
-			get_node("AudioAndar").play()
 		UnitState.CHASING:
 			get_node("guerreiro/AnimationPlayer").play("walk")
-			get_node("AudioAndar").play()
 		UnitState.DEAD:
 			get_node("guerreiro/AnimationPlayer").play("morte")
 			queue_free()

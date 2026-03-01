@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://7js44xknoi47" path="res://texturamenus/fundomana.png" id="9_fqpyl"]
 [ext_resource type="PackedScene" uid="uid://cw5pm78sy0cji" path="res://menus/button_manager/button_mark.tscn" id="12_45ana"]
 [ext_resource type="PackedScene" uid="uid://bd5iiq2oudvt3" path="res://menus/button_manager/button_scenes/slot_selecter.tscn" id="13_h50hu"]
+[ext_resource type="Script" uid="uid://boraqoxchagyy" path="res://menus/button_manager/button_scenes/control.gd" id="14_apa8j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lgqb8"]
 shader = ExtResource("7_2p8q6")
@@ -232,62 +233,70 @@ grow_vertical = 2
 texture = ExtResource("5_2p8q6")
 expand_mode = 1
 
-[node name="Slot0" parent="HUDRoot" unique_id=1752071099 instance=ExtResource("12_45ana")]
-layout_mode = 0
-offset_left = 725.0
-offset_top = 925.0
-offset_right = 725.0
-offset_bottom = 925.0
-script = null
-
-[node name="Slot1" parent="HUDRoot" unique_id=1383057614 instance=ExtResource("12_45ana")]
-layout_mode = 0
-offset_left = 885.0
-offset_top = 924.0
-offset_right = 885.0
-offset_bottom = 924.0
-script = null
-
-[node name="Slot2" parent="HUDRoot" unique_id=71575518 instance=ExtResource("12_45ana")]
-layout_mode = 0
-offset_left = 1045.0
-offset_top = 924.0
-offset_right = 1045.0
-offset_bottom = 924.0
-script = null
-
-[node name="Slot3" parent="HUDRoot" unique_id=1773934177 instance=ExtResource("12_45ana")]
-layout_mode = 0
-offset_left = 1207.0
-offset_top = 925.0
-offset_right = 1207.0
-offset_bottom = 925.0
-script = null
-
-[node name="SlotSelecter1" parent="HUDRoot" unique_id=1769109193 instance=ExtResource("13_h50hu")]
+[node name="Slot0" parent="HUDRoot" unique_id=1769109193 instance=ExtResource("13_h50hu")]
 layout_mode = 0
 offset_left = 725.0
 offset_top = 925.0
 offset_right = 725.0
 offset_bottom = 925.0
 
-[node name="SlotSelecter2" parent="HUDRoot" unique_id=91036231 instance=ExtResource("13_h50hu")]
+[node name="Slot1" parent="HUDRoot" unique_id=1002735265 instance=ExtResource("13_h50hu")]
 layout_mode = 0
-offset_left = 885.0
-offset_top = 924.0
-offset_right = 885.0
-offset_bottom = 924.0
+offset_left = 888.0
+offset_top = 925.0
+offset_right = 888.0
+offset_bottom = 925.0
 
-[node name="SlotSelecter3" parent="HUDRoot" unique_id=800408567 instance=ExtResource("13_h50hu")]
+[node name="Slot2" parent="HUDRoot" unique_id=1254494775 instance=ExtResource("13_h50hu")]
 layout_mode = 0
-offset_left = 1045.0
-offset_top = 924.0
-offset_right = 1045.0
-offset_bottom = 924.0
+offset_left = 1046.0
+offset_top = 925.0
+offset_right = 1046.0
+offset_bottom = 925.0
 
-[node name="SlotSelecter4" parent="HUDRoot" unique_id=891586355 instance=ExtResource("13_h50hu")]
+[node name="Slot3" parent="HUDRoot" unique_id=1844161293 instance=ExtResource("13_h50hu")]
 layout_mode = 0
 offset_left = 1207.0
 offset_top = 925.0
 offset_right = 1207.0
 offset_bottom = 925.0
+
+[node name="SlotSelecter0" parent="HUDRoot" unique_id=1752071099 instance=ExtResource("12_45ana")]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 925.0
+offset_right = 725.0
+offset_bottom = 925.0
+script = ExtResource("14_apa8j")
+radius = 45.0
+color = Color(1, 1, 0, 0.176)
+
+[node name="SlotSelecter1" parent="HUDRoot" unique_id=570879186 instance=ExtResource("12_45ana")]
+layout_mode = 0
+offset_left = 887.0
+offset_top = 925.0
+offset_right = 887.0
+offset_bottom = 925.0
+script = ExtResource("14_apa8j")
+radius = 45.0
+color = Color(1, 1, 0, 0.176)
+
+[node name="SlotSelecter2" parent="HUDRoot" unique_id=153805439 instance=ExtResource("12_45ana")]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 925.0
+offset_right = 1046.0
+offset_bottom = 925.0
+script = ExtResource("14_apa8j")
+radius = 45.0
+color = Color(1, 1, 0, 0.176)
+
+[node name="SlotSelecter3" parent="HUDRoot" unique_id=618129136 instance=ExtResource("12_45ana")]
+layout_mode = 0
+offset_left = 1207.0
+offset_top = 925.0
+offset_right = 1207.0
+offset_bottom = 925.0
+script = ExtResource("14_apa8j")
+radius = 45.0
+color = Color(1, 1, 0, 0.176)

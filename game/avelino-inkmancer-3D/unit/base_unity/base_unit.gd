@@ -1,6 +1,12 @@
 extends CharacterBody3D
 class_name BaseUnit
 
+const LAYER_WORLD: int = 1
+const LAYER_ALLY_UNITS: int = 1 << 1
+const LAYER_ENEMY_UNITS: int = 1 << 2
+const LAYER_PROJECTILE_ALLY: int = 1 << 3
+const LAYER_PROJECTILE_ENEMY: int = 1 << 4
+
 enum Faction { ALLY, ENEMY }
 enum UnitState { IDLE, MOVING, CHASING, ATTACKING, DEAD }
 
@@ -12,7 +18,7 @@ enum UnitState { IDLE, MOVING, CHASING, ATTACKING, DEAD }
 @export var attack_range: float = 2.0
 @export var show_health_bar: bool = true
 @export var health_bar_scene: PackedScene
-@export var health_bar_offset: Vector3 = Vector3(0, 2, 0)
+@export var health_bar_offset: Vector3 = Vector3(0, 3.2, 0)
 @export var health_bar_scale: Vector3 = Vector3(1, 1, 1)
 
 var health_bar_instance: HealthBar3D = null
@@ -28,9 +34,24 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready() -> void:
 	current_health = max_health
 	add_to_group("base_unit")
+	_configure_collision_layers()
 
 	if show_health_bar and health_bar_scene != null:
 		call_deferred("_spawn_health_bar")
+
+
+func _configure_collision_layers() -> void:
+	if faction == Faction.ALLY:
+		collision_layer = LAYER_ALLY_UNITS
+		collision_mask = LAYER_WORLD | LAYER_ALLY_UNITS | LAYER_ENEMY_UNITS
+	else:
+		collision_layer = LAYER_ENEMY_UNITS
+		collision_mask = LAYER_WORLD | LAYER_ALLY_UNITS | LAYER_ENEMY_UNITS
+
+	var detection_area := get_node_or_null("DetectionArea") as Area3D
+	if detection_area != null:
+		detection_area.collision_layer = 0
+		detection_area.collision_mask = LAYER_ALLY_UNITS | LAYER_ENEMY_UNITS
 	
 	
 func _spawn_health_bar() -> void:

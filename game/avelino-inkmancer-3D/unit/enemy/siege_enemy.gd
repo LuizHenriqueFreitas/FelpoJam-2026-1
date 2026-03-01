@@ -15,13 +15,11 @@ func _procces(delta: float) -> void:
 			get_node("canhao/AnimationPlayer").play("canhao_002")
 			get_node("canhao/AnimationPlayer").play("canhao_003")
 			get_node("canhao/AnimationPlayer").play("canhao_004")
-			get_node("AudioAndar").play()
 		UnitState.CHASING:
 			get_node("canhao/AnimationPlayer").play("canhao_001")
 			get_node("canhao/AnimationPlayer").play("canhao_002")
 			get_node("canhao/AnimationPlayer").play("canhao_003")
 			get_node("canhao/AnimationPlayer").play("canhao_004")
-			get_node("AudioAndar").play()
 		UnitState.DEAD:
 			queue_free()
 

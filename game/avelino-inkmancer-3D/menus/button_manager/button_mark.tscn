@@ -1,8 +1,20 @@
 [gd_scene format=3 uid="uid://cw5pm78sy0cji"]
 
 [ext_resource type="Script" uid="uid://byglyweikm5vn" path="res://menus/button_manager/button_manager.gd" id="1_1s43c"]
+[ext_resource type="PackedScene" uid="uid://daer31x1s52ft" path="res://menus/button_manager/button_scenes/type/melee.tscn" id="2_khybl"]
+[ext_resource type="PackedScene" uid="uid://q7ktg085kbyl" path="res://menus/button_manager/button_scenes/type/ranged.tscn" id="3_s1t1e"]
+[ext_resource type="PackedScene" uid="uid://cp7qik8cudo8" path="res://menus/button_manager/button_scenes/type/siege.tscn" id="4_o1p7a"]
+[ext_resource type="PackedScene" uid="uid://tn5dx37iouva" path="res://menus/button_manager/button_scenes/rarity/common.tscn" id="5_4ea12"]
+[ext_resource type="PackedScene" uid="uid://bneh41qsast34" path="res://menus/button_manager/button_scenes/rarity/uncommon.tscn" id="6_5fmpw"]
+[ext_resource type="PackedScene" uid="uid://c5e5ahjfypvxw" path="res://menus/button_manager/button_scenes/rarity/rare.tscn" id="7_dbmg8"]
 
 [node name="ButtonMark" type="Control" unique_id=1752071099]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_1s43c")
+interface_scene_melee = ExtResource("2_khybl")
+interface_scene_ranged = ExtResource("3_s1t1e")
+interface_scene_siege = ExtResource("4_o1p7a")
+interface_scene_common = ExtResource("5_4ea12")
+interface_scene_uncommon = ExtResource("6_5fmpw")
+interface_scene_rare = ExtResource("7_dbmg8")

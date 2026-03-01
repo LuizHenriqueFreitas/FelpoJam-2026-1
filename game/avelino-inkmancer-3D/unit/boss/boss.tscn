@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fx1tcalfthad" path="res://props/personagens/modelo_anjo.tscn" id="1_w7ekg"]
 [ext_resource type="PackedScene" uid="uid://dmc1uy31mfsqe" path="res://menus/vitoria.tscn" id="2_460v6"]
 [ext_resource type="PackedScene" uid="uid://buvwcvjm4prgr" path="res://unit/health_bar_3d.tscn" id="3_i16oc"]
+[ext_resource type="PackedScene" uid="uid://co5u1dmlyim4t" path="res://unit/projectiles/boss_projectile.tscn" id="4_2xq0g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h68hj"]
 radius = 4.3052073
@@ -14,7 +15,14 @@ radius = 40.77832
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1147815765]
 script = ExtResource("1_h68hj")
 win_scene = ExtResource("2_460v6")
+projectile_scene = ExtResource("4_2xq0g")
+projectile_arc_time = 1.0
+projectile_offset_distance = 1.0
+attack_origin_path = NodePath("attack_origin")
 faction = 1
+max_health = 1000.0
+attack_speed = 5.0
+attack_range = 30.0
 health_bar_scene = ExtResource("3_i16oc")
 
 [node name="anjo" parent="." unique_id=1924285470 instance=ExtResource("1_w7ekg")]
@@ -24,8 +32,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2399812, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2399812, 0)
 shape = SubResource("SphereShape3D_h68hj")
 
-[node name="AttackOrigin" type="Node3D" parent="." unique_id=122357488]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1614542, 0.69397736)
+[node name="attack_origin" type="Node3D" parent="." unique_id=49912459]
+transform = Transform3D(1, 0, 0, 0, -0.34629717, 0.9381249, 0, -0.9381249, -0.34629717, 0, 2.4600735, 0)
 
 [node name="DetectionArea" type="Area3D" parent="." unique_id=1247354852]
 
