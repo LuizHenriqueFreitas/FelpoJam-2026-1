@@ -21,7 +21,6 @@ O jogo está disponível para **Windows** e **Linux**, com suporte para teclado 
 | Comando | Ação |
 | :--- | :--- |
 | **WASD** | Movimentação |
-| **Clique Direito** | Ataque corpo-a-corpo |
 | **Clique Esquerdo** | Ativar modo de invocação / Confirmar invocação |
 | **1 - 2 - 3 - 4** | Selecionar carimbos de invocação no inventário |
 | **Esc** | Abrir menu de configurações |
